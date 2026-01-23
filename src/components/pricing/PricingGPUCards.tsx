@@ -1,37 +1,40 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
-const gpuPlans = [
-  {
-    name: "NVIDIA H200",
-    label: "最高性能",
-    price: "$2.50",
-    unit: "/ GPU-hour",
-    description: "適用於大規模訓練需求、最強大算力的選項。搭載 HBM3e 記憶體，提供無與倫比的 AI 訓練效能。",
-    cta: "聯繫我們",
-    ctaLink: "/contact",
-  },
-  {
-    name: "NVIDIA H100",
-    label: "效能與成本兼備",
-    price: "$2.10",
-    unit: "/ GPU-hour",
-    description: "適合大量推理任務需求，具備成本效益的最佳化選項。80GB HBM3 記憶體，滿足企業級 AI 部署。",
-    cta: "立即部署",
-    ctaLink: "/contact",
-    featured: true,
-  },
-  {
-    name: "NVIDIA Blackwell Platforms",
-    label: "Coming Soon",
-    headline: "搶先預訂",
-    description: "Blackwell 將於 2025 年上市，具備更高能效和 AI 優化特性，適合下一代 AI 工作負載。",
-    cta: "立即預訂",
-    ctaLink: "/contact",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const PricingGPUCards = () => {
+  const { t } = useTranslation();
+
+  const gpuPlans = [
+    {
+      name: "NVIDIA H200",
+      label: t("pricing.gpuPlans.h200.label"),
+      price: "$2.50",
+      unit: "/ GPU-hour",
+      description: t("pricing.gpuPlans.h200.description"),
+      cta: t("pricing.gpuPlans.h200.cta"),
+      ctaLink: "/contact",
+    },
+    {
+      name: "NVIDIA H100",
+      label: t("pricing.gpuPlans.h100.label"),
+      price: "$2.10",
+      unit: "/ GPU-hour",
+      description: t("pricing.gpuPlans.h100.description"),
+      cta: t("pricing.gpuPlans.h100.cta"),
+      ctaLink: "/contact",
+      featured: true,
+    },
+    {
+      name: "NVIDIA Blackwell Platforms",
+      label: t("pricing.gpuPlans.blackwell.label"),
+      headline: t("pricing.gpuPlans.blackwell.headline"),
+      description: t("pricing.gpuPlans.blackwell.description"),
+      cta: t("pricing.gpuPlans.blackwell.cta"),
+      ctaLink: "/contact",
+    },
+  ];
+
   return (
     <section className="py-12 md:py-16 bg-background">
       <div className="container">

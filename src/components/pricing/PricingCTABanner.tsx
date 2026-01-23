@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import ctaConsultation from "@/assets/pricing/cta-consultation.jpg";
 
 const PricingCTABanner = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-8 md:py-12">
       <div className="container">
@@ -22,14 +25,14 @@ const PricingCTABanner = () => {
           {/* Content */}
           <div className="relative z-10 flex flex-col justify-center h-full min-h-[320px] md:min-h-[400px] px-8 md:px-12 py-12 max-w-xl">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Not sure which product fits your needs? Let's talk.
+              {t("pricing.cta.title")}
             </h2>
             <p className="text-slate-300 mb-8 leading-relaxed">
-              Our team is here to help you choose the right GPU cloud solution and answer any questions you have about performance, pricing, or scaling.
+              {t("pricing.cta.subtitle")}
             </p>
             <div>
               <Button asChild size="lg" className="font-semibold">
-                <Link to="/contact">Contact Sales</Link>
+                <Link to="/contact">{t("common.contactSales")}</Link>
               </Button>
             </div>
           </div>

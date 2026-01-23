@@ -1,20 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import heroHolographic from "@/assets/gpu/hero-holographic.jpg";
 
 const GPUHero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative overflow-hidden bg-heading py-20 md:py-28">
       <div className="container relative z-10">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4">
-            GPU 算力租賃
+            {t("gpuPage.heroTitle")}
           </h1>
           <p className="text-lg text-white/70 mb-8">
-            完整雲端整合的裸機伺服器，以最具競爭力的價格提供。
+            {t("gpuPage.heroSubtitle")}
           </p>
           <Button asChild size="lg" className="px-8">
-            <Link to="/contact">Contact Sales</Link>
+            <Link to="/contact">{t("common.contactSales")}</Link>
           </Button>
         </div>
       </div>

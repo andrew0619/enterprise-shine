@@ -1,14 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import NetworkGlobeVisual from "./NetworkGlobeVisual";
 
-const stats = [
-  { value: "2023", label: "年" },
-  { value: "100+", label: "核心成員" },
-  { value: "5", label: "全球據點" },
-];
-
 const AboutHero = () => {
+  const { t } = useTranslation();
+
+  const stats = [
+    { value: "2023", label: t("about.stats.year") },
+    { value: "100+", label: t("about.stats.coreMembers") },
+    { value: "5", label: t("about.stats.globalOffices") },
+  ];
+
   return (
     <section className="relative bg-heading text-background overflow-hidden">
       {/* Grid overlay */}
@@ -25,18 +28,15 @@ const AboutHero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-16 md:py-24 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <p className="text-primary font-medium">關於 GMI Cloud</p>
+            <p className="text-primary font-medium">{t("about.kicker")}</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-background">
-              築基 AI 基礎建設，
-              <br />
-              成就每個可能
+              {t("about.heroTitle")}
             </h1>
             <p className="text-lg text-muted-foreground max-w-lg">
-              Building AI Infrastructure, Empowering Possibilities. 
-              我們致力於打造最先進的 GPU 雲端運算平台，加速全球 AI 創新。
+              {t("about.heroSubtitle")}
             </p>
             <Button asChild size="lg" className="mt-4">
-              <Link to="/contact">聯繫我們</Link>
+              <Link to="/contact">{t("common.contactSales")}</Link>
             </Button>
           </div>
           
