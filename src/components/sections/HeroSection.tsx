@@ -47,23 +47,12 @@ const HeroSection = () => {
         </div>
 
         {/* 3D Cubes Visual */}
-        <div className="relative max-w-2xl mx-auto mb-16 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+        <div className="max-w-4xl mx-auto mb-16 animate-fade-in" style={{ animationDelay: "0.3s" }}>
           <img
             src={heroCubes}
             alt="GPU, AI/ML Ops, and Inference cubes"
             className="w-full h-auto"
           />
-          {/* Labels overlay */}
-          <div className="absolute inset-0 flex items-end justify-center gap-8 md:gap-16 pb-4">
-            {pillars.map((pillar) => (
-              <span
-                key={pillar.label}
-                className="text-sm md:text-base font-semibold text-foreground bg-background/80 px-3 py-1 rounded-full"
-              >
-                {pillar.label}
-              </span>
-            ))}
-          </div>
         </div>
 
         {/* Partner Strip */}
