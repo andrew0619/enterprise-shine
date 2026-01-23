@@ -34,6 +34,14 @@ const developersDropdown = [
   { href: "/docs", label: "Docs Hub" },
 ];
 
+const companyDropdown = [
+  { href: "/about", label: "About Us" },
+  { href: "/blog", label: "Blog" },
+  { href: "https://discord.com", label: "Discord", external: true },
+  { href: "/partners", label: "Partners" },
+  { href: "/careers", label: "Careers" },
+];
+
 const simpleNavLinks = [
   { href: "/studio", label: "Studio", isNew: true },
   { href: "/pricing", label: "Pricing" },
@@ -45,6 +53,7 @@ const Header = () => {
   const [productsOpen, setProductsOpen] = useState(false);
   const [gpusOpen, setGpusOpen] = useState(false);
   const [developersOpen, setDevelopersOpen] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -63,6 +72,9 @@ const Header = () => {
   );
   const isDevelopersActive = developersDropdown.some(
     (item) => location.pathname === item.href
+  );
+  const isCompanyActive = companyDropdown.some(
+    (item) => !("external" in item) && location.pathname === item.href
   );
 
   return (
@@ -183,6 +195,46 @@ const Header = () => {
                   >
                     {item.label}
                   </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Company Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                "flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary outline-none",
+                isCompanyActive ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              Company
+              <ChevronDown className="h-3 w-3" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="bg-popover w-44">
+              {companyDropdown.map((item) => (
+                <DropdownMenuItem key={item.href} asChild>
+                  {"external" in item && item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full cursor-pointer flex items-center gap-2"
+                    >
+                      {item.label}
+                      <span className="text-xs text-muted-foreground">↗</span>
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className={cn(
+                        "w-full cursor-pointer",
+                        location.pathname === item.href && "text-primary"
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -340,6 +392,50 @@ const Header = () => {
                         {item.label}
                       </Link>
                     ))}
+                  </CollapsibleContent>
+                </Collapsible>
+
+                {/* Company Collapsible */}
+                <Collapsible open={companyOpen} onOpenChange={setCompanyOpen}>
+                  <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-lg font-medium">
+                    Company
+                    <ChevronDown
+                      className={cn(
+                        "h-4 w-4 transition-transform",
+                        companyOpen && "rotate-180"
+                      )}
+                    />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="pl-4 space-y-2">
+                    {companyDropdown.map((item) =>
+                      "external" in item && item.external ? (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="block py-2 text-base transition-colors hover:text-primary text-muted-foreground flex items-center gap-2"
+                        >
+                          {item.label}
+                          <span className="text-xs">↗</span>
+                        </a>
+                      ) : (
+                        <Link
+                          key={item.href}
+                          to={item.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={cn(
+                            "block py-2 text-base transition-colors hover:text-primary",
+                            location.pathname === item.href
+                              ? "text-primary"
+                              : "text-muted-foreground"
+                          )}
+                        >
+                          {item.label}
+                        </Link>
+                      )
+                    )}
                   </CollapsibleContent>
                 </Collapsible>
               </nav>
