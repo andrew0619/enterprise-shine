@@ -3,13 +3,21 @@ import { Button } from "@/components/ui/button";
 import FloatingNodeCard from "./FloatingNodeCard";
 import NodeNetwork from "./NodeNetwork";
 
+// Import images
+import heroPortrait from "@/assets/studio/hero-portrait.jpg";
+import heroClouds from "@/assets/studio/hero-clouds.jpg";
+import heroStones from "@/assets/studio/hero-stones.jpg";
+import heroDancer from "@/assets/studio/hero-dancer.jpg";
+import heroMusicians from "@/assets/studio/hero-musicians.jpg";
+import hero3DFigure from "@/assets/studio/hero-3dfigure.jpg";
+
 const floatingCards = [
-  { gradient: "from-rose-400 via-pink-500 to-purple-500", size: "md" as const, animation: "float" as const, position: "top-[15%] left-[10%]", delay: "0s" },
-  { gradient: "from-sky-400 via-blue-500 to-indigo-500", size: "sm" as const, animation: "float-reverse" as const, position: "top-[12%] right-[12%]", delay: "0.5s" },
-  { gradient: "from-amber-400 via-orange-500 to-red-500", size: "lg" as const, animation: "float-slow" as const, position: "top-[40%] left-[5%]", delay: "1s" },
-  { gradient: "from-emerald-400 via-teal-500 to-cyan-500", size: "md" as const, animation: "float" as const, position: "top-[45%] right-[8%]", delay: "1.5s" },
-  { gradient: "from-violet-400 via-purple-500 to-fuchsia-500", size: "sm" as const, animation: "float-reverse" as const, position: "bottom-[20%] left-[15%]", delay: "0.8s" },
-  { gradient: "from-lime-400 via-green-500 to-emerald-500", size: "md" as const, animation: "float-slow" as const, position: "bottom-[18%] right-[15%]", delay: "1.2s" },
+  { imageSrc: heroPortrait, size: "md" as const, animation: "float" as const, position: "top-[15%] left-[10%]", delay: "0s" },
+  { imageSrc: heroClouds, size: "sm" as const, animation: "float-reverse" as const, position: "top-[12%] right-[12%]", delay: "0.5s" },
+  { imageSrc: heroMusicians, size: "lg" as const, animation: "float-slow" as const, position: "top-[40%] left-[5%]", delay: "1s" },
+  { imageSrc: hero3DFigure, size: "md" as const, animation: "float" as const, position: "top-[45%] right-[8%]", delay: "1.5s" },
+  { imageSrc: heroStones, size: "sm" as const, animation: "float-reverse" as const, position: "bottom-[20%] left-[15%]", delay: "0.8s" },
+  { imageSrc: heroDancer, size: "md" as const, animation: "float-slow" as const, position: "bottom-[18%] right-[15%]", delay: "1.2s" },
 ];
 
 const StudioHero = () => {
@@ -35,7 +43,7 @@ const StudioHero = () => {
           className={`absolute ${card.position} hidden md:block z-10`}
         >
           <FloatingNodeCard
-            gradient={card.gradient}
+            imageSrc={card.imageSrc}
             size={card.size}
             animation={card.animation}
             delay={card.delay}

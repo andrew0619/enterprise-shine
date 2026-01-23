@@ -1,47 +1,49 @@
 import GalleryCard from "./GalleryCard";
 
+// Import images
+import gallerySnow from "@/assets/studio/gallery-snow.jpg";
+import galleryCar from "@/assets/studio/gallery-car.jpg";
+import galleryFriends from "@/assets/studio/gallery-friends.jpg";
+import galleryPortrait from "@/assets/studio/gallery-portrait.jpg";
+import galleryTypography from "@/assets/studio/gallery-typography.jpg";
+import galleryAnime from "@/assets/studio/gallery-anime.jpg";
+
 const galleryItems = [
   {
-    gradient: "from-zinc-600 via-stone-500 to-zinc-400",
-    title: "Winter Streets",
-    subtitle: "Urban exploration",
-    date: "DEC 2025",
-    category: "Photography",
+    imageSrc: gallerySnow,
+    title: "World of Depth",
+    author: "Rinessa Official",
+    aiTools: ["Gemini 2.5", "Gemini 3"],
   },
   {
-    gradient: "from-amber-500 via-yellow-400 to-orange-300",
-    title: "Yellow Cab",
-    subtitle: "City life series",
-    date: "NOV 2025",
-    category: "Digital Art",
+    imageSrc: galleryCar,
+    title: "Automotive in Motion",
+    author: "Josh",
+    aiTools: ["Veo 1", "Gemini 3 Pro"],
   },
   {
-    gradient: "from-slate-700 via-blue-900 to-slate-600",
-    title: "Neon Nights",
-    subtitle: "Cyberpunk dreams",
-    date: "OCT 2025",
-    category: "3D Render",
+    imageSrc: galleryFriends,
+    title: "Long Distance Friends",
+    author: "Mia Zhu",
+    aiTools: ["Gemini 3 Pro", "Kling 2.6"],
   },
   {
-    gradient: "from-teal-500 via-emerald-400 to-cyan-300",
-    title: "Digital Muse",
-    subtitle: "Character design",
-    date: "SEP 2025",
-    category: "Illustration",
+    imageSrc: galleryPortrait,
+    title: "One Character, Many Worlds",
+    author: "Jie",
+    aiTools: ["Gemini 3 Pro"],
   },
   {
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
-    title: "Rainy Reflections",
-    subtitle: "Mood photography",
-    date: "AUG 2025",
-    category: "Photography",
+    imageSrc: galleryTypography,
+    title: "Wear the Process",
+    author: "Lloyd",
+    aiTools: ["Nano Banana", "Kling 2.5"],
   },
   {
-    gradient: "from-purple-400 via-pink-300 to-rose-200",
-    title: "Dream Sequence",
-    subtitle: "Abstract visions",
-    date: "JUL 2025",
-    category: "AI Art",
+    imageSrc: galleryAnime,
+    title: "The Walk-In Shot",
+    author: "Viri",
+    aiTools: ["Mini26", "Gemini 3 Pro"],
   },
 ];
 

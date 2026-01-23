@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import ctaNature from "@/assets/studio/cta-nature.jpg";
 
 const StudioCTABanner = () => {
   return (
@@ -14,7 +15,7 @@ const StudioCTABanner = () => {
           {/* Content */}
           <div className="relative z-10 px-8 py-16 md:px-12 md:py-20 flex flex-col md:flex-row items-center justify-between gap-8">
             {/* Text */}
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-left flex-1">
               <h2 className="text-3xl md:text-4xl font-bold text-white">
                 Create at the rhythm of your imagination.
               </h2>
@@ -38,6 +39,16 @@ const StudioCTABanner = () => {
                 <Link to="/contact">Start Now</Link>
               </Button>
             </div>
+          </div>
+
+          {/* Nature Image on right side */}
+          <div className="absolute right-0 top-0 bottom-0 w-1/3 hidden lg:block">
+            <div className="absolute inset-0 bg-gradient-to-r from-zinc-900 to-transparent z-10" />
+            <img 
+              src={ctaNature} 
+              alt="" 
+              className="w-full h-full object-cover opacity-60"
+            />
           </div>
         </div>
       </div>
