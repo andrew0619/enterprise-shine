@@ -1,6 +1,11 @@
 import { useTranslation } from "react-i18next";
 import DemoAppCard from "./DemoAppCard";
 
+// Import demo app images
+import demoChatImage from "@/assets/developers/demo-chat.jpg";
+import demoResearchImage from "@/assets/developers/demo-research.jpg";
+import demoAgentImage from "@/assets/developers/demo-agent.jpg";
+
 const DemoAppsGrid = () => {
   const { t } = useTranslation();
 
@@ -17,7 +22,7 @@ const DemoAppsGrid = () => {
         "developers.demoTags.knowledgeGrounding",
         "developers.demoTags.aiAssistant",
       ],
-      mockupType: "chat" as const,
+      image: demoChatImage,
     },
     {
       titleKey: "developers.demoApps.deepResearch.title",
@@ -31,7 +36,7 @@ const DemoAppsGrid = () => {
         "developers.demoTags.multiDocument",
         "developers.demoTags.knowledgeSynthesis",
       ],
-      mockupType: "form" as const,
+      image: demoResearchImage,
     },
     {
       titleKey: "developers.demoApps.companyResearch.title",
@@ -44,12 +49,12 @@ const DemoAppsGrid = () => {
         "developers.demoTags.salesEnablement",
         "developers.demoTags.marketResearch",
       ],
-      mockupType: "agent" as const,
+      image: demoAgentImage,
     },
   ];
 
   return (
-    <section className="bg-white pb-16">
+    <section className="bg-background pb-16">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {demoApps.map((app) => (
@@ -58,7 +63,7 @@ const DemoAppsGrid = () => {
               title={t(app.titleKey)}
               description={t(app.descriptionKey)}
               tags={app.tagKeys.map((key) => t(key))}
-              mockupType={app.mockupType}
+              image={app.image}
             />
           ))}
         </div>
