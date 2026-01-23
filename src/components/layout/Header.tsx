@@ -29,9 +29,13 @@ const gpusDropdown = [
   { href: "/gpus/hgx-b200", label: "NVIDIA HGX™ B200" },
 ];
 
+const developersDropdown = [
+  { href: "/developers/demo-apps", label: "Demo Apps" },
+  { href: "/developers/docs-hub", label: "Docs Hub" },
+];
+
 const simpleNavLinks = [
   { href: "/studio", label: "Studio", isNew: true },
-  { href: "/solutions", label: "Solutions" },
   { href: "/pricing", label: "Pricing" },
 ];
 
@@ -40,6 +44,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [gpusOpen, setGpusOpen] = useState(false);
+  const [developersOpen, setDevelopersOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -54,6 +59,9 @@ const Header = () => {
     (item) => location.pathname === item.href
   );
   const isGpusActive = gpusDropdown.some(
+    (item) => location.pathname === item.href
+  );
+  const isDevelopersActive = developersDropdown.some(
     (item) => location.pathname === item.href
   );
 
@@ -151,6 +159,34 @@ const Header = () => {
               )}
             </Link>
           ))}
+
+          {/* Developers Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                "flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary outline-none",
+                isDevelopersActive ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              Developers
+              <ChevronDown className="h-3 w-3" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="bg-popover w-44">
+              {developersDropdown.map((item) => (
+                <DropdownMenuItem key={item.href} asChild>
+                  <Link
+                    to={item.href}
+                    className={cn(
+                      "w-full cursor-pointer",
+                      location.pathname === item.href && "text-primary"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
 
         {/* Desktop Right Actions */}
@@ -276,6 +312,36 @@ const Header = () => {
                     )}
                   </Link>
                 ))}
+
+                {/* Developers Collapsible */}
+                <Collapsible open={developersOpen} onOpenChange={setDevelopersOpen}>
+                  <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-lg font-medium">
+                    Developers
+                    <ChevronDown
+                      className={cn(
+                        "h-4 w-4 transition-transform",
+                        developersOpen && "rotate-180"
+                      )}
+                    />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="pl-4 space-y-2">
+                    {developersDropdown.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={cn(
+                          "block py-2 text-base transition-colors hover:text-primary",
+                          location.pathname === item.href
+                            ? "text-primary"
+                            : "text-muted-foreground"
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
               </nav>
 
               <div className="border-t pt-6 flex flex-col gap-4">

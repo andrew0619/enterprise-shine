@@ -23,6 +23,10 @@ import GPUH200 from "./pages/GPUH200";
 import GPUGB200 from "./pages/gpus/GPUGB200";
 import GPUHGXB200 from "./pages/gpus/GPUHGXB200";
 
+// Developer pages
+import DemoApps from "./pages/developers/DemoApps";
+import DocsHub from "./pages/developers/DocsHub";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -43,6 +47,8 @@ const App = () => (
           <Route path="/gpus/hgx-b200" element={<GPUHGXB200 />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/developers/demo-apps" element={<DemoApps />} />
+          <Route path="/developers/docs-hub" element={<DocsHub />} />
           <Route path="/about" element={<About />} />
           <Route path="/studio" element={<Studio />} />
           <Route path="/contact" element={<Contact />} />
