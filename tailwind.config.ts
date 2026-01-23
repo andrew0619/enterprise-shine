@@ -14,7 +14,16 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: [
+          'Inter',
+          'Noto Sans TC',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'PingFang TC',
+          'Microsoft JhengHei',
+          'sans-serif'
+        ],
       },
       colors: {
         border: "hsl(var(--border))",
