@@ -1,47 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
-// Metallic Cubes Visual
-const MetallicCubes = () => (
-  <div className="relative w-full h-64 md:h-80 flex items-center justify-center">
-    {/* Main cube cluster */}
-    <div className="relative">
-      {[
-        { x: 0, y: 0, z: 0, size: "w-20 h-24" },
-        { x: 60, y: -20, z: 10, size: "w-16 h-20" },
-        { x: -50, y: 10, z: -5, size: "w-14 h-18" },
-        { x: 30, y: 30, z: 5, size: "w-12 h-16" },
-      ].map((cube, i) => (
-        <div
-          key={i}
-          className={`absolute ${cube.size} bg-gradient-to-b from-slate-600 to-slate-900 rounded-lg shadow-xl`}
-          style={{
-            left: `${cube.x}px`,
-            top: `${cube.y}px`,
-            transform: `translateZ(${cube.z}px) rotateY(15deg) rotateX(10deg)`,
-          }}
-        >
-          {/* Top face */}
-          <div
-            className="absolute -top-2 left-1 right-1 h-3 bg-gradient-to-b from-slate-400 to-slate-600 rounded-t"
-            style={{ clipPath: "polygon(10% 100%, 90% 100%, 100% 0%, 0% 0%)" }}
-          />
-          {/* Right face */}
-          <div
-            className="absolute top-0 -right-2 w-3 h-full bg-gradient-to-r from-slate-700 to-slate-900 rounded-r"
-            style={{ clipPath: "polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%)" }}
-          />
-          {/* LED */}
-          <div className="absolute bottom-2 left-2 w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-        </div>
-      ))}
-    </div>
-    
-    {/* Glow effect */}
-    <div className="absolute bottom-0 w-48 h-16 bg-primary/10 blur-3xl rounded-full" />
-  </div>
-);
+import scalingCubes from "@/assets/inference/scaling-cubes.jpg";
 
 // Donut Chart / Gauge Component
 const MonitoringDashboard = ({ t }: { t: (key: string) => string }) => (
@@ -147,8 +107,14 @@ const FeatureDeepDive = () => {
               </Button>
             </div>
             
-            {/* Right Visual */}
-            <MetallicCubes />
+            {/* Right Visual - Scaling Cubes Image */}
+            <div className="flex items-center justify-center">
+              <img
+                src={scalingCubes}
+                alt="Effortless Scaling"
+                className="w-full max-w-sm rounded-2xl shadow-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
