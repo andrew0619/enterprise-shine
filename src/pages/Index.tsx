@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/sections/HeroSection";
+import LogoMarquee from "@/components/home/LogoMarquee";
 import InferenceSection from "@/components/sections/InferenceSection";
 import ClusterSection from "@/components/sections/ClusterSection";
 import GPUComputeSection from "@/components/sections/GPUComputeSection";
@@ -12,6 +13,7 @@ const Index = () => {
   return (
     <Layout>
       <HeroSection />
+      <LogoMarquee />
       <InferenceSection />
       <ClusterSection />
       <GPUComputeSection />
