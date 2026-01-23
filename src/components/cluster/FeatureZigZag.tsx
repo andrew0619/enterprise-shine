@@ -1,33 +1,23 @@
-import { Shield, Lock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
-// UI Mockup Components
+// Import server images
+import serverStackImg from "@/assets/cluster/server-stack.jpg";
+import serverClusterImg from "@/assets/cluster/server-cluster.jpg";
+import serverRackImg from "@/assets/cluster/server-rack.jpg";
+
+// Server Stack Visual with real image
 const ServerStackVisual = () => (
-  <div className="bg-slate-100 rounded-2xl p-8 h-full flex items-center justify-center">
-    <div className="relative w-48 h-48">
-      {/* Stacked server blocks with sketch effect */}
-      {[0, 1, 2, 3].map((i) => (
-        <div
-          key={i}
-          className="absolute left-0 right-0 h-10 bg-gradient-to-r from-slate-800 to-slate-700 rounded"
-          style={{
-            bottom: `${i * 28}px`,
-            transform: `translateX(${i * 4}px)`,
-            opacity: 1 - i * 0.15,
-          }}
-        >
-          {/* LED indicators */}
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 flex gap-1">
-            <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-            <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-          </div>
-        </div>
-      ))}
-      {/* Sketch texture overlay */}
-      <div className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(45deg,transparent,transparent_2px,rgba(0,0,0,0.1)_2px,rgba(0,0,0,0.1)_4px)]" />
-    </div>
+  <div className="rounded-2xl overflow-hidden h-full min-h-[280px]">
+    <img 
+      src={serverStackImg} 
+      alt="Server stack visualization"
+      className="w-full h-full object-cover"
+    />
   </div>
 );
 
+// Monitoring Dashboard UI Mockup
 const MonitoringDashboard = () => (
   <div className="bg-white rounded-2xl shadow-lg p-6 h-full">
     <div className="text-sm font-medium text-foreground mb-4">Instance Status</div>
@@ -61,52 +51,18 @@ const MonitoringDashboard = () => (
   </div>
 );
 
-const AnalyticsDashboard = () => (
-  <div className="bg-white rounded-2xl shadow-lg p-6 h-full">
-    <div className="text-sm font-medium text-foreground mb-4">Usage Analytics</div>
-    <div className="grid grid-cols-2 gap-4">
-      {/* Line chart mockup */}
-      <div className="bg-slate-50 rounded-lg p-4">
-        <div className="text-xs text-muted-foreground mb-2">GPU Utilization</div>
-        <svg className="w-full h-16" viewBox="0 0 100 40">
-          <polyline
-            points="0,35 15,28 30,32 45,18 60,22 75,12 90,8 100,15"
-            fill="none"
-            stroke="hsl(var(--primary))"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          <polyline
-            points="0,35 15,28 30,32 45,18 60,22 75,12 90,8 100,15"
-            fill="url(#gradient)"
-            stroke="none"
-            opacity="0.2"
-          />
-          <defs>
-            <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stopColor="hsl(var(--primary))" />
-              <stop offset="100%" stopColor="transparent" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      {/* Bar chart mockup */}
-      <div className="bg-slate-50 rounded-lg p-4">
-        <div className="text-xs text-muted-foreground mb-2">Compute Hours</div>
-        <div className="flex items-end gap-1 h-16">
-          {[60, 80, 45, 90, 70, 85, 95].map((h, i) => (
-            <div
-              key={i}
-              className="flex-1 bg-primary/70 rounded-t"
-              style={{ height: `${h}%` }}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
+// Server Cluster Visual with real image
+const ServerClusterVisual = () => (
+  <div className="rounded-2xl overflow-hidden h-full min-h-[280px]">
+    <img 
+      src={serverClusterImg} 
+      alt="Server cluster visualization"
+      className="w-full h-full object-cover"
+    />
   </div>
 );
 
+// Resource Table UI Mockup
 const ResourceTable = () => (
   <div className="bg-white rounded-2xl shadow-lg p-6 h-full overflow-hidden">
     <div className="text-sm font-medium text-foreground mb-4">Resource Management</div>
@@ -150,14 +106,14 @@ const ResourceTable = () => (
   </div>
 );
 
-const SecurityVisual = () => (
-  <div className="bg-slate-100 rounded-2xl p-8 h-full flex items-center justify-center">
-    <div className="relative">
-      <div className="w-32 h-40 bg-gradient-to-b from-primary/20 to-primary/5 rounded-xl flex items-center justify-center">
-        <Shield className="w-16 h-16 text-primary" />
-        <Lock className="w-6 h-6 text-primary absolute" />
-      </div>
-    </div>
+// Server Rack Visual with real image
+const ServerRackVisual = () => (
+  <div className="rounded-2xl overflow-hidden h-full min-h-[280px]">
+    <img 
+      src={serverRackImg} 
+      alt="Server rack infrastructure"
+      className="w-full h-full object-cover"
+    />
   </div>
 );
 
@@ -166,36 +122,66 @@ const features = [
     title: "Efficient Scaling",
     description:
       "Automatically scale your GPU clusters up or down based on workload demands. Our intelligent orchestration ensures optimal resource utilization.",
+    subtitle: "Auto-scaling",
+    bulletPoints: [
+      "Dynamic resource allocation",
+      "Cost-optimized scaling policies",
+    ],
     visual: ServerStackVisual,
     imageFirst: false,
+    showButton: true,
   },
   {
     title: "Real-time Monitoring",
     description:
       "Monitor every aspect of your cluster with comprehensive dashboards. Track instance health, resource usage, and job progress in real-time.",
+    subtitle: "observability",
+    bulletPoints: [
+      "Live metrics dashboard",
+      "Alerting and notifications",
+    ],
     visual: MonitoringDashboard,
     imageFirst: true,
+    showButton: true,
   },
   {
     title: "Usage Analytics",
     description:
       "Gain deep insights into your compute usage patterns. Visualize trends, optimize costs, and make data-driven infrastructure decisions.",
-    visual: AnalyticsDashboard,
+    subtitle: "Unified Analytics",
+    bulletPoints: [
+      "Cost breakdown reports",
+      "Usage trend analysis",
+    ],
+    visual: ServerClusterVisual,
     imageFirst: false,
+    showButton: true,
   },
   {
     title: "Resource Management",
     description:
       "Fine-grained control over every GPU, node, and container. Allocate resources precisely where they're needed with our intuitive management interface.",
+    subtitle: "Smart Allocation",
+    bulletPoints: [
+      "Priority-based scheduling",
+      "Multi-tenant isolation",
+    ],
     visual: ResourceTable,
     imageFirst: true,
+    showButton: true,
   },
   {
     title: "Enterprise Security",
     description:
       "Bank-grade security for your AI workloads. Role-based access control, encryption at rest and in transit, and comprehensive audit logging.",
-    visual: SecurityVisual,
+    subtitle: "Zero Trust Security",
+    bulletPoints: [
+      "SOC 2 Type II certified",
+      "End-to-end encryption",
+    ],
+    visual: ServerRackVisual,
     imageFirst: false,
+    showButton: true,
   },
 ];
 
@@ -212,12 +198,28 @@ const FeatureZigZag = () => {
             >
               {/* Text */}
               <div className={feature.imageFirst ? "lg:order-2" : ""}>
+                <p className="text-sm text-primary font-medium mb-2">{feature.subtitle}</p>
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed mb-4">
                   {feature.description}
                 </p>
+                {feature.bulletPoints && (
+                  <ul className="space-y-2 mb-6">
+                    {feature.bulletPoints.map((point, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {feature.showButton && (
+                  <Button asChild variant="outline" size="sm">
+                    <Link to="/contact">Learn More</Link>
+                  </Button>
+                )}
               </div>
 
               {/* Visual */}
