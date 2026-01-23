@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import heroSystem from "@/assets/hgxb200/hero-system.jpg";
 
 const HGXB200Hero = () => {
   return (
@@ -33,71 +34,13 @@ const HGXB200Hero = () => {
             </div>
           </div>
 
-          {/* Right Visual - HGX B200 Module (8-GPU Baseboard) */}
-          <div className="relative h-[350px] md:h-[400px] flex items-center justify-center">
-            {/* Glow effect underneath */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-80 h-24 bg-blue-500/15 blur-3xl" />
-            
-            {/* Main Baseboard Module */}
-            <div className="relative w-full max-w-md">
-              {/* Base platform */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[90%] h-3 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 rounded-sm" />
-              
-              {/* Main board */}
-              <div className="relative bg-gradient-to-b from-zinc-800 to-zinc-900 rounded-lg p-4 border border-zinc-700/50">
-                {/* Circuit trace lines */}
-                <div className="absolute inset-0 overflow-hidden rounded-lg opacity-20">
-                  <div className="absolute top-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500 to-transparent" />
-                  <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-                  <div className="absolute top-3/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500 to-transparent" />
-                </div>
-                
-                {/* GPU Grid - 2 rows x 4 columns */}
-                <div className="grid grid-cols-4 grid-rows-2 gap-3">
-                  {Array.from({ length: 8 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="aspect-square bg-zinc-950 rounded border border-zinc-700/30 flex flex-col items-center justify-center p-2"
-                    >
-                      {/* Heatsink representation */}
-                      <div className="w-full flex-1 bg-gradient-to-b from-zinc-700 to-zinc-800 rounded-t relative overflow-hidden">
-                        {/* Heatsink fin lines */}
-                        {Array.from({ length: 5 }).map((_, j) => (
-                          <div
-                            key={j}
-                            className="absolute left-0 right-0 h-px bg-zinc-600"
-                            style={{ top: `${(j + 1) * 16}%` }}
-                          />
-                        ))}
-                      </div>
-                      {/* LED indicator */}
-                      <div 
-                        className="w-2 h-2 bg-green-500 rounded-full mt-1 animate-pulse"
-                        style={{ animationDelay: `${i * 0.15}s` }}
-                      />
-                    </div>
-                  ))}
-                </div>
-                
-                {/* NVLink connectors at bottom */}
-                <div className="flex justify-center gap-2 mt-3">
-                  {Array.from({ length: 4 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="w-8 h-2 bg-zinc-700 rounded-sm border border-zinc-600/50"
-                    />
-                  ))}
-                </div>
-              </div>
-              
-              {/* Product label */}
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-zinc-500 text-xs tracking-wider">
-                NVIDIA HGX™ B200
-              </div>
-            </div>
-            
-            {/* Ambient glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl" />
+          {/* Right Visual - HGX B200 System Image */}
+          <div className="relative flex items-center justify-center">
+            <img
+              src={heroSystem}
+              alt="NVIDIA HGX B200"
+              className="w-full max-w-lg h-auto object-contain"
+            />
           </div>
         </div>
       </div>
