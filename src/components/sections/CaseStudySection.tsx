@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, TrendingDown, Zap } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import caseStudyImage from "@/assets/home/case-study-video.jpg";
 
 const CaseStudySection = () => {
   const { t } = useTranslation();
@@ -26,15 +27,20 @@ const CaseStudySection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Video/Testimonial Card */}
           <div className="relative group">
-            <div className="aspect-video rounded-2xl bg-gradient-to-br from-heading to-foreground overflow-hidden relative">
-              {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.1)_25%,rgba(255,255,255,0.1)_50%,transparent_50%,transparent_75%,rgba(255,255,255,0.1)_75%)] bg-[length:20px_20px]" />
-              </div>
+            <div className="aspect-video rounded-2xl overflow-hidden relative">
+              {/* Background Image */}
+              <img 
+                src={caseStudyImage} 
+                alt="Enterprise datacenter infrastructure"
+                className="w-full h-full object-cover"
+              />
+              
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black/40" />
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-primary-foreground p-8">
-                <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors cursor-pointer">
+                <div className="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors cursor-pointer border border-white/20">
                   <Play className="h-8 w-8 ml-1" />
                 </div>
                 <blockquote className="text-center max-w-md">
@@ -64,7 +70,7 @@ const CaseStudySection = () => {
           {/* Stats */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl md:text-4xl font-normal mb-4">
+              <h2 className="text-3xl md:text-4xl mb-4">
                 {t("home.caseStudyTitle")}
               </h2>
               <p className="text-lg text-muted-foreground">
@@ -76,7 +82,7 @@ const CaseStudySection = () => {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="flex items-start gap-6 p-6 bg-card rounded-xl border border-card-border"
+                  className="flex items-start gap-6 p-6 bg-card rounded-xl border border-border"
                 >
                   <div className="shrink-0 h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center">
                     <stat.icon className="h-7 w-7 text-primary" />
