@@ -1,16 +1,11 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-// Import logo images
+// Import logo images - only brands from reference image
 import logoWan from "@/assets/models/logo-wan.png";
 import logoKling from "@/assets/models/logo-kling.png";
 import logoLuma from "@/assets/models/logo-luma.png";
 import logoGoogle from "@/assets/models/logo-google.png";
-import logoMistral from "@/assets/models/logo-mistral.png";
-import logoMeta from "@/assets/models/logo-meta.png";
-import logoDeepseek from "@/assets/models/logo-deepseek.png";
-import logoStability from "@/assets/models/logo-stability.png";
-import logoQwen from "@/assets/models/logo-qwen.png";
 
 export interface ModelCardProps {
   id: string;
@@ -22,20 +17,11 @@ export interface ModelCardProps {
   isNew?: boolean;
 }
 
-// Logo mapping by provider
+// Logo mapping by provider - only brands with official logos
 export const providerLogos: Record<string, string> = {
-  "Meta": logoMeta,
-  "Mistral AI": logoMistral,
   "Google": logoGoogle,
-  "Alibaba": logoQwen,
-  "DeepSeek": logoDeepseek,
-  "Stability AI": logoStability,
-  "LMSys": logoStability,
-  "Tsinghua": logoDeepseek,
   "Luma AI": logoLuma,
   "Kuaishou": logoKling,
-  "BAAI": logoDeepseek,
-  "Microsoft": logoMeta,
   "Wan": logoWan,
 };
 
@@ -50,7 +36,10 @@ const ModelCard = ({
   const { t } = useTranslation();
   
   // Get logo from provider or use provided logoImage
-  const logo = logoImage || providerLogos[provider] || logoMeta;
+  const logo = logoImage || providerLogos[provider];
+  
+  // Get first letter for fallback
+  const fallbackLetter = provider.charAt(0).toUpperCase();
 
   return (
     <Link
@@ -59,13 +48,17 @@ const ModelCard = ({
     >
       {/* Top Row - Logo and Badge */}
       <div className="flex items-start justify-between mb-6">
-        {/* Logo */}
-        <div className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-white">
-          <img 
-            src={logo} 
-            alt={provider}
-            className="w-10 h-10 object-contain"
-          />
+        {/* Logo or Fallback Letter */}
+        <div className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-slate-100">
+          {logo ? (
+            <img 
+              src={logo} 
+              alt={provider}
+              className="w-10 h-10 object-contain"
+            />
+          ) : (
+            <span className="text-lg font-bold text-slate-600">{fallbackLetter}</span>
+          )}
         </div>
 
         {/* New Badge */}
