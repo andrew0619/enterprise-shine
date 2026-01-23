@@ -45,36 +45,38 @@ const ClusterSection = () => {
               <div className="h-3 w-3 rounded-full bg-green-400" />
               <span className="ml-4 text-xs text-muted-foreground">GPU Fleet Dashboard</span>
             </div>
-            <div className="p-4">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-sm font-medium">Active GPUs</span>
-                <span className="text-xs text-muted-foreground">Last updated: Just now</span>
-              </div>
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b text-muted-foreground">
-                    <th className="text-left py-2 font-medium">ID</th>
-                    <th className="text-left py-2 font-medium">Model</th>
-                    <th className="text-left py-2 font-medium">Status</th>
-                    <th className="text-left py-2 font-medium">Usage</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {dashboardData.map((row) => (
-                    <tr key={row.id} className="border-b last:border-0">
-                      <td className="py-2 font-mono text-xs">{row.id}</td>
-                      <td className="py-2">{row.name}</td>
-                      <td className="py-2">
-                        <span className={`inline-flex items-center gap-1 text-xs ${row.status === "active" ? "text-green-600" : "text-muted-foreground"}`}>
-                          <Check className="h-3 w-3" />
-                          {row.status}
-                        </span>
-                      </td>
-                      <td className="py-2 font-medium">{row.utilization}</td>
+            <div className="p-4 overflow-x-auto">
+              <div className="min-w-[400px]">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm font-medium">Active GPUs</span>
+                  <span className="text-xs text-muted-foreground">Last updated: Just now</span>
+                </div>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b text-muted-foreground">
+                      <th className="text-left py-2 font-medium">ID</th>
+                      <th className="text-left py-2 font-medium">Model</th>
+                      <th className="text-left py-2 font-medium">Status</th>
+                      <th className="text-left py-2 font-medium">Usage</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {dashboardData.map((row) => (
+                      <tr key={row.id} className="border-b last:border-0">
+                        <td className="py-2 font-mono text-xs">{row.id}</td>
+                        <td className="py-2">{row.name}</td>
+                        <td className="py-2">
+                          <span className={`inline-flex items-center gap-1 text-xs ${row.status === "active" ? "text-green-600" : "text-muted-foreground"}`}>
+                            <Check className="h-3 w-3" />
+                            {row.status}
+                          </span>
+                        </td>
+                        <td className="py-2 font-medium">{row.utilization}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

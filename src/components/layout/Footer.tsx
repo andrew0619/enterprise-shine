@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
 
           {/* Right Columns - Navigation Links */}
-          <div className="lg:col-span-5 grid grid-cols-3 gap-8">
+          <div className="lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8">
             {footerColumns.map((column, idx) => (
               <ul key={idx} className="space-y-4">
                 {column.links.map((link) => (
