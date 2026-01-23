@@ -11,8 +11,8 @@ const DemoAppsGrid = () => {
 
   const demoApps = [
     {
-      titleKey: "developers.demoApps.ragChatbot.title",
-      descriptionKey: "developers.demoApps.ragChatbot.description",
+      titleKey: "developers.demoAppsContent.ragChatbot.title",
+      descriptionKey: "developers.demoAppsContent.ragChatbot.description",
       tagKeys: [
         "developers.demoTags.rag",
         "developers.demoTags.chatbot",
@@ -25,8 +25,8 @@ const DemoAppsGrid = () => {
       image: demoChatImage,
     },
     {
-      titleKey: "developers.demoApps.deepResearch.title",
-      descriptionKey: "developers.demoApps.deepResearch.description",
+      titleKey: "developers.demoAppsContent.deepResearch.title",
+      descriptionKey: "developers.demoAppsContent.deepResearch.description",
       tagKeys: [
         "developers.demoTags.research",
         "developers.demoTags.longContext",
@@ -39,8 +39,8 @@ const DemoAppsGrid = () => {
       image: demoResearchImage,
     },
     {
-      titleKey: "developers.demoApps.companyResearch.title",
-      descriptionKey: "developers.demoApps.companyResearch.description",
+      titleKey: "developers.demoAppsContent.companyResearch.title",
+      descriptionKey: "developers.demoAppsContent.companyResearch.description",
       tagKeys: [
         "developers.demoTags.companyResearch",
         "developers.demoTags.businessIntelligence",
