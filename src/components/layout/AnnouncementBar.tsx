@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { X, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { siteConfig } from "@/config/site-config";
 
 const AnnouncementBar = () => {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(true);
 
-  if (!isVisible) return null;
+  // 根據 siteConfig 控制顯示
+  if (!siteConfig.navigation.showAnnouncementBar || !isVisible) return null;
 
   return (
     <div className="bg-announcement text-announcement-foreground py-2.5 px-4">

@@ -16,6 +16,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/config/site-config";
 
 const languages = [
   { code: "en", label: "English", shortLabel: "EN" },
@@ -36,36 +37,41 @@ const Header = () => {
 
   const currentLanguage = languages.find((l) => l.code === i18n.language) || languages[0];
 
+  // 根據 siteConfig 過濾 Products 下拉選單
   const productsDropdown = [
-    { href: "/products/gpu-compute", labelKey: "products.gpuCompute" },
-    { href: "/products/cluster-engine", labelKey: "products.clusterEngine" },
-    { href: "/products/inference-engine", labelKey: "products.inferenceEngine" },
-    { href: "/products/model-library", labelKey: "products.modelLibrary" },
-  ];
+    { href: "/products/gpu-compute", labelKey: "products.gpuCompute", feature: "gpuCompute" as const },
+    { href: "/products/cluster-engine", labelKey: "products.clusterEngine", feature: "clusterEngine" as const },
+    { href: "/products/inference-engine", labelKey: "products.inferenceEngine", feature: "inferenceEngine" as const },
+    { href: "/products/model-library", labelKey: "products.modelLibrary", feature: "modelLibrary" as const },
+  ].filter(item => siteConfig.features[item.feature]);
 
+  // 根據 siteConfig 過濾 GPUs 下拉選單
   const gpusDropdown = [
-    { href: "/gpus/h200", labelKey: "gpus.h200" },
-    { href: "/gpus/gb200", labelKey: "gpus.gb200" },
-    { href: "/gpus/hgx-b200", labelKey: "gpus.hgxb200" },
-  ];
+    { href: "/gpus/h200", labelKey: "gpus.h200", feature: "gpuH200" as const },
+    { href: "/gpus/gb200", labelKey: "gpus.gb200", feature: "gpuGB200" as const },
+    { href: "/gpus/hgx-b200", labelKey: "gpus.hgxb200", feature: "gpuHGXB200" as const },
+  ].filter(item => siteConfig.features[item.feature]);
 
+  // 根據 siteConfig 過濾 Developers 下拉選單
   const developersDropdown = [
-    { href: "/developers/demo-apps", labelKey: "developers.demoApps" },
-    { href: "/docs", labelKey: "developers.docsHub" },
-  ];
+    { href: "/developers/demo-apps", labelKey: "developers.demoApps", feature: "demoApps" as const },
+    { href: "/docs", labelKey: "developers.docsHub", feature: "docs" as const },
+  ].filter(item => siteConfig.features[item.feature]);
 
+  // 根據 siteConfig 過濾 Company 下拉選單
   const companyDropdown = [
-    { href: "/about", labelKey: "company.aboutUs" },
-    { href: "/blog", labelKey: "company.blog" },
-    { href: "https://discord.com", labelKey: "company.discord", external: true },
-    { href: "/partners", labelKey: "company.partners" },
-    { href: "/careers", labelKey: "company.careers" },
-  ];
+    { href: "/about", labelKey: "company.aboutUs", feature: "about" as const },
+    { href: "/blog", labelKey: "company.blog", feature: "blog" as const },
+    { href: "https://discord.com", labelKey: "company.discord", external: true, feature: null },
+    { href: "/partners", labelKey: "company.partners", feature: "partners" as const },
+    { href: "/careers", labelKey: "company.careers", feature: "careers" as const },
+  ].filter(item => item.feature === null || siteConfig.features[item.feature]);
 
+  // 根據 siteConfig 過濾簡單導航連結
   const simpleNavLinks = [
-    { href: "/studio", labelKey: "nav.studio", isNew: true },
-    { href: "/pricing", labelKey: "nav.pricing" },
-  ];
+    { href: "/studio", labelKey: "nav.studio", isNew: true, feature: "studio" as const },
+    { href: "/pricing", labelKey: "nav.pricing", feature: "pricing" as const },
+  ].filter(item => siteConfig.features[item.feature]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -258,41 +264,49 @@ const Header = () => {
 
         {/* Desktop Right Actions */}
         <div className="hidden md:flex items-center gap-4">
-          {/* Language Switcher */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="gap-1.5">
-                <Globe className="h-4 w-4" />
-                {currentLanguage.shortLabel}
-                <ChevronDown className="h-3 w-3" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-popover">
-              {languages.map((lang) => (
-                <DropdownMenuItem
-                  key={lang.code}
-                  onClick={() => changeLanguage(lang.code)}
-                  className={cn(
-                    "cursor-pointer",
-                    i18n.language === lang.code && "text-primary font-medium"
-                  )}
-                >
-                  {lang.label}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+          {/* Language Switcher - 根據 siteConfig 控制顯示 */}
+          {siteConfig.navigation.showLanguageSwitcher && (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="gap-1.5">
+                  <Globe className="h-4 w-4" />
+                  {currentLanguage.shortLabel}
+                  <ChevronDown className="h-3 w-3" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-popover">
+                {languages.map((lang) => (
+                  <DropdownMenuItem
+                    key={lang.code}
+                    onClick={() => changeLanguage(lang.code)}
+                    className={cn(
+                      "cursor-pointer",
+                      i18n.language === lang.code && "text-primary font-medium"
+                    )}
+                  >
+                    {lang.label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
 
-          <Link
-            to="/login"
-            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-          >
-            {t("nav.login")}
-          </Link>
+          {/* Login Link - 根據 siteConfig 控制顯示 */}
+          {siteConfig.navigation.showLogin && (
+            <Link
+              to="/login"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              {t("nav.login")}
+            </Link>
+          )}
 
-          <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-            <Link to="/contact">{t("nav.contactSales")}</Link>
-          </Button>
+          {/* Contact Sales Button - 根據 siteConfig 控制顯示 */}
+          {siteConfig.navigation.showContactSales && (
+            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              <Link to="/contact">{t("nav.contactSales")}</Link>
+            </Button>
+          )}
         </div>
 
         {/* Mobile Menu */}
