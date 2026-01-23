@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/products", label: "Products" },
+  { href: "/gpu-compute", label: "GPU Compute" },
   { href: "/solutions", label: "Solutions" },
   { href: "/pricing", label: "Pricing" },
 ];
