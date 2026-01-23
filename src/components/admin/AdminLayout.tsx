@@ -16,6 +16,7 @@ import {
   LogOut,
   Bell,
   ChevronDown,
+  Palette,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -37,6 +38,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: '儀表板', href: '/admin', icon: LayoutDashboard },
   { label: '專案管理', href: '/admin/projects', icon: FolderKanban, badge: 3 },
+  { label: '主題系統', href: '/admin/themes', icon: Palette },
   { label: '客戶管理', href: '/admin/clients', icon: Users },
   { label: '檔案庫', href: '/admin/files', icon: FileText },
   { label: '設定', href: '/admin/settings', icon: Settings },
