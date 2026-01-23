@@ -1,53 +1,39 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import heroCubes from "@/assets/home/hero-cubes.png";
 
-const pillars = [
-  { label: "GPUs" },
-  { label: "AI/ML Ops" },
-  { label: "Inference" },
-];
-
 const partnerLogos = [
-  "NVIDIA",
-  "Lenovo",
-  "VMware",
-  "Dell",
-  "Intel",
-  "AMD",
+  { name: "DeepSeek", icon: "🐋" },
+  { name: "OpenAI", icon: "◯" },
+  { name: "Anthropic", icon: "A" },
+  { name: "NVIDIA", icon: "◆" },
+  { name: "LangChain", icon: "🔗" },
+  { name: "Hugging Face", icon: "🤗" },
+  { name: "Meta", icon: "∞" },
+  { name: "Mistral", icon: "M" },
 ];
 
 const HeroSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-16 md:py-20 bg-background">
       <div className="container">
         {/* Main Content */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in">
-            Borderless Deployment.
-            <br />
-            <span className="text-primary">Unlimited AI.</span>
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 animate-fade-in">
+            Build AI Without Limits
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            Deploy AI infrastructure at scale with enterprise-grade GPU clusters. 
-            From development to production, we power the world's most demanding AI workloads.
+          <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            We build complete GPU infrastructure so you can focus on what really matters — your AI.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <Button asChild size="lg" className="text-base px-8">
-              <Link to="/contact">
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="text-base px-8">
-              <Link to="/products">View Products</Link>
+              <Link to="/contact">Get Started</Link>
             </Button>
           </div>
         </div>
 
         {/* 3D Cubes Visual */}
-        <div className="max-w-4xl mx-auto mb-16 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+        <div className="max-w-3xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
           <img
             src={heroCubes}
             alt="GPU, AI/ML Ops, and Inference cubes"
@@ -56,20 +42,16 @@ const HeroSection = () => {
         </div>
 
         {/* Partner Strip */}
-        <div className="border-t pt-12">
-          <p className="text-center text-sm text-muted-foreground mb-8 uppercase tracking-wider">
-            Trusted by industry leaders
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-            {partnerLogos.map((logo) => (
-              <span
-                key={logo}
-                className="text-xl md:text-2xl font-bold text-muted-foreground/50 hover:text-muted-foreground transition-colors cursor-pointer"
-              >
-                {logo}
-              </span>
-            ))}
-          </div>
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+          {partnerLogos.map((logo) => (
+            <div
+              key={logo.name}
+              className="flex items-center gap-2 text-muted-foreground/60 hover:text-muted-foreground transition-colors cursor-pointer"
+            >
+              <span className="text-lg">{logo.icon}</span>
+              <span className="text-sm md:text-base font-medium">{logo.name}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

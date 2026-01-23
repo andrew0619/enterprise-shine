@@ -1,29 +1,8 @@
-import { Check, Server, Activity, Shield, Gauge } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { Check } from "lucide-react";
 
-const features = [
-  {
-    icon: Server,
-    title: "Unified Management",
-    description: "Manage your entire GPU fleet from a single dashboard",
-  },
-  {
-    icon: Activity,
-    title: "Real-time Monitoring",
-    description: "Track utilization, performance, and health metrics instantly",
-  },
-  {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "SOC 2 Type II certified with end-to-end encryption",
-  },
-  {
-    icon: Gauge,
-    title: "Auto-scaling",
-    description: "Automatically scale resources based on demand",
-  },
-];
-
-const mockData = [
+const dashboardData = [
   { id: "gpu-001", name: "NVIDIA H100", status: "active", utilization: "94%" },
   { id: "gpu-002", name: "NVIDIA H100", status: "active", utilization: "87%" },
   { id: "gpu-003", name: "NVIDIA A100", status: "active", utilization: "92%" },
@@ -33,104 +12,139 @@ const mockData = [
 
 const ClusterSection = () => {
   return (
-    <section className="py-20 md:py-24 bg-secondary/30">
+    <section className="py-16 md:py-20 bg-muted/30">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+        {/* First Row - Cluster Engine Overview */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Cluster Engine
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Orchestrate thousands of GPUs with our intelligent cluster
-              management platform. Built for scale, designed for simplicity.
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Cluster Engine</h2>
+            <Button asChild variant="default" size="sm">
+              <Link to="/products/cluster-engine">Learn More</Link>
+            </Button>
+          </div>
+          <div>
+            <p className="text-muted-foreground">
+              GMI Cloud's Cluster Engine is your all-in-one AI cloud management platform, designed to streamline GPU resource coordination, workload scheduling, and cost optimization. Whether you're managing AI training, fine-tuning, or inference workloads, Cluster Engine provides real-time visibility and control.
             </p>
+          </div>
+        </div>
 
-            <div className="grid sm:grid-cols-2 gap-6">
-              {features.map((feature) => (
-                <div key={feature.title} className="flex gap-4">
-                  <div className="shrink-0 h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <feature.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+        {/* Centralized Management */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h3 className="text-lg font-semibold text-muted-foreground mb-2">Centralized Management</h3>
+            <p className="text-muted-foreground text-sm">
+              Unify your GPU resources across multiple regions and manage workloads from a single, intuitive dashboard.
+            </p>
+          </div>
+          <div className="bg-card rounded-xl shadow-lg overflow-hidden border">
+            {/* Dashboard Header */}
+            <div className="bg-muted/50 px-4 py-3 border-b flex items-center gap-2">
+              <div className="h-3 w-3 rounded-full bg-red-400" />
+              <div className="h-3 w-3 rounded-full bg-yellow-400" />
+              <div className="h-3 w-3 rounded-full bg-green-400" />
+              <span className="ml-4 text-xs text-muted-foreground">GPU Fleet Dashboard</span>
+            </div>
+            <div className="p-4">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-sm font-medium">Active GPUs</span>
+                <span className="text-xs text-muted-foreground">Last updated: Just now</span>
+              </div>
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b text-muted-foreground">
+                    <th className="text-left py-2 font-medium">ID</th>
+                    <th className="text-left py-2 font-medium">Model</th>
+                    <th className="text-left py-2 font-medium">Status</th>
+                    <th className="text-left py-2 font-medium">Usage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {dashboardData.map((row) => (
+                    <tr key={row.id} className="border-b last:border-0">
+                      <td className="py-2 font-mono text-xs">{row.id}</td>
+                      <td className="py-2">{row.name}</td>
+                      <td className="py-2">
+                        <span className={`inline-flex items-center gap-1 text-xs ${row.status === "active" ? "text-green-600" : "text-muted-foreground"}`}>
+                          <Check className="h-3 w-3" />
+                          {row.status}
+                        </span>
+                      </td>
+                      <td className="py-2 font-medium">{row.utilization}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
+        </div>
 
-          {/* Right Dashboard Mockup */}
-          <div className="relative">
-            <div className="bg-primary/5 rounded-2xl p-6 border border-primary/10">
-              <div className="bg-card rounded-xl shadow-lg overflow-hidden">
-                {/* Dashboard Header */}
-                <div className="bg-primary/5 px-4 py-3 border-b">
-                  <div className="flex items-center gap-2">
-                    <div className="h-3 w-3 rounded-full bg-destructive/60" />
-                    <div className="h-3 w-3 rounded-full bg-yellow-400" />
-                    <div className="h-3 w-3 rounded-full bg-green-500" />
-                    <span className="ml-4 text-xs text-muted-foreground">
-                      GPU Fleet Dashboard
-                    </span>
-                  </div>
+        {/* Real-Time Dashboard */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="order-2 lg:order-1">
+            <div className="bg-card rounded-xl shadow-lg overflow-hidden border p-6">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-sm font-medium">GPU Utilization Overview</span>
+                <span className="text-xs text-muted-foreground">Real-time</span>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-muted/30 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-primary">87%</div>
+                  <div className="text-xs text-muted-foreground">Avg. GPU Usage</div>
                 </div>
-
-                {/* Dashboard Content */}
-                <div className="p-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-medium">Active GPUs</span>
-                    <span className="text-xs text-muted-foreground">
-                      Last updated: Just now
-                    </span>
-                  </div>
-
-                  {/* Table */}
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b text-muted-foreground">
-                          <th className="text-left py-2 font-medium">ID</th>
-                          <th className="text-left py-2 font-medium">Model</th>
-                          <th className="text-left py-2 font-medium">Status</th>
-                          <th className="text-left py-2 font-medium">Usage</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {mockData.map((row) => (
-                          <tr key={row.id} className="border-b last:border-0">
-                            <td className="py-2 font-mono text-xs">{row.id}</td>
-                            <td className="py-2">{row.name}</td>
-                            <td className="py-2">
-                              <span
-                                className={`inline-flex items-center gap-1 text-xs ${
-                                  row.status === "active"
-                                    ? "text-green-600"
-                                    : "text-muted-foreground"
-                                }`}
-                              >
-                                <Check className="h-3 w-3" />
-                                {row.status}
-                              </span>
-                            </td>
-                            <td className="py-2 font-medium">
-                              {row.utilization}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                <div className="bg-muted/30 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-green-600">24</div>
+                  <div className="text-xs text-muted-foreground">Active Nodes</div>
+                </div>
+                <div className="bg-muted/30 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-blue-600">1.2TB</div>
+                  <div className="text-xs text-muted-foreground">Memory Used</div>
+                </div>
+                <div className="bg-muted/30 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-amber-600">99.9%</div>
+                  <div className="text-xs text-muted-foreground">Uptime</div>
                 </div>
               </div>
             </div>
+          </div>
+          <div className="order-1 lg:order-2">
+            <h3 className="text-lg font-semibold text-muted-foreground mb-2">Real-Time Dashboard</h3>
+            <p className="text-muted-foreground text-sm">
+              Monitor performance metrics, track resource utilization, and get instant alerts for any anomalies in your infrastructure.
+            </p>
+          </div>
+        </div>
 
-            {/* Decorative elements */}
-            <div className="absolute -z-10 -top-4 -right-4 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
-            <div className="absolute -z-10 -bottom-4 -left-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl" />
+        {/* Access Management */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Access Management</h3>
+            <p className="text-muted-foreground text-sm">
+              Securely manage user permissions and control access to GPU resources with role-based access controls and team workspaces.
+            </p>
+          </div>
+          <div className="bg-card rounded-xl shadow-lg overflow-hidden border p-6">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-sm font-medium">Team Members</span>
+              <Button variant="outline" size="sm">+ Invite</Button>
+            </div>
+            <div className="space-y-3">
+              {[
+                { name: "John Chen", role: "Admin", avatar: "JC" },
+                { name: "Sarah Lin", role: "Developer", avatar: "SL" },
+                { name: "Mike Wang", role: "Viewer", avatar: "MW" },
+              ].map((member) => (
+                <div key={member.name} className="flex items-center justify-between py-2 border-b last:border-0">
+                  <div className="flex items-center gap-3">
+                    <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-xs font-medium text-primary">
+                      {member.avatar}
+                    </div>
+                    <span className="text-sm font-medium">{member.name}</span>
+                  </div>
+                  <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">{member.role}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
