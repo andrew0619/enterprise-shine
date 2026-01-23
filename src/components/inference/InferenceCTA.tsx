@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const InferenceCTA = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-gradient-to-br from-slate-900 to-slate-950 py-16 md:py-20 overflow-hidden">
       <div className="container">
@@ -9,17 +12,17 @@ const InferenceCTA = () => {
           {/* Left Content */}
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Start Inferencing Now
+              {t("inferenceEngine.cta.title")}
             </h2>
             <p className="text-slate-400 mb-8 leading-relaxed">
-              Deploy your first model in minutes. No complex setup required. Just bring your model and start serving predictions at scale.
+              {t("inferenceEngine.cta.subtitle")}
             </p>
             <Button
               asChild
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900"
             >
-              <Link to="/contact">Get Started</Link>
+              <Link to="/contact">{t("common.getStarted")}</Link>
             </Button>
           </div>
 

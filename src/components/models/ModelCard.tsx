@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 export interface ModelCardProps {
   id: string;
@@ -22,6 +23,8 @@ const ModelCard = ({
   logoIcon,
   isNew,
 }: ModelCardProps) => {
+  const { t } = useTranslation();
+
   return (
     <Link
       to={`/models/${id}`}
@@ -42,7 +45,7 @@ const ModelCard = ({
         {/* New Badge */}
         {isNew && (
           <span className="px-2 py-0.5 text-[10px] font-medium bg-blue-100 text-primary rounded-full">
-            New
+            {t("common.new")}
           </span>
         )}
       </div>
@@ -61,7 +64,7 @@ const ModelCard = ({
       {/* Action */}
       <div className="flex justify-end">
         <span className="text-xs text-primary font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
-          View Model
+          {t("common.viewModel")}
           <ArrowRight className="h-3 w-3" />
         </span>
       </div>

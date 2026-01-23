@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const InferenceHero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-slate-50 py-16 md:py-24">
       <div className="container">
@@ -9,13 +12,13 @@ const InferenceHero = () => {
           {/* Left Content */}
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              NexusAI Cloud Inference Engine
+              {t("inferenceEngine.heroTitle")}
             </h1>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Run and scale generative AI models with ease. Deploy pre-trained models for fast, low-latency inference deployment with blazing speed and scalability at scale you can rely on.
+              {t("inferenceEngine.heroSubtitle")}
             </p>
             <Button asChild size="lg" className="font-semibold">
-              <Link to="/contact">Get Started</Link>
+              <Link to="/contact">{t("common.getStarted")}</Link>
             </Button>
           </div>
 
@@ -42,8 +45,8 @@ const InferenceHero = () => {
                     {/* Label on front */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                       <div className="bg-primary/20 rounded-lg px-4 py-2 backdrop-blur-sm">
-                        <p className="text-primary text-xs font-medium">Inference</p>
-                        <p className="text-white text-sm font-bold">Engine</p>
+                        <p className="text-primary text-xs font-medium">{t("inferenceEngine.cubeLabel")}</p>
+                        <p className="text-white text-sm font-bold">{t("inferenceEngine.cubeSubLabel")}</p>
                       </div>
                     </div>
                     

@@ -2,32 +2,7 @@ import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Youtube, MessageCircle } from "lucide-react";
-
-const footerColumns = [
-  {
-    links: [
-      { label: "GPU Cloud", href: "/products/gpu-compute" },
-      { label: "Cluster Engine", href: "/products/cluster-engine" },
-      { label: "Inference Engine", href: "/products/inference-engine" },
-      { label: "Pricing", href: "/pricing" },
-    ],
-  },
-  {
-    links: [
-      { label: "Model Library", href: "/products/model-library" },
-      { label: "Glossary", href: "/docs" },
-      { label: "Blog", href: "/blog" },
-      { label: "Careers", href: "/careers" },
-    ],
-  },
-  {
-    links: [
-      { label: "About Us", href: "/about" },
-      { label: "Partners", href: "/partners" },
-      { label: "Contact Us", href: "/contact" },
-    ],
-  },
-];
+import { useTranslation } from "react-i18next";
 
 // X (Twitter) icon component
 const XIcon = () => (
@@ -44,6 +19,34 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const { t } = useTranslation();
+
+  const footerColumns = [
+    {
+      links: [
+        { label: t("footer.gpuCloud"), href: "/products/gpu-compute" },
+        { label: t("footer.clusterEngine"), href: "/products/cluster-engine" },
+        { label: t("footer.inferenceEngine"), href: "/products/inference-engine" },
+        { label: t("footer.pricing"), href: "/pricing" },
+      ],
+    },
+    {
+      links: [
+        { label: t("footer.modelLibrary"), href: "/products/model-library" },
+        { label: t("footer.glossary"), href: "/docs" },
+        { label: t("footer.blog"), href: "/blog" },
+        { label: t("footer.careers"), href: "/careers" },
+      ],
+    },
+    {
+      links: [
+        { label: t("footer.aboutUs"), href: "/about" },
+        { label: t("footer.partners"), href: "/partners" },
+        { label: t("footer.contactUs"), href: "/contact" },
+      ],
+    },
+  ];
+
   return (
     <footer className="bg-foreground text-background">
       <div className="container py-16">
@@ -84,15 +87,15 @@ const Footer = () => {
 
             {/* Newsletter */}
             <div className="pt-4">
-              <h3 className="text-base font-medium mb-4">Subscribe to our newsletter</h3>
+              <h3 className="text-base font-medium mb-4">{t("footer.subscribeNewsletter")}</h3>
               <form className="flex gap-2">
                 <Input
                   type="email"
-                  placeholder="Enter email"
+                  placeholder={t("footer.enterEmail")}
                   className="w-full max-w-xs bg-muted-foreground/10 border-muted-foreground/30 text-background placeholder:text-muted-foreground"
                 />
                 <Button type="submit" className="shrink-0 px-6">
-                  Subscribe
+                  {t("common.subscribe")}
                 </Button>
               </form>
             </div>
@@ -103,7 +106,7 @@ const Footer = () => {
             {footerColumns.map((column, idx) => (
               <ul key={idx} className="space-y-4">
                 {column.links.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.href}>
                     <Link
                       to={link.href}
                       className="text-muted-foreground hover:text-background transition-colors text-sm"
@@ -140,15 +143,15 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-12 mt-12 border-t border-muted-foreground/20">
           <span className="text-sm text-muted-foreground">
-            © 2025 All Rights Reserved.
+            {t("footer.allRightsReserved")}
           </span>
 
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <Link to="/privacy" className="hover:text-background transition-colors">
-              Privacy Policy
+              {t("footer.privacyPolicy")}
             </Link>
             <Link to="/terms" className="hover:text-background transition-colors">
-              Terms of Use
+              {t("footer.termsOfUse")}
             </Link>
           </div>
         </div>

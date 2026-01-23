@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Metallic Cubes Visual
 const MetallicCubes = () => (
@@ -43,9 +44,9 @@ const MetallicCubes = () => (
 );
 
 // Donut Chart / Gauge Component
-const MonitoringDashboard = () => (
+const MonitoringDashboard = ({ t }: { t: (key: string) => string }) => (
   <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 max-w-md mx-auto">
-    <div className="text-sm font-medium text-foreground mb-6">Total Inferences</div>
+    <div className="text-sm font-medium text-foreground mb-6">{t("inferenceEngine.monitoring.totalInferences")}</div>
     
     {/* Donut Chart */}
     <div className="relative w-40 h-40 mx-auto mb-6">
@@ -75,26 +76,26 @@ const MonitoringDashboard = () => (
       {/* Center text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="text-3xl font-bold text-primary">5</span>
-        <span className="text-xs text-muted-foreground">Active</span>
+        <span className="text-xs text-muted-foreground">{t("common.active")}</span>
       </div>
     </div>
     
     {/* Metrics */}
     <div className="space-y-3">
       <div className="flex items-center justify-between py-2 border-b">
-        <span className="text-sm text-muted-foreground">Avg Latency</span>
+        <span className="text-sm text-muted-foreground">{t("inferenceEngine.monitoring.avgLatency")}</span>
         <span className="text-sm font-medium">42ms</span>
       </div>
       <div className="flex items-center justify-between py-2 border-b">
-        <span className="text-sm text-muted-foreground">Throughput</span>
+        <span className="text-sm text-muted-foreground">{t("inferenceEngine.monitoring.throughput")}</span>
         <span className="text-sm font-medium">1.2K req/s</span>
       </div>
       <div className="flex items-center justify-between py-2 border-b">
-        <span className="text-sm text-muted-foreground">Uptime</span>
+        <span className="text-sm text-muted-foreground">{t("inferenceEngine.monitoring.uptime")}</span>
         <span className="text-sm font-medium text-green-600">99.99%</span>
       </div>
       <div className="flex items-center justify-between py-2">
-        <span className="text-sm text-muted-foreground">Cost/1K inferences</span>
+        <span className="text-sm text-muted-foreground">{t("inferenceEngine.monitoring.costPerInference")}</span>
         <span className="text-sm font-medium">$0.002</span>
       </div>
     </div>
@@ -102,6 +103,8 @@ const MonitoringDashboard = () => (
 );
 
 const FeatureDeepDive = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* Scaling Section */}
@@ -110,31 +113,37 @@ const FeatureDeepDive = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Auto-Scale</p>
+              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
+                {t("inferenceEngine.scaling.kicker")}
+              </p>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-                Effortless Scaling for Your AI Workloads
+                {t("inferenceEngine.scaling.title")}
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Scale from zero to thousands of concurrent requests automatically. Our intelligent auto-scaling adjusts resources in real-time based on traffic patterns.
+                {t("inferenceEngine.scaling.description")}
               </p>
               
               <div className="space-y-4 mb-8">
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Dynamic Scaling</h4>
+                  <h4 className="font-semibold text-foreground mb-1">
+                    {t("inferenceEngine.scaling.dynamicScaling.title")}
+                  </h4>
                   <p className="text-sm text-muted-foreground">
-                    Automatically provisions GPUs as demand increases, scales down during quiet periods.
+                    {t("inferenceEngine.scaling.dynamicScaling.description")}
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Blazing Flexibility</h4>
+                  <h4 className="font-semibold text-foreground mb-1">
+                    {t("inferenceEngine.scaling.flexibility.title")}
+                  </h4>
                   <p className="text-sm text-muted-foreground">
-                    Choose your minimum and maximum replicas, set custom scaling metrics.
+                    {t("inferenceEngine.scaling.flexibility.description")}
                   </p>
                 </div>
               </div>
               
               <Button asChild>
-                <Link to="/contact">Get Started Now</Link>
+                <Link to="/contact">{t("inferenceEngine.scaling.cta")}</Link>
               </Button>
             </div>
             
@@ -150,21 +159,23 @@ const FeatureDeepDive = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Monitor</p>
+              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
+                {t("inferenceEngine.monitoring.kicker")}
+              </p>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-                Real-Time AI Performance Monitoring
+                {t("inferenceEngine.monitoring.title")}
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Keep your finger on the pulse with comprehensive dashboards. Track latency, throughput, and error rates in real-time to ensure optimal performance.
+                {t("inferenceEngine.monitoring.description")}
               </p>
               
               <Button asChild>
-                <Link to="/contact">Get Started Now</Link>
+                <Link to="/contact">{t("inferenceEngine.scaling.cta")}</Link>
               </Button>
             </div>
             
             {/* Right Visual - Dashboard */}
-            <MonitoringDashboard />
+            <MonitoringDashboard t={t} />
           </div>
         </div>
       </section>

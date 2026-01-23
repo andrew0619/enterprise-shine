@@ -38,25 +38,148 @@
     "applyNow": "立即申請",
     "joinNow": "立即加入",
     "subscribe": "訂閱",
-    "new": "新功能"
+    "new": "新",
+    "viewModel": "查看模型",
+    "contactSales": "聯絡銷售",
+    "seeModelList": "查看模型列表",
+    "showingModels": "顯示 {{count}} 個模型",
+    "noModelsFound": "找不到符合條件的模型。",
+    "active": "運行中"
   },
   "footer": {
-    "stayUpToDate": "保持更新",
-    "getLatestNews": "獲取 NexusAI 的最新消息和更新",
-    "enterEmail": "輸入您的電子郵件",
-    "products": "產品",
-    "solutions": "解決方案",
-    "company": "公司",
-    "resources": "資源",
+    "subscribeNewsletter": "訂閱我們的電子報",
+    "enterEmail": "輸入電子郵件",
+    "gpuCloud": "GPU 雲端",
+    "clusterEngine": "叢集引擎",
+    "inferenceEngine": "推論引擎",
+    "pricing": "定價",
+    "modelLibrary": "模型庫",
+    "glossary": "詞彙表",
+    "blog": "部落格",
+    "careers": "人才招募",
+    "aboutUs": "關於我們",
+    "partners": "合作夥伴",
+    "contactUs": "聯絡我們",
     "privacyPolicy": "隱私政策",
-    "termsOfService": "服務條款",
-    "allRightsReserved": "版權所有"
+    "termsOfUse": "使用條款",
+    "allRightsReserved": "© 2025 版權所有。"
   },
   "home": {
     "heroTitle": "企業級 AI GPU 雲端平台",
     "heroSubtitle": "在最新的 NVIDIA GPU 上部署 AI 工作負載，享有企業級的可靠性和效能。",
     "getStarted": "立即開始",
     "viewPricing": "查看定價"
+  },
+  "modelLibrary": {
+    "heroTitle": "模型庫",
+    "heroSubtitle": "探索我們精選的強大開源模型庫，加速您的 AI 應用開發。",
+    "filters": {
+      "all": "全部",
+      "llm": "大語言模型",
+      "vision": "視覺",
+      "embedding": "向量嵌入"
+    },
+    "searchPlaceholder": "搜尋模型...",
+    "ctaTitle": "不確定哪個產品適合您的需求？讓我們談談。",
+    "ctaSubtitle": "我們的團隊隨時為您選擇適合 AI 應用的基礎設施和模型提供協助。",
+    "types": {
+      "textGeneration": "文字生成",
+      "codeGeneration": "程式碼生成",
+      "imageGeneration": "圖像生成",
+      "visionLanguage": "視覺語言",
+      "textEmbedding": "文字嵌入"
+    }
+  },
+  "inferenceEngine": {
+    "heroTitle": "NexusAI 雲端推論引擎",
+    "heroSubtitle": "輕鬆運行和擴展生成式 AI 模型。部署預訓練模型，享受快速、低延遲的推論部署，具備您可以信賴的高速和可擴展性。",
+    "cubeLabel": "推論",
+    "cubeSubLabel": "引擎",
+    "smarterWayTitle": "更智慧的推論方式",
+    "features": {
+      "deployment": {
+        "title": "快速部署，零煩惱",
+        "description": "透過全託管基礎設施即時擴展。我們的推論引擎提供所有您需要的自動化和工具，讓您更快交付，專注於建構。"
+      },
+      "efficiency": {
+        "title": "效能最佳化",
+        "description": "先進的 GPU 優化和模型快取技術，最小化延遲同時最大化吞吐量。透過我們智慧的資源分配，讓每一分錢獲得更多推論。"
+      }
+    },
+    "modelShowcase": {
+      "title": "預建 AI 模型，快速推論",
+      "subtitle": "從我們精選的預優化模型庫中選擇，或帶上您自己的模型",
+      "inference": "推論",
+      "viewAllModels": "查看我們模型庫中的所有模型 →",
+      "models": {
+        "llama2": {
+          "name": "Llama 2",
+          "description": "用於文字生成和對話的開源大型語言模型"
+        },
+        "stableDiffusion": {
+          "name": "Stable Diffusion",
+          "description": "最先進的圖像生成模型"
+        },
+        "mpt7b": {
+          "name": "MPT-7B",
+          "description": "高效的商用 Transformer 模型"
+        }
+      }
+    },
+    "scaling": {
+      "kicker": "自動擴展",
+      "title": "輕鬆擴展您的 AI 工作負載",
+      "description": "自動從零擴展到數千個並發請求。我們的智慧自動擴展根據流量模式即時調整資源。",
+      "dynamicScaling": {
+        "title": "動態擴展",
+        "description": "隨著需求增加自動配置 GPU，在低峰期間縮減規模。"
+      },
+      "flexibility": {
+        "title": "極致彈性",
+        "description": "選擇您的最小和最大副本數，設定自訂擴展指標。"
+      },
+      "cta": "立即開始"
+    },
+    "monitoring": {
+      "kicker": "監控",
+      "title": "即時 AI 效能監控",
+      "description": "透過全面的儀表板掌握脈動。即時追蹤延遲、吞吐量和錯誤率，確保最佳效能。",
+      "totalInferences": "總推論次數",
+      "avgLatency": "平均延遲",
+      "throughput": "吞吐量",
+      "uptime": "正常運行時間",
+      "costPerInference": "每千次推論成本"
+    },
+    "cta": {
+      "title": "立即開始推論",
+      "subtitle": "幾分鐘內部署您的第一個模型。無需複雜設定。只需帶上您的模型，即可開始大規模提供預測服務。"
+    },
+    "faq": {
+      "title": "常見問題",
+      "subtitle": "快速獲得關於推論引擎的常見問題解答",
+      "items": {
+        "q1": {
+          "question": "什麼是 NexusAI 雲端推論引擎？",
+          "answer": "推論引擎是我們用於在生產環境中部署和擴展 AI 模型的託管平台。它處理所有基礎設施的複雜性，讓您可以專注於建構出色的 AI 應用程式。部署預訓練模型或帶上您自己的模型，只需最少的配置。"
+        },
+        "q2": {
+          "question": "部署速度有多快？預期延遲是多少？",
+          "answer": "預建模型的部署通常在 2 分鐘內完成。對於延遲，大多數模型可達到低於 100 毫秒的推論時間，優化後的 Llama 2 等模型對於典型請求可低至 30-50 毫秒。透過智慧快取最小化冷啟動。"
+        },
+        "q3": {
+          "question": "如何優化效能和成本？",
+          "answer": "我們的引擎使用 GPU 批次處理、模型快取和智慧請求路由來最大化吞吐量，同時最小化成本。自動擴展確保您只為使用的資源付費，在沒有流量時縮減至零。"
+        },
+        "q4": {
+          "question": "自動擴展如何處理波動的流量？",
+          "answer": "自動擴展器即時監控請求佇列深度、延遲和 GPU 使用率。當流量激增時，新副本在幾秒內啟動。在低峰期間，資源自動縮減。您可以配置最小/最大副本數和自訂擴展觸發器。"
+        },
+        "q5": {
+          "question": "是否提供內建監控和運營洞察？",
+          "answer": "是的！每個部署都包含一個綜合儀表板，提供即時指標：延遲百分位數、吞吐量、錯誤率、GPU 使用率和成本追蹤。設定異常警報並將資料匯出到您的可觀測性堆疊。"
+        }
+      }
+    }
   },
   "clusterEngine": {
     "heroTitle": "NexusAI 雲端叢集引擎",
