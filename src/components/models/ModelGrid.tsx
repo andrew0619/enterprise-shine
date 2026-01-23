@@ -1,7 +1,10 @@
 import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import ModelFilterBar from "./ModelFilterBar";
-import ModelCard, { ModelCardProps } from "./ModelCard";
+import ModelCard, { ModelCardProps, providerLogos } from "./ModelCard";
+
+// Import logo images for special cases
+import logoWan from "@/assets/models/logo-wan.png";
 
 const ModelGrid = () => {
   const { t } = useTranslation();
@@ -10,34 +13,40 @@ const ModelGrid = () => {
 
   const allModels: ModelCardProps[] = useMemo(() => [
     // LLMs
-    { id: "llama-3-70b", name: "Llama-3-70b-instruct", provider: "Meta", type: "LLM", category: "LLM", logoColor: "bg-blue-600", logoIcon: "M", isNew: true },
-    { id: "llama-3-8b", name: "Llama-3-8b-instruct", provider: "Meta", type: "LLM", category: "LLM", logoColor: "bg-blue-600", logoIcon: "M" },
-    { id: "mistral-large", name: "Mistral Large", provider: "Mistral AI", type: "LLM", category: "LLM", logoColor: "bg-orange-500", logoIcon: "M", isNew: true },
-    { id: "mistral-7b", name: "Mistral-7b-instruct", provider: "Mistral AI", type: "LLM", category: "LLM", logoColor: "bg-orange-500", logoIcon: "M" },
-    { id: "gemma-7b", name: "Gemma 7B", provider: "Google", type: "LLM", category: "LLM", logoColor: "bg-gradient-to-br from-blue-500 via-green-500 to-yellow-500", logoIcon: "G" },
-    { id: "gemma-2b", name: "Gemma 2B", provider: "Google", type: "LLM", category: "LLM", logoColor: "bg-gradient-to-br from-blue-500 via-green-500 to-yellow-500", logoIcon: "G" },
-    { id: "qwen-2.5-72b", name: "Qwen 2.5 72B", provider: "Alibaba", type: "LLM", category: "LLM", logoColor: "bg-purple-600", logoIcon: "Q", isNew: true },
-    { id: "qwen-2.5-7b", name: "Qwen 2.5 7B", provider: "Alibaba", type: "LLM", category: "LLM", logoColor: "bg-purple-600", logoIcon: "Q" },
-    { id: "deepseek-v3", name: "DeepSeek V3", provider: "DeepSeek", type: "LLM", category: "LLM", logoColor: "bg-cyan-600", logoIcon: "D", isNew: true },
-    { id: "deepseek-coder", name: "DeepSeek Coder", provider: "DeepSeek", type: "LLM", category: "LLM", logoColor: "bg-cyan-600", logoIcon: "D" },
+    { id: "llama-3-70b", name: "Llama-3-70b-instruct", provider: "Meta", type: "LLM", category: "LLM", isNew: true },
+    { id: "llama-3-8b", name: "Llama-3-8b-instruct", provider: "Meta", type: "LLM", category: "LLM" },
+    { id: "mistral-large", name: "Mistral Large", provider: "Mistral AI", type: "LLM", category: "LLM", isNew: true },
+    { id: "mistral-7b", name: "Mistral-7b-instruct", provider: "Mistral AI", type: "LLM", category: "LLM" },
+    { id: "gemma-7b", name: "Gemma 7B", provider: "Google", type: "LLM", category: "LLM" },
+    { id: "gemma-2b", name: "Gemma 2B", provider: "Google", type: "LLM", category: "LLM" },
+    { id: "qwen-2.5-72b", name: "Qwen 2.5 72B", provider: "Alibaba", type: "LLM", category: "LLM", isNew: true },
+    { id: "qwen-2.5-7b", name: "Qwen 2.5 7B", provider: "Alibaba", type: "LLM", category: "LLM" },
+    { id: "deepseek-v3", name: "DeepSeek V3", provider: "DeepSeek", type: "LLM", category: "LLM", isNew: true },
+    { id: "deepseek-coder", name: "DeepSeek Coder", provider: "DeepSeek", type: "LLM", category: "LLM" },
     
     // Vision
-    { id: "sdxl", name: "Stable Diffusion XL", provider: "Stability AI", type: t("modelLibrary.filters.vision"), category: "Vision", logoColor: "bg-violet-600", logoIcon: "S" },
-    { id: "sd-3", name: "Stable Diffusion 3", provider: "Stability AI", type: t("modelLibrary.filters.vision"), category: "Vision", logoColor: "bg-violet-600", logoIcon: "S", isNew: true },
-    { id: "llava-1.6", name: "LLaVA 1.6", provider: "LMSys", type: t("modelLibrary.filters.vision"), category: "Vision", logoColor: "bg-green-600", logoIcon: "L" },
-    { id: "cogvlm", name: "CogVLM", provider: "Tsinghua", type: t("modelLibrary.filters.vision"), category: "Vision", logoColor: "bg-red-600", logoIcon: "C" },
+    { id: "sdxl", name: "Stable Diffusion XL", provider: "Stability AI", type: t("modelLibrary.filters.vision"), category: "Vision" },
+    { id: "sd-3", name: "Stable Diffusion 3", provider: "Stability AI", type: t("modelLibrary.filters.vision"), category: "Vision", isNew: true },
+    { id: "llava-1.6", name: "LLaVA 1.6", provider: "LMSys", type: t("modelLibrary.filters.vision"), category: "Vision" },
+    { id: "cogvlm", name: "CogVLM", provider: "Tsinghua", type: t("modelLibrary.filters.vision"), category: "Vision" },
     
-    // Video
-    { id: "wan2.5-t2v", name: "Wan2.5 T2V", provider: "Alibaba", type: t("modelLibrary.filters.video"), category: "Video", logoColor: "bg-indigo-500", logoIcon: "W", isNew: true },
-    { id: "wan2.5-i2v", name: "Wan2.5 I2V", provider: "Alibaba", type: t("modelLibrary.filters.video"), category: "Video", logoColor: "bg-indigo-500", logoIcon: "W", isNew: true },
-    { id: "veo3-fast", name: "Veo3 Fast", provider: "Google", type: t("modelLibrary.filters.video"), category: "Video", logoColor: "bg-gradient-to-br from-blue-500 via-green-500 to-yellow-500", logoIcon: "G" },
-    { id: "veo3", name: "Veo3", provider: "Google", type: t("modelLibrary.filters.video"), category: "Video", logoColor: "bg-gradient-to-br from-blue-500 via-green-500 to-yellow-500", logoIcon: "G" },
-    { id: "luma-ray2", name: "Luma Ray2", provider: "Luma AI", type: t("modelLibrary.filters.video"), category: "Video", logoColor: "bg-slate-800", logoIcon: "L" },
-    { id: "kling-t2v-v2.1", name: "Kling Text2Video V2.1 Master", provider: "Kuaishou", type: t("modelLibrary.filters.video"), category: "Video", logoColor: "bg-slate-700", logoIcon: "K" },
+    // Video - with Wan logo
+    { id: "wan2.5-t2v", name: "Wan2.5 T2V", provider: "Wan", type: t("modelLibrary.filters.video"), category: "Video", logoImage: logoWan, isNew: true },
+    { id: "wan2.5-i2v", name: "Wan2.5 I2V", provider: "Wan", type: t("modelLibrary.filters.video"), category: "Video", logoImage: logoWan, isNew: true },
+    { id: "wan2.2-i2v-a14b", name: "Wan2.2 I2V A14B", provider: "Wan", type: t("modelLibrary.filters.video"), category: "Video", logoImage: logoWan },
+    { id: "wan2.2-t2v-a14b", name: "Wan2.2 T2V A14B", provider: "Wan", type: t("modelLibrary.filters.video"), category: "Video", logoImage: logoWan },
+    { id: "veo3-fast", name: "Veo3 Fast", provider: "Google", type: t("modelLibrary.filters.video"), category: "Video" },
+    { id: "veo3", name: "Veo3", provider: "Google", type: t("modelLibrary.filters.video"), category: "Video" },
+    { id: "luma-ray2", name: "Luma Ray2", provider: "Luma AI", type: t("modelLibrary.filters.video"), category: "Video" },
+    { id: "kling-t2v-v2.1", name: "Kling Text2Video V2.1 Master", provider: "Kuaishou", type: t("modelLibrary.filters.video"), category: "Video" },
+    { id: "kling-i2v-v2.1-std", name: "Kling Image2Video V2.1 Standard", provider: "Kuaishou", type: t("modelLibrary.filters.video"), category: "Video" },
+    { id: "kling-i2v-v2.1-pro", name: "Kling Image2Video V2.1 Pro", provider: "Kuaishou", type: t("modelLibrary.filters.video"), category: "Video" },
+    { id: "kling-i2v-v2.1-master", name: "Kling Image2Video V2.1 Master", provider: "Kuaishou", type: t("modelLibrary.filters.video"), category: "Video" },
+    { id: "kling-t2v-v1.6-std", name: "Kling Text2Video V1.6 Standard", provider: "Kuaishou", type: t("modelLibrary.filters.video"), category: "Video" },
     
     // Embedding
-    { id: "bge-large", name: "BGE Large EN", provider: "BAAI", type: t("modelLibrary.filters.embedding"), category: "Embedding", logoColor: "bg-slate-700", logoIcon: "B" },
-    { id: "e5-mistral", name: "E5-Mistral-7B", provider: "Microsoft", type: t("modelLibrary.filters.embedding"), category: "Embedding", logoColor: "bg-blue-500", logoIcon: "E" },
+    { id: "bge-large", name: "BGE Large EN", provider: "BAAI", type: t("modelLibrary.filters.embedding"), category: "Embedding" },
+    { id: "e5-mistral", name: "E5-Mistral-7B", provider: "Microsoft", type: t("modelLibrary.filters.embedding"), category: "Embedding" },
   ], [t]);
 
   const filteredModels = useMemo(() => {
