@@ -1,6 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import postDatacenter from "@/assets/blog/post-datacenter.jpg";
+import postAiNetwork from "@/assets/blog/post-ai-network.jpg";
+import postTeam from "@/assets/blog/post-team.jpg";
 
 const articles = [
   {
@@ -10,7 +13,8 @@ const articles = [
       "How enterprise teams are managing GPU clusters at unprecedented scale.",
     date: "Jan 15, 2026",
     category: "Engineering",
-    image: "/placeholder.svg",
+    categoryColor: "bg-primary",
+    image: postDatacenter,
   },
   {
     id: 2,
@@ -19,7 +23,8 @@ const articles = [
       "Real-world performance comparisons for production AI workloads.",
     date: "Jan 12, 2026",
     category: "Research",
-    image: "/placeholder.svg",
+    categoryColor: "bg-purple-500",
+    image: postAiNetwork,
   },
   {
     id: 3,
@@ -28,7 +33,8 @@ const articles = [
       "Practical tips to reduce your GPU infrastructure costs by up to 50%.",
     date: "Jan 8, 2026",
     category: "Business",
-    image: "/placeholder.svg",
+    categoryColor: "bg-green-500",
+    image: postTeam,
   },
 ];
 
@@ -58,7 +64,7 @@ const NewsSection = () => {
           {articles.map((article) => (
             <Card
               key={article.id}
-              className="group overflow-hidden border border-card-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+              className="group overflow-hidden border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
             >
               <div className="aspect-[16/10] relative overflow-hidden bg-muted">
                 <img
@@ -67,7 +73,7 @@ const NewsSection = () => {
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
+                  <span className={`px-3 py-1 ${article.categoryColor} text-white text-xs font-medium rounded-full`}>
                     {article.category}
                   </span>
                 </div>
