@@ -44,7 +44,10 @@
     "seeModelList": "查看模型列表",
     "showingModels": "顯示 {{count}} 個模型",
     "noModelsFound": "找不到符合條件的模型。",
-    "active": "運行中"
+    "active": "運行中",
+    "viewPricing": "查看定價",
+    "watchStory": "觀看故事",
+    "viewAllArticles": "查看所有文章"
   },
   "footer": {
     "subscribeNewsletter": "訂閱我們的電子報",
@@ -65,10 +68,101 @@
     "allRightsReserved": "© 2025 版權所有。"
   },
   "home": {
-    "heroTitle": "企業級 AI GPU 雲端平台",
-    "heroSubtitle": "在最新的 NVIDIA GPU 上部署 AI 工作負載，享有企業級的可靠性和效能。",
+    "heroTitle": "無限制地建構 AI",
+    "heroSubtitle": "我們打造完整的 GPU 基礎設施，讓您專注於真正重要的事——您的 AI。",
     "getStarted": "立即開始",
-    "viewPricing": "查看定價"
+    "viewPricing": "查看定價",
+    "foundationTitle": "您 AI 成功的基石",
+    "foundationSubtitle": "— 由 GPU 雲端解決方案驅動",
+    "foundationDescription": "GMI Cloud 提供您建構可擴展 AI 解決方案所需的一切——完全運行在 GMI 自有的 AI 優化數據中心。從高效能推論和容器化運維，到隨需存取頂級 GPU 進行訓練和推論，我們掌控完整技術堆疊。",
+    "inferenceTitle": "推論引擎 Inference Engine",
+    "inferenceDescription1": "GMI Cloud 推論引擎為開發者提供運行 AI 模型所需的超高速度與彈性擴展性，專為極低延遲、高併發處理以及頂尖效能優化設計。無論是深度學習、自然語言處理 (NLP) 還是計算機視覺 (CV)，皆能完美支援，實現更高的推論效率。",
+    "inferenceDescription2": "透過 GMI Cloud 的全球 GPU 節點佈局，開發者能夠即時部署模型，隨時隨地擴展計算力，自動化調整運算負載，大幅降低成本並提升效能。依需求彈性伸縮，即刻應對高流量運算挑戰，交付更快、更穩定且更精準的 AI 預測。",
+    "inferenceModelsLabel": "輕鬆運行市場領先的 AI 模型",
+    "clusterTitle": "Cluster Engine",
+    "clusterDescription": "GMI Cloud 的 Cluster Engine 是您的一站式 AI 雲端管理平台，專為簡化 GPU 資源協調、工作負載排程和成本優化而設計。無論您是管理 AI 訓練、微調還是推論工作負載，Cluster Engine 都能提供即時可見性和控制。",
+    "gpuTitle": "GPUs",
+    "gpuDescription": "GMI Cloud 提供多元的 NVIDIA GPU 組合，專為 AI/ML 訓練、推論和數據分析設計。我們的 GPU 基礎設施專為最嚴苛的 AI 工作負載打造，具備超低延遲、高記憶體頻寬和企業級可靠性。",
+    "caseStudyTitle": "實證成效",
+    "caseStudySubtitle": "我們的客戶在成本、效能和上市時間方面都取得了可衡量的改善。",
+    "caseStudyQuote": "NexusAI 徹底改變了我們部署 AI 模型的方式。過去需要數週的工作現在只需數小時。",
+    "costSavings": "成本節省",
+    "costSavingsDesc": "基礎設施成本平均降低",
+    "fasterDeployment": "更快部署",
+    "fasterDeploymentDesc": "新 GPU 叢集從數週縮短至數小時",
+    "newsTitle": "最新洞見",
+    "newsSubtitle": "掌握 AI 基礎設施和 GPU 運算的最新動態。",
+    "ctaTitle": "準備好大規模部署 AI 了嗎？",
+    "ctaSubtitle": "加入數千家使用 NexusAI 驅動 AI 基礎設施的企業。只需幾分鐘即可開始。"
+  },
+  "faq": {
+    "title": "常見問題",
+    "subtitle": "關於我們 GPU 基礎設施平台您需要知道的一切。",
+    "items": {
+      "q1": {
+        "question": "你們提供哪些 GPU 型號？",
+        "answer": "我們提供最新的 NVIDIA GPU，包括 H100、A100 和 L40S。所有叢集都配備 NVLink 和 InfiniBand，在分散式訓練和推論工作負載中實現最佳效能。"
+      },
+      "q2": {
+        "question": "部署新叢集需要多長時間？",
+        "answer": "大多數叢集可以在數小時內完成配置，而非數週。我們的自動化基礎設施允許根據您的需求快速擴展，並為熱門的 ML 框架預先配置環境。"
+      },
+      "q3": {
+        "question": "你們有哪些安全認證？",
+        "answer": "我們維持 SOC 2 Type II、HIPAA 和 GDPR 合規性。所有資料在靜態和傳輸中都經過加密，並提供可選的專用租戶以實現最大隔離。"
+      },
+      "q4": {
+        "question": "我可以使用自己的模型嗎？",
+        "answer": "當然可以。我們的平台支援任何模型格式，包括 PyTorch、TensorFlow 和 ONNX。我們還為 Llama、Mistral 等熱門開源模型提供優化的服務基礎設施。"
+      },
+      "q5": {
+        "question": "計費方式是什麼？",
+        "answer": "我們提供靈活的定價方式，包括隨需、預留容量和承諾使用折扣。您只需為使用的運算資源付費，價格透明無隱藏費用。"
+      }
+    }
+  },
+  "news": {
+    "articles": {
+      "article1": {
+        "title": "擴展 AI 基礎設施：來自 10,000 個 GPU 的經驗",
+        "excerpt": "企業團隊如何以前所未有的規模管理 GPU 叢集。",
+        "category": "工程"
+      },
+      "article2": {
+        "title": "推論的未來：H100 vs A100 效能評測",
+        "excerpt": "生產環境 AI 工作負載的真實效能比較。",
+        "category": "研究"
+      },
+      "article3": {
+        "title": "AI 團隊的成本優化策略",
+        "excerpt": "降低 GPU 基礎設施成本最高達 50% 的實用技巧。",
+        "category": "商業"
+      }
+    }
+  },
+  "cluster": {
+    "centralizedManagement": "集中式管理",
+    "centralizedManagementDesc": "在單一直觀的儀表板中統一管理跨多個區域的 GPU 資源和工作負載。",
+    "realtimeDashboard": "即時儀表板",
+    "realtimeDashboardDesc": "監控效能指標、追蹤資源使用率，並即時獲取基礎設施異常警報。",
+    "accessManagement": "存取管理",
+    "accessManagementDesc": "透過角色型存取控制和團隊工作區，安全地管理使用者權限和 GPU 資源存取。",
+    "activeGPUs": "運行中的 GPU",
+    "lastUpdated": "最後更新：剛剛",
+    "avgGPUUsage": "平均 GPU 使用率",
+    "activeNodes": "活躍節點",
+    "memoryUsed": "已用記憶體",
+    "uptime": "正常運行時間",
+    "teamMembers": "團隊成員",
+    "invite": "+ 邀請"
+  },
+  "gpu": {
+    "topTierGPUs": "頂級 GPU",
+    "topTierGPUsDesc": "以具競爭力的價格和保證可用性，存取最新的 NVIDIA H100 和 A100 GPU。",
+    "infinibandNetworking": "InfiniBand 網路",
+    "infinibandNetworkingDesc": "超低延遲互連，400Gb/s 頻寬，適用於分散式訓練和即時推論。",
+    "secureScalable": "安全且可擴展",
+    "secureScalableDesc": "企業級安全性，符合 SOC 2 Type II、HIPAA 和 GDPR。可從 1 擴展至 1000+ GPU。"
   },
   "modelLibrary": {
     "heroTitle": "模型庫",
@@ -270,6 +364,18 @@
   "blog": {
     "heroTitle": "NexusAI 部落格",
     "heroSubtitle": "探索我們團隊的最新消息、更新和見解。"
+  },
+  "models": {
+    "deepseekR1": {
+      "description": "開源推理模型，可與 OpenAI o1 媲美，在數學、程式設計和多步驟推理方面表現出色。"
+    },
+    "deepseekR1Distill": {
+      "description": "免費端點體驗強大的推理模型，此蒸餾版本保留了出色的推理能力。"
+    },
+    "llama33": {
+      "description": "開源推理模型，支援多語言對話優化，專為對話流暢度而調優。"
+    },
+    "free": "免費"
   },
   "languages": {
     "en": "English",

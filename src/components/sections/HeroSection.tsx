@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import heroCubes from "@/assets/home/hero-cubes.png";
 
 const partnerLogos = [
@@ -14,20 +15,22 @@ const partnerLogos = [
 ];
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-16 md:py-20 bg-background">
       <div className="container">
         {/* Main Content */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight mb-6 animate-fade-in">
-            Build AI Without Limits
+            {t("home.heroTitle")}
           </h1>
           <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            We build complete GPU infrastructure so you can focus on what really matters — your AI.
+            {t("home.heroSubtitle")}
           </p>
           <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <Button asChild size="lg" className="text-base px-8">
-              <Link to="/contact">Get Started</Link>
+              <Link to="/contact">{t("common.getStarted")}</Link>
             </Button>
           </div>
         </div>
