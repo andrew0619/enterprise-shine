@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 const integrations = {
   left: [
     { name: "Jupyter", icon: "📓" },
@@ -18,16 +20,18 @@ const integrations = {
 };
 
 const IntegrationEcosystem = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-background py-16 md:py-24">
       <div className="container">
         {/* Section Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Your AI Control Plane for Cluster and Container Orchestration
+            {t("clusterEngine.integrationTitle")}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Seamlessly integrate with your existing tools and infrastructure
+            {t("clusterEngine.integrationSubtitle")}
           </p>
         </div>
 

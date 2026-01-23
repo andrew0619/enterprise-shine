@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import newProductArch from "@/assets/partners/new-product-arch.jpg";
 
 const NewProductSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-black py-20 md:py-28 overflow-hidden">
       <div className="container">
@@ -16,13 +19,13 @@ const NewProductSection = () => {
         {/* Content */}
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            New product
+            {t("partners.newProductTitle")}
           </h2>
           <p className="text-zinc-400 leading-relaxed mb-4">
-            Develop access to the IT supply chain and connect with partners, OEMs, and ISVs in a single cohesive AI app workflow infrastructure.
+            {t("partners.newProductDesc", { defaultValue: "Develop access to the IT supply chain and connect with partners, OEMs, and ISVs in a single cohesive AI app workflow infrastructure." })}
           </p>
           <p className="text-zinc-500 text-sm leading-relaxed">
-            We are connecting our partners and creating an ecosystem where the AI GPU is the core compute and ready for the latest technology to meet accelerated time-to-value and predictable workloads. Let us do the work for you.
+            {t("partners.newProductDetail", { defaultValue: "We are connecting our partners and creating an ecosystem where the AI GPU is the core compute and ready for the latest technology to meet accelerated time-to-value and predictable workloads. Let us do the work for you." })}
           </p>
         </div>
       </div>

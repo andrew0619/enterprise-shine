@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import ctaLandscape from "@/assets/cluster/cta-landscape.jpg";
 
 const DualCTABanners = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* Banner 1 - Dark with nature background */}
@@ -20,13 +23,13 @@ const DualCTABanners = () => {
         <div className="container relative z-10">
           <div className="max-w-xl">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Manage the World's Most Advanced GPUs with Cluster Engine
+              {t("clusterEngine.darkCtaTitle")}
             </h2>
             <p className="text-slate-300 mb-8 leading-relaxed">
-              Deploy, monitor, and scale your AI infrastructure with enterprise-grade reliability.
+              {t("clusterEngine.darkCtaSubtitle")}
             </p>
             <Button asChild size="lg" className="font-semibold">
-              <Link to="/contact">Learn More</Link>
+              <Link to="/contact">{t("common.learnMore")}</Link>
             </Button>
           </div>
         </div>
@@ -36,13 +39,13 @@ const DualCTABanners = () => {
       <section className="bg-blue-100 py-16 md:py-20">
         <div className="container text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Ready to scale your AI infrastructure?
+            {t("clusterEngine.ctaTitle")}
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Get started with Cluster Engine today and experience enterprise-grade orchestration.
+            {t("clusterEngine.ctaSubtitle")}
           </p>
           <Button asChild size="lg" className="font-semibold">
-            <Link to="/contact">Get Started</Link>
+            <Link to="/contact">{t("common.getStarted")}</Link>
           </Button>
         </div>
       </section>

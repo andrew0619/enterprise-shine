@@ -1,33 +1,33 @@
 import { Zap, Megaphone, HeadphonesIcon } from "lucide-react";
-
-const benefits = [
-  {
-    icon: Zap,
-    title: "Exclusive Access",
-    description:
-      "Get priority access to new GPU infrastructure, beta features, and dedicated support channels.",
-  },
-  {
-    icon: Megaphone,
-    title: "Co-Marketing",
-    description:
-      "Amplify your brand through joint marketing campaigns, case studies, and partner spotlights.",
-  },
-  {
-    icon: HeadphonesIcon,
-    title: "Technical Support",
-    description:
-      "Receive dedicated technical resources, training materials, and priority engineering support.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const WhyJoinSection = () => {
+  const { t } = useTranslation();
+
+  const benefits = [
+    {
+      icon: Zap,
+      title: t("partners.benefits.access.title"),
+      description: t("partners.benefits.access.description"),
+    },
+    {
+      icon: Megaphone,
+      title: t("partners.benefits.marketing.title"),
+      description: t("partners.benefits.marketing.description"),
+    },
+    {
+      icon: HeadphonesIcon,
+      title: t("partners.benefits.support.title"),
+      description: t("partners.benefits.support.description"),
+    },
+  ];
+
   return (
     <section className="bg-white py-20 md:py-28">
       <div className="container">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-16">
-          Why Join the NexusAI Partner Program?
+          {t("partners.whyJoinTitle")}
         </h2>
 
         {/* Benefits Grid */}

@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 const partnerLogos = [
   { name: "NVIDIA", display: "NVIDIA" },
   { name: "Reuters", display: "Reuters" },
@@ -9,11 +11,13 @@ const partnerLogos = [
 ];
 
 const PartnerLogosStrip = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-black py-8 border-t border-zinc-900">
       <div className="container">
         <p className="text-center text-xs text-zinc-600 mb-6 uppercase tracking-wider">
-          Built in partnership with
+          {t("partners.builtWith", { defaultValue: "Built in partnership with" })}
         </p>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
           {partnerLogos.map((logo) => (

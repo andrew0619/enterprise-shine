@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import heroCube from "@/assets/cluster/hero-cube.jpg";
 
 const ClusterHero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-slate-50 py-16 md:py-24">
       <div className="container">
@@ -10,13 +13,13 @@ const ClusterHero = () => {
           {/* Left Content */}
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              NexusAI Cloud Cluster Engine
+              {t("clusterEngine.heroTitle")}
             </h1>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Automated orchestration for AI workloads at scale. Deploy, manage, and monitor GPU clusters with enterprise-grade reliability and performance.
+              {t("clusterEngine.heroSubtitle")}
             </p>
             <Button asChild size="lg" className="font-semibold">
-              <Link to="/contact">Deploy Now</Link>
+              <Link to="/contact">{t("clusterEngine.deployNow")}</Link>
             </Button>
           </div>
 

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import GalleryCard from "./GalleryCard";
 
 // Import images
@@ -48,16 +49,18 @@ const galleryItems = [
 ];
 
 const StudioGallery = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-[#000000] py-24 px-4">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            One canvas for your
+            {t("studio.galleryTitle", { defaultValue: "One canvas for your" })}
           </h2>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            entire creative process
+            {t("studio.gallerySubtitle", { defaultValue: "entire creative process" })}
           </h2>
         </div>
 
