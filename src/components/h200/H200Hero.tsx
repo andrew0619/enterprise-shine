@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import heroGpu from "@/assets/h200/hero-gpu.jpg";
 
 const H200Hero = () => {
   return (
@@ -25,37 +26,14 @@ const H200Hero = () => {
             </Button>
           </div>
           
-          {/* Right Visual - H200 Chip */}
+          {/* Right Visual - H200 GPU Image */}
           <div className="relative">
-            <div className="bg-secondary/30 rounded-2xl p-8 md:p-12 flex items-center justify-center">
-              {/* H200 GPU Visual */}
-              <div className="relative w-full max-w-md aspect-square">
-                {/* GPU Base */}
-                <div className="absolute inset-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-lg shadow-2xl transform rotate-3">
-                  {/* Heatsink Pattern */}
-                  <div className="absolute inset-4 flex flex-col gap-1">
-                    {Array.from({ length: 12 }).map((_, i) => (
-                      <div
-                        key={i}
-                        className="w-full h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-sm"
-                      />
-                    ))}
-                  </div>
-                  
-                  {/* NVIDIA Label */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-gradient-to-r from-green-500 to-green-400 text-black text-xs font-bold px-3 py-1 rounded inline-block">
-                      NVIDIA H200
-                    </div>
-                  </div>
-                  
-                  {/* Gold Connector Pins */}
-                  <div className="absolute -bottom-2 left-8 right-8 h-3 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 rounded-b opacity-80" />
-                </div>
-                
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-green-500/20 via-transparent to-blue-500/20 rounded-lg blur-2xl" />
-              </div>
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src={heroGpu}
+                alt="NVIDIA H200 GPU"
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>
