@@ -534,7 +534,7 @@
       "title": "開發者示範應用",
       "subtitle": "在 GMI Cloud 上探索和測試即時 AI 模型。建構原型、進行實驗，並將生成式 AI 整合到您的應用程式中。"
     },
-    "demoApps": {
+    "demoAppsContent": {
       "ragChatbot": {
         "title": "多模態 RAG 聊天機器人",
         "description": "智慧多模態 RAG 聊天機器人，提供自然問答功能、生成式回答和互動視覺化，適用於問答、摘要和多媒體工作流程。"

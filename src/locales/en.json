@@ -242,7 +242,7 @@
       "title": "Demo Apps for Developers",
       "subtitle": "Explore and test live AI models on GMI Cloud. Build prototypes, run experiments, and integrate generative AI into your apps."
     },
-    "demoApps": {
+    "demoAppsContent": {
       "ragChatbot": {
         "title": "Multimodal RAG Chatbot",
         "description": "Intelligent multimodal RAG chatbot granting natural Q&A capabilities, generated answers, and interactive visuals for Q&A, summarization, and multimedia workflows."
