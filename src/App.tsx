@@ -10,6 +10,7 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import GPUCompute from "./pages/GPUCompute";
 import About from "./pages/About";
+import Studio from "./pages/Studio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
+          <Route path="/studio" element={<Studio />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
