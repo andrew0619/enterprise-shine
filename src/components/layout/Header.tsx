@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, ChevronDown, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -16,38 +17,15 @@ import {
 } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
 
-const productsDropdown = [
-  { href: "/products/gpu-compute", label: "GPU Compute" },
-  { href: "/products/cluster-engine", label: "Cluster Engine" },
-  { href: "/products/inference-engine", label: "Inference Engine" },
-  { href: "/products/model-library", label: "Model Library" },
-];
-
-const gpusDropdown = [
-  { href: "/gpus/h200", label: "NVIDIA H200" },
-  { href: "/gpus/gb200", label: "NVIDIA GB200 NVL72" },
-  { href: "/gpus/hgx-b200", label: "NVIDIA HGX™ B200" },
-];
-
-const developersDropdown = [
-  { href: "/developers/demo-apps", label: "Demo Apps" },
-  { href: "/docs", label: "Docs Hub" },
-];
-
-const companyDropdown = [
-  { href: "/about", label: "About Us" },
-  { href: "/blog", label: "Blog" },
-  { href: "https://discord.com", label: "Discord", external: true },
-  { href: "/partners", label: "Partners" },
-  { href: "/careers", label: "Careers" },
-];
-
-const simpleNavLinks = [
-  { href: "/studio", label: "Studio", isNew: true },
-  { href: "/pricing", label: "Pricing" },
+const languages = [
+  { code: "en", label: "English", shortLabel: "EN" },
+  { code: "zh-TW", label: "繁體中文", shortLabel: "中文" },
+  { code: "ja", label: "日本語", shortLabel: "日本語" },
+  { code: "ko", label: "한국어", shortLabel: "한국어" },
 ];
 
 const Header = () => {
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
@@ -56,6 +34,39 @@ const Header = () => {
   const [companyOpen, setCompanyOpen] = useState(false);
   const location = useLocation();
 
+  const currentLanguage = languages.find((l) => l.code === i18n.language) || languages[0];
+
+  const productsDropdown = [
+    { href: "/products/gpu-compute", labelKey: "products.gpuCompute" },
+    { href: "/products/cluster-engine", labelKey: "products.clusterEngine" },
+    { href: "/products/inference-engine", labelKey: "products.inferenceEngine" },
+    { href: "/products/model-library", labelKey: "products.modelLibrary" },
+  ];
+
+  const gpusDropdown = [
+    { href: "/gpus/h200", labelKey: "gpus.h200" },
+    { href: "/gpus/gb200", labelKey: "gpus.gb200" },
+    { href: "/gpus/hgx-b200", labelKey: "gpus.hgxb200" },
+  ];
+
+  const developersDropdown = [
+    { href: "/developers/demo-apps", labelKey: "developers.demoApps" },
+    { href: "/docs", labelKey: "developers.docsHub" },
+  ];
+
+  const companyDropdown = [
+    { href: "/about", labelKey: "company.aboutUs" },
+    { href: "/blog", labelKey: "company.blog" },
+    { href: "https://discord.com", labelKey: "company.discord", external: true },
+    { href: "/partners", labelKey: "company.partners" },
+    { href: "/careers", labelKey: "company.careers" },
+  ];
+
+  const simpleNavLinks = [
+    { href: "/studio", labelKey: "nav.studio", isNew: true },
+    { href: "/pricing", labelKey: "nav.pricing" },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -63,6 +74,10 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const changeLanguage = (langCode: string) => {
+    i18n.changeLanguage(langCode);
+  };
 
   const isProductsActive = productsDropdown.some(
     (item) => location.pathname === item.href
@@ -103,7 +118,7 @@ const Header = () => {
                 isProductsActive ? "text-primary" : "text-muted-foreground"
               )}
             >
-              Products
+              {t("nav.products")}
               <ChevronDown className="h-3 w-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="bg-popover w-48">
@@ -116,7 +131,7 @@ const Header = () => {
                       location.pathname === item.href && "text-primary"
                     )}
                   >
-                    {item.label}
+                    {t(item.labelKey)}
                   </Link>
                 </DropdownMenuItem>
               ))}
@@ -131,7 +146,7 @@ const Header = () => {
                 isGpusActive ? "text-primary" : "text-muted-foreground"
               )}
             >
-              GPUs
+              {t("nav.gpus")}
               <ChevronDown className="h-3 w-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="bg-popover w-52">
@@ -144,7 +159,7 @@ const Header = () => {
                       location.pathname === item.href && "text-primary"
                     )}
                   >
-                    {item.label}
+                    {t(item.labelKey)}
                   </Link>
                 </DropdownMenuItem>
               ))}
@@ -163,10 +178,10 @@ const Header = () => {
                   : "text-muted-foreground"
               )}
             >
-              {link.label}
+              {t(link.labelKey)}
               {link.isNew && (
                 <span className="bg-destructive text-destructive-foreground text-[10px] font-semibold px-1.5 py-0.5 rounded">
-                  NEW
+                  {t("common.new")}
                 </span>
               )}
             </Link>
@@ -180,7 +195,7 @@ const Header = () => {
                 isDevelopersActive ? "text-primary" : "text-muted-foreground"
               )}
             >
-              Developers
+              {t("nav.developers")}
               <ChevronDown className="h-3 w-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="bg-popover w-44">
@@ -193,7 +208,7 @@ const Header = () => {
                       location.pathname === item.href && "text-primary"
                     )}
                   >
-                    {item.label}
+                    {t(item.labelKey)}
                   </Link>
                 </DropdownMenuItem>
               ))}
@@ -208,7 +223,7 @@ const Header = () => {
                 isCompanyActive ? "text-primary" : "text-muted-foreground"
               )}
             >
-              Company
+              {t("nav.company")}
               <ChevronDown className="h-3 w-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="bg-popover w-44">
@@ -221,7 +236,7 @@ const Header = () => {
                       rel="noopener noreferrer"
                       className="w-full cursor-pointer flex items-center gap-2"
                     >
-                      {item.label}
+                      {t(item.labelKey)}
                       <span className="text-xs text-muted-foreground">↗</span>
                     </a>
                   ) : (
@@ -232,7 +247,7 @@ const Header = () => {
                         location.pathname === item.href && "text-primary"
                       )}
                     >
-                      {item.label}
+                      {t(item.labelKey)}
                     </Link>
                   )}
                 </DropdownMenuItem>
@@ -243,20 +258,28 @@ const Header = () => {
 
         {/* Desktop Right Actions */}
         <div className="hidden md:flex items-center gap-4">
+          {/* Language Switcher */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm" className="gap-1.5">
                 <Globe className="h-4 w-4" />
-                EN
+                {currentLanguage.shortLabel}
                 <ChevronDown className="h-3 w-3" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-popover">
-              <DropdownMenuItem>English</DropdownMenuItem>
-              <DropdownMenuItem>Español</DropdownMenuItem>
-              <DropdownMenuItem>Français</DropdownMenuItem>
-              <DropdownMenuItem>Deutsch</DropdownMenuItem>
-              <DropdownMenuItem>日本語</DropdownMenuItem>
+              {languages.map((lang) => (
+                <DropdownMenuItem
+                  key={lang.code}
+                  onClick={() => changeLanguage(lang.code)}
+                  className={cn(
+                    "cursor-pointer",
+                    i18n.language === lang.code && "text-primary font-medium"
+                  )}
+                >
+                  {lang.label}
+                </DropdownMenuItem>
+              ))}
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -264,11 +287,11 @@ const Header = () => {
             to="/login"
             className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
           >
-            Login
+            {t("nav.login")}
           </Link>
 
           <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-            <Link to="/contact">Contact Sales</Link>
+            <Link to="/contact">{t("nav.contactSales")}</Link>
           </Button>
         </div>
 
@@ -282,11 +305,27 @@ const Header = () => {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[350px]">
             <div className="flex flex-col gap-4 mt-8">
+              {/* Mobile Language Switcher */}
+              <div className="flex items-center gap-2 pb-4 border-b">
+                <Globe className="h-4 w-4 text-muted-foreground" />
+                <select
+                  value={i18n.language}
+                  onChange={(e) => changeLanguage(e.target.value)}
+                  className="bg-transparent text-sm font-medium focus:outline-none"
+                >
+                  {languages.map((lang) => (
+                    <option key={lang.code} value={lang.code}>
+                      {lang.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
               <nav className="flex flex-col gap-2">
                 {/* Products Collapsible */}
                 <Collapsible open={productsOpen} onOpenChange={setProductsOpen}>
                   <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-lg font-medium">
-                    Products
+                    {t("nav.products")}
                     <ChevronDown
                       className={cn(
                         "h-4 w-4 transition-transform",
@@ -307,7 +346,7 @@ const Header = () => {
                             : "text-muted-foreground"
                         )}
                       >
-                        {item.label}
+                        {t(item.labelKey)}
                       </Link>
                     ))}
                   </CollapsibleContent>
@@ -316,7 +355,7 @@ const Header = () => {
                 {/* GPUs Collapsible */}
                 <Collapsible open={gpusOpen} onOpenChange={setGpusOpen}>
                   <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-lg font-medium">
-                    GPUs
+                    {t("nav.gpus")}
                     <ChevronDown
                       className={cn(
                         "h-4 w-4 transition-transform",
@@ -337,7 +376,7 @@ const Header = () => {
                             : "text-muted-foreground"
                         )}
                       >
-                        {item.label}
+                        {t(item.labelKey)}
                       </Link>
                     ))}
                   </CollapsibleContent>
@@ -356,10 +395,10 @@ const Header = () => {
                         : "text-foreground"
                     )}
                   >
-                    {link.label}
+                    {t(link.labelKey)}
                     {link.isNew && (
                       <span className="bg-destructive text-destructive-foreground text-[10px] font-semibold px-1.5 py-0.5 rounded">
-                        NEW
+                        {t("common.new")}
                       </span>
                     )}
                   </Link>
@@ -368,7 +407,7 @@ const Header = () => {
                 {/* Developers Collapsible */}
                 <Collapsible open={developersOpen} onOpenChange={setDevelopersOpen}>
                   <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-lg font-medium">
-                    Developers
+                    {t("nav.developers")}
                     <ChevronDown
                       className={cn(
                         "h-4 w-4 transition-transform",
@@ -389,7 +428,7 @@ const Header = () => {
                             : "text-muted-foreground"
                         )}
                       >
-                        {item.label}
+                        {t(item.labelKey)}
                       </Link>
                     ))}
                   </CollapsibleContent>
@@ -398,7 +437,7 @@ const Header = () => {
                 {/* Company Collapsible */}
                 <Collapsible open={companyOpen} onOpenChange={setCompanyOpen}>
                   <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-lg font-medium">
-                    Company
+                    {t("nav.company")}
                     <ChevronDown
                       className={cn(
                         "h-4 w-4 transition-transform",
@@ -417,7 +456,7 @@ const Header = () => {
                           onClick={() => setIsMobileMenuOpen(false)}
                           className="block py-2 text-base transition-colors hover:text-primary text-muted-foreground flex items-center gap-2"
                         >
-                          {item.label}
+                          {t(item.labelKey)}
                           <span className="text-xs">↗</span>
                         </a>
                       ) : (
@@ -432,7 +471,7 @@ const Header = () => {
                               : "text-muted-foreground"
                           )}
                         >
-                          {item.label}
+                          {t(item.labelKey)}
                         </Link>
                       )
                     )}
@@ -446,11 +485,11 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-lg font-medium text-muted-foreground hover:text-primary"
                 >
-                  Login
+                  {t("nav.login")}
                 </Link>
                 <Button asChild className="w-full">
                   <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                    Contact Sales
+                    {t("nav.contactSales")}
                   </Link>
                 </Button>
               </div>

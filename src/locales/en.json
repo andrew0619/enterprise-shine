@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "products": "Products",
+    "gpus": "GPUs",
+    "studio": "Studio",
+    "pricing": "Pricing",
+    "developers": "Developers",
+    "company": "Company",
+    "login": "Login",
+    "contactSales": "Contact Sales"
+  },
+  "products": {
+    "gpuCompute": "GPU Compute",
+    "clusterEngine": "Cluster Engine",
+    "inferenceEngine": "Inference Engine",
+    "modelLibrary": "Model Library"
+  },
+  "gpus": {
+    "h200": "NVIDIA H200",
+    "gb200": "NVIDIA GB200 NVL72",
+    "hgxb200": "NVIDIA HGX™ B200"
+  },
+  "developers": {
+    "demoApps": "Demo Apps",
+    "docsHub": "Docs Hub"
+  },
+  "company": {
+    "aboutUs": "About Us",
+    "blog": "Blog",
+    "discord": "Discord",
+    "partners": "Partners",
+    "careers": "Careers"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "deployNow": "Deploy Now",
+    "applyNow": "Apply Now",
+    "joinNow": "Join Now",
+    "subscribe": "Subscribe",
+    "new": "NEW"
+  },
+  "footer": {
+    "stayUpToDate": "Stay up to date",
+    "getLatestNews": "Get the latest news and updates from NexusAI",
+    "enterEmail": "Enter your email",
+    "products": "PRODUCTS",
+    "solutions": "SOLUTIONS",
+    "company": "COMPANY",
+    "resources": "RESOURCES",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "allRightsReserved": "All rights reserved"
+  },
+  "home": {
+    "heroTitle": "Enterprise GPU Cloud for AI",
+    "heroSubtitle": "Deploy AI workloads on the latest NVIDIA GPUs with enterprise-grade reliability and performance.",
+    "getStarted": "Get Started",
+    "viewPricing": "View Pricing"
+  },
+  "clusterEngine": {
+    "heroTitle": "NexusAI Cloud Cluster Engine",
+    "heroSubtitle": "Automated orchestration for AI workloads at scale. Deploy, manage, and monitor GPU clusters with enterprise-grade reliability and performance.",
+    "deployNow": "Deploy Now",
+    "integrationTitle": "Your AI Control Plane for Cluster and Container Orchestration",
+    "integrationSubtitle": "Seamlessly integrate with your existing tools and infrastructure",
+    "features": {
+      "scaling": {
+        "title": "Efficient Scaling",
+        "description": "Automatically scale your GPU clusters up or down based on workload demands. Our intelligent orchestration ensures optimal resource utilization."
+      },
+      "monitoring": {
+        "title": "Real-time Monitoring",
+        "description": "Monitor every aspect of your cluster with comprehensive dashboards. Track instance health, resource usage, and job progress in real-time."
+      },
+      "analytics": {
+        "title": "Usage Analytics",
+        "description": "Gain deep insights into your compute usage patterns. Visualize trends, optimize costs, and make data-driven infrastructure decisions."
+      },
+      "resources": {
+        "title": "Resource Management",
+        "description": "Fine-grained control over every GPU, node, and container. Allocate resources precisely where they're needed with our intuitive management interface."
+      },
+      "security": {
+        "title": "Enterprise Security",
+        "description": "Bank-grade security for your AI workloads. Role-based access control, encryption at rest and in transit, and comprehensive audit logging."
+      }
+    },
+    "ctaTitle": "Ready to scale your AI infrastructure?",
+    "ctaSubtitle": "Get started with Cluster Engine today and experience enterprise-grade orchestration.",
+    "darkCtaTitle": "Manage Workloads Effortlessly",
+    "darkCtaSubtitle": "Deploy, monitor, and scale your AI workloads with our intuitive Cluster Engine. Built for teams who demand reliability at scale.",
+    "faqTitle": "Frequently asked questions",
+    "faqSubtitle": "Everything you need to know about Cluster Engine"
+  },
+  "careers": {
+    "heroTitle": "Build the Future of AI with NexusAI",
+    "heroSubtitle": "At NexusAI, we're not just building cutting-edge cloud infrastructure — we're shaping the future of AI and high-performance computing. Innovation thrives when brilliant minds have the freedom to push boundaries, which is why we foster a dynamic, fast-paced environment where creativity and expertise drive progress.",
+    "joinButton": "Join NexusAI",
+    "seePositions": "See Open Positions",
+    "valuesKicker": "We're not just offering jobs — we're offering the chance to shape the future of AI.",
+    "values": {
+      "engineering": {
+        "title": "Engineering Excellence",
+        "description": "Build complex, cutting-edge technology that push the limits of what's possible. If you're an engineer who thrives on innovation, this is where you can truly test your skills and grow."
+      },
+      "business": {
+        "title": "Business at the Forefront",
+        "description": "Join a team of bold thinkers charting a global business from the ground up. We're looking for exceptional problem solvers ready to make a real impact in a rapidly evolving industry."
+      },
+      "startup": {
+        "title": "Startup Energy, Big Ambitions",
+        "description": "We move fast, value fresh ideas, and believe in bold leaps. At NexusAI Cloud, proactivity, speed, and innovation aren't just encouraged — they're essential."
+      }
+    },
+    "officesKicker": "Our team is at the forefront of global AI development.",
+    "joinTeamTitle": "Join a Global Team of Innovators",
+    "joinTeamSubtitle": "We want to bring together bold thinkers from around the world to drive the future of AI and high-performance computing. Our diverse, multicultural team thrives on collaboration, fresh perspectives, and a shared passion for pushing boundaries."
+  },
+  "partners": {
+    "heroTitle": "Join the NexusAI Partner Program",
+    "heroSubtitle": "Join a robust ecosystem of technology leaders to drive growth and innovation in AI infrastructure.",
+    "stats": {
+      "founded": "Founded",
+      "partners": "Partners",
+      "gpuHours": "GPU Hours"
+    },
+    "diverseTitle": "Diverse Partners, Tailored Success",
+    "whyJoinTitle": "Why Join the NexusAI Partner Program?",
+    "benefits": {
+      "access": {
+        "title": "Exclusive Access",
+        "description": "Get priority access to new GPU infrastructure, beta features, and dedicated support channels."
+      },
+      "marketing": {
+        "title": "Co-Marketing",
+        "description": "Amplify your brand through joint marketing campaigns, case studies, and partner spotlights."
+      },
+      "support": {
+        "title": "Technical Support",
+        "description": "Receive dedicated technical resources, training materials, and priority engineering support."
+      }
+    },
+    "newProductTitle": "New product",
+    "faqTitle": "Frequently asked questions"
+  },
+  "blog": {
+    "heroTitle": "NexusAI Blog",
+    "heroSubtitle": "Discover the latest news, updates, and insights from our team."
+  },
+  "languages": {
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "ko": "한국어"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "products": "產品",
+    "gpus": "GPU",
+    "studio": "工作室",
+    "pricing": "定價",
+    "developers": "開發者",
+    "company": "公司",
+    "login": "登入",
+    "contactSales": "聯絡銷售"
+  },
+  "products": {
+    "gpuCompute": "GPU 運算",
+    "clusterEngine": "叢集引擎",
+    "inferenceEngine": "推論引擎",
+    "modelLibrary": "模型庫"
+  },
+  "gpus": {
+    "h200": "NVIDIA H200",
+    "gb200": "NVIDIA GB200 NVL72",
+    "hgxb200": "NVIDIA HGX™ B200"
+  },
+  "developers": {
+    "demoApps": "示範應用",
+    "docsHub": "文件中心"
+  },
+  "company": {
+    "aboutUs": "關於我們",
+    "blog": "部落格",
+    "discord": "Discord",
+    "partners": "合作夥伴",
+    "careers": "人才招募"
+  },
+  "common": {
+    "learnMore": "了解更多",
+    "getStarted": "立即開始",
+    "deployNow": "立即部署",
+    "applyNow": "立即申請",
+    "joinNow": "立即加入",
+    "subscribe": "訂閱",
+    "new": "新功能"
+  },
+  "footer": {
+    "stayUpToDate": "保持更新",
+    "getLatestNews": "獲取 NexusAI 的最新消息和更新",
+    "enterEmail": "輸入您的電子郵件",
+    "products": "產品",
+    "solutions": "解決方案",
+    "company": "公司",
+    "resources": "資源",
+    "privacyPolicy": "隱私政策",
+    "termsOfService": "服務條款",
+    "allRightsReserved": "版權所有"
+  },
+  "home": {
+    "heroTitle": "企業級 AI GPU 雲端平台",
+    "heroSubtitle": "在最新的 NVIDIA GPU 上部署 AI 工作負載，享有企業級的可靠性和效能。",
+    "getStarted": "立即開始",
+    "viewPricing": "查看定價"
+  },
+  "clusterEngine": {
+    "heroTitle": "NexusAI 雲端叢集引擎",
+    "heroSubtitle": "大規模 AI 工作負載的自動化編排。以企業級的可靠性和效能部署、管理和監控 GPU 叢集。",
+    "deployNow": "立即部署",
+    "integrationTitle": "您的 AI 控制平面，用於叢集和容器編排",
+    "integrationSubtitle": "與您現有的工具和基礎設施無縫整合",
+    "features": {
+      "scaling": {
+        "title": "高效擴展",
+        "description": "根據工作負載需求自動擴展或縮減您的 GPU 叢集。我們的智慧編排確保最佳資源利用率。"
+      },
+      "monitoring": {
+        "title": "即時監控",
+        "description": "透過全面的儀表板監控叢集的每個面向。即時追蹤執行個體健康狀況、資源使用情況和工作進度。"
+      },
+      "analytics": {
+        "title": "使用分析",
+        "description": "深入了解您的運算使用模式。視覺化趨勢、優化成本，並做出資料驅動的基礎設施決策。"
+      },
+      "resources": {
+        "title": "資源管理",
+        "description": "對每個 GPU、節點和容器進行精細控制。透過我們直觀的管理介面，精確地將資源分配到需要的地方。"
+      },
+      "security": {
+        "title": "企業級安全",
+        "description": "為您的 AI 工作負載提供銀行級安全性。角色型存取控制、靜態和傳輸中加密，以及全面的稽核日誌。"
+      }
+    },
+    "ctaTitle": "準備好擴展您的 AI 基礎設施了嗎？",
+    "ctaSubtitle": "立即開始使用叢集引擎，體驗企業級編排。",
+    "darkCtaTitle": "輕鬆管理工作負載",
+    "darkCtaSubtitle": "使用我們直觀的叢集引擎部署、監控和擴展您的 AI 工作負載。專為要求可靠性的團隊打造。",
+    "faqTitle": "常見問題",
+    "faqSubtitle": "關於叢集引擎的所有資訊"
+  },
+  "careers": {
+    "heroTitle": "與 NexusAI 一起打造 AI 的未來",
+    "heroSubtitle": "在 NexusAI，我們不僅僅是在建設尖端的雲端基礎設施——我們正在塑造 AI 和高效能運算的未來。當傑出人才擁有突破界限的自由時，創新就會蓬勃發展，這就是為什麼我們培養一個充滿活力、快節奏的環境，讓創造力和專業知識推動進步。",
+    "joinButton": "加入 NexusAI",
+    "seePositions": "查看職缺",
+    "valuesKicker": "我們提供的不只是工作——我們提供的是塑造 AI 未來的機會。",
+    "values": {
+      "engineering": {
+        "title": "工程卓越",
+        "description": "建構突破可能性極限的複雜尖端技術。如果您是一位在創新中茁壯成長的工程師，這裡是您真正測試技能和成長的地方。"
+      },
+      "business": {
+        "title": "商業前沿",
+        "description": "加入一群大膽思考者的團隊，從零開始規劃全球業務。我們正在尋找準備好在快速發展的行業中產生真正影響的傑出問題解決者。"
+      },
+      "startup": {
+        "title": "新創能量，遠大抱負",
+        "description": "我們行動迅速、重視新想法，並相信大膽的飛躍。在 NexusAI Cloud，主動性、速度和創新不僅受到鼓勵——它們是必不可少的。"
+      }
+    },
+    "officesKicker": "我們的團隊站在全球 AI 發展的前沿。",
+    "joinTeamTitle": "加入全球創新者團隊",
+    "joinTeamSubtitle": "我們希望匯聚來自世界各地的大膽思考者，共同推動 AI 和高效能運算的未來。我們多元、多文化的團隊在協作、新視角和對突破界限的共同熱情中蓬勃發展。"
+  },
+  "partners": {
+    "heroTitle": "加入 NexusAI 合作夥伴計畫",
+    "heroSubtitle": "加入強大的技術領導者生態系統，推動 AI 基礎設施的成長和創新。",
+    "stats": {
+      "founded": "成立年份",
+      "partners": "合作夥伴",
+      "gpuHours": "GPU 運算時數"
+    },
+    "diverseTitle": "多元夥伴，量身成功",
+    "whyJoinTitle": "為什麼加入 NexusAI 合作夥伴計畫？",
+    "benefits": {
+      "access": {
+        "title": "獨家存取",
+        "description": "優先存取新的 GPU 基礎設施、測試版功能和專屬支援管道。"
+      },
+      "marketing": {
+        "title": "聯合行銷",
+        "description": "透過聯合行銷活動、案例研究和合作夥伴焦點專題放大您的品牌。"
+      },
+      "support": {
+        "title": "技術支援",
+        "description": "獲得專屬技術資源、培訓材料和優先工程支援。"
+      }
+    },
+    "newProductTitle": "新產品",
+    "faqTitle": "常見問題"
+  },
+  "blog": {
+    "heroTitle": "NexusAI 部落格",
+    "heroSubtitle": "探索我們團隊的最新消息、更新和見解。"
+  },
+  "languages": {
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "ko": "한국어"
+  }
+}
