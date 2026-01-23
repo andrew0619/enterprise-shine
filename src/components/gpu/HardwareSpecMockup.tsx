@@ -41,11 +41,11 @@ const HardwareSpecMockup = () => {
       </div>
       
       {/* Specs Display */}
-      <div className="grid grid-cols-3 gap-2 pt-2 border-t border-slate-200">
+      <div className="grid grid-cols-3 gap-1 sm:gap-2 pt-2 border-t border-slate-200">
         {specs.map((spec, index) => (
-          <div key={index} className="text-center p-2">
-            <p className="text-xs text-muted-foreground">{spec.label}</p>
-            <p className="text-sm font-semibold text-foreground">{spec.value}</p>
+          <div key={index} className="text-center p-1 sm:p-2">
+            <p className="text-[10px] sm:text-xs text-muted-foreground">{spec.label}</p>
+            <p className="text-xs sm:text-sm font-semibold text-foreground break-words">{spec.value}</p>
           </div>
         ))}
       </div>

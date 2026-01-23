@@ -100,7 +100,7 @@ const GPUFeatureGrid = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-card border border-card-border rounded-2xl p-6 lg:p-8"
+              className="bg-card border border-card-border rounded-2xl p-4 sm:p-6 lg:p-8"
             >
               {/* Icon */}
               <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center mb-4">

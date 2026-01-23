@@ -39,7 +39,7 @@ const ServiceEngineSection = () => {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-card border border-card-border rounded-xl p-6 border-l-4 border-l-primary hover:shadow-md transition-shadow"
+              className="bg-card border border-card-border rounded-xl p-4 sm:p-6 border-l-4 border-l-primary hover:shadow-md transition-shadow"
             >
               {/* Service Type Label */}
               <span className="text-xs text-muted-foreground uppercase tracking-wider">

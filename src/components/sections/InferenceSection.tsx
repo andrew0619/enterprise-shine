@@ -60,7 +60,7 @@ const InferenceSection = () => {
         </p>
 
         {/* Models grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {models.map((model) => (
             <Card
               key={model.name}
