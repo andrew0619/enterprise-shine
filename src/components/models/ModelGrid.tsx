@@ -1,10 +1,7 @@
 import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import ModelFilterBar from "./ModelFilterBar";
-import ModelCard, { ModelCardProps, providerLogos } from "./ModelCard";
-
-// Import logo images for special cases
-import logoWan from "@/assets/models/logo-wan.png";
+import ModelCard, { ModelCardProps } from "./ModelCard";
 
 const ModelGrid = () => {
   const { t } = useTranslation();
@@ -30,11 +27,11 @@ const ModelGrid = () => {
     { id: "llava-1.6", name: "LLaVA 1.6", provider: "LMSys", type: t("modelLibrary.filters.vision"), category: "Vision" },
     { id: "cogvlm", name: "CogVLM", provider: "Tsinghua", type: t("modelLibrary.filters.vision"), category: "Vision" },
     
-    // Video - with Wan logo
-    { id: "wan2.5-t2v", name: "Wan2.5 T2V", provider: "Wan", type: t("modelLibrary.filters.video"), category: "Video", logoImage: logoWan, isNew: true },
-    { id: "wan2.5-i2v", name: "Wan2.5 I2V", provider: "Wan", type: t("modelLibrary.filters.video"), category: "Video", logoImage: logoWan, isNew: true },
-    { id: "wan2.2-i2v-a14b", name: "Wan2.2 I2V A14B", provider: "Wan", type: t("modelLibrary.filters.video"), category: "Video", logoImage: logoWan },
-    { id: "wan2.2-t2v-a14b", name: "Wan2.2 T2V A14B", provider: "Wan", type: t("modelLibrary.filters.video"), category: "Video", logoImage: logoWan },
+    // Video
+    { id: "wan2.5-t2v", name: "Wan2.5 T2V", provider: "Wan", type: t("modelLibrary.filters.video"), category: "Video", isNew: true },
+    { id: "wan2.5-i2v", name: "Wan2.5 I2V", provider: "Wan", type: t("modelLibrary.filters.video"), category: "Video", isNew: true },
+    { id: "wan2.2-i2v-a14b", name: "Wan2.2 I2V A14B", provider: "Wan", type: t("modelLibrary.filters.video"), category: "Video" },
+    { id: "wan2.2-t2v-a14b", name: "Wan2.2 T2V A14B", provider: "Wan", type: t("modelLibrary.filters.video"), category: "Video" },
     { id: "veo3-fast", name: "Veo3 Fast", provider: "Google", type: t("modelLibrary.filters.video"), category: "Video" },
     { id: "veo3", name: "Veo3", provider: "Google", type: t("modelLibrary.filters.video"), category: "Video" },
     { id: "luma-ray2", name: "Luma Ray2", provider: "Luma AI", type: t("modelLibrary.filters.video"), category: "Video" },
