@@ -1,40 +1,18 @@
 import Layout from "@/components/layout/Layout";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Server, ArrowRight } from "lucide-react";
+import ClusterHero from "@/components/cluster/ClusterHero";
+import IntegrationEcosystem from "@/components/cluster/IntegrationEcosystem";
+import FeatureZigZag from "@/components/cluster/FeatureZigZag";
+import DualCTABanners from "@/components/cluster/DualCTABanners";
+import ClusterFAQSection from "@/components/cluster/ClusterFAQSection";
 
 const ClusterEngine = () => {
   return (
     <Layout>
-      <section className="py-20 md:py-32 bg-background">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 mb-6">
-              <Server className="h-8 w-8 text-primary" />
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Cluster Engine
-            </h1>
-            
-            <p className="text-xl text-muted-foreground mb-8">
-              Enterprise-grade GPU cluster orchestration for large-scale AI training and inference. Deploy thousands of GPUs with seamless management and monitoring.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg">
-                <Link to="/contact">
-                  Contact Sales
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link to="/pricing">View Pricing</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ClusterHero />
+      <IntegrationEcosystem />
+      <FeatureZigZag />
+      <DualCTABanners />
+      <ClusterFAQSection />
     </Layout>
   );
 };
