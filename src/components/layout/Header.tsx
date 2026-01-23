@@ -13,7 +13,8 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/products", label: "Products" },
-  { href: "/gpu-compute", label: "GPU Compute" },
+  { href: "/gpu-compute", label: "GPUs" },
+  { href: "/studio", label: "Studio", isNew: true },
   { href: "/solutions", label: "Solutions" },
   { href: "/pricing", label: "Pricing" },
 ];
@@ -54,13 +55,18 @@ const Header = () => {
               key={link.href}
               to={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
+                "text-sm font-medium transition-colors hover:text-primary flex items-center gap-1.5",
                 location.pathname === link.href
                   ? "text-primary"
                   : "text-muted-foreground"
               )}
             >
               {link.label}
+              {"isNew" in link && link.isNew && (
+                <span className="bg-destructive text-destructive-foreground text-[10px] font-semibold px-1.5 py-0.5 rounded">
+                  NEW
+                </span>
+              )}
             </Link>
           ))}
         </nav>
@@ -113,13 +119,18 @@ const Header = () => {
                     to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={cn(
-                      "text-lg font-medium transition-colors hover:text-primary py-2",
+                      "text-lg font-medium transition-colors hover:text-primary py-2 flex items-center gap-2",
                       location.pathname === link.href
                         ? "text-primary"
                         : "text-foreground"
                     )}
                   >
                     {link.label}
+                    {"isNew" in link && link.isNew && (
+                      <span className="bg-destructive text-destructive-foreground text-[10px] font-semibold px-1.5 py-0.5 rounded">
+                        NEW
+                      </span>
+                    )}
                   </Link>
                 ))}
               </nav>
