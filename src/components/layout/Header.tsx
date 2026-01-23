@@ -31,7 +31,7 @@ const gpusDropdown = [
 
 const developersDropdown = [
   { href: "/developers/demo-apps", label: "Demo Apps" },
-  { href: "/developers/docs-hub", label: "Docs Hub" },
+  { href: "/docs", label: "Docs Hub" },
 ];
 
 const simpleNavLinks = [
