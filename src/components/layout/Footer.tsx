@@ -1,174 +1,155 @@
 import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Twitter, Linkedin, Github, Youtube, ArrowRight } from "lucide-react";
+import { Linkedin, Youtube, MessageCircle } from "lucide-react";
 
-const footerLinks = {
-  products: [
-    { label: "GPU Clusters", href: "/products#clusters" },
-    { label: "Inference Engine", href: "/products#inference" },
-    { label: "AI Workloads", href: "/products#workloads" },
-    { label: "Private Cloud", href: "/products#private-cloud" },
-  ],
-  solutions: [
-    { label: "Enterprise AI", href: "/solutions#enterprise" },
-    { label: "Research Labs", href: "/solutions#research" },
-    { label: "Startups", href: "/solutions#startups" },
-    { label: "Government", href: "/solutions#government" },
-  ],
-  company: [
-    { label: "About Us", href: "/about" },
-    { label: "Careers", href: "/careers" },
-    { label: "Blog", href: "/blog" },
-    { label: "Press", href: "/press" },
-  ],
-  resources: [
-    { label: "Documentation", href: "/docs" },
-    { label: "API Reference", href: "/api" },
-    { label: "Status", href: "/status" },
-    { label: "Support", href: "/support" },
-  ],
-};
+const footerColumns = [
+  {
+    links: [
+      { label: "GPU Cloud", href: "/products/gpu-compute" },
+      { label: "Cluster Engine", href: "/products/cluster-engine" },
+      { label: "Inference Engine", href: "/products/inference-engine" },
+      { label: "Pricing", href: "/pricing" },
+    ],
+  },
+  {
+    links: [
+      { label: "Model Library", href: "/products/model-library" },
+      { label: "Glossary", href: "/docs" },
+      { label: "Blog", href: "/blog" },
+      { label: "Careers", href: "/careers" },
+    ],
+  },
+  {
+    links: [
+      { label: "About Us", href: "/about" },
+      { label: "Partners", href: "/partners" },
+      { label: "Contact Us", href: "/contact" },
+    ],
+  },
+];
+
+// X (Twitter) icon component
+const XIcon = () => (
+  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+);
 
 const socialLinks = [
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+  { icon: XIcon, href: "https://twitter.com", label: "X" },
   { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Github, href: "https://github.com", label: "GitHub" },
   { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+  { icon: MessageCircle, href: "https://discord.com", label: "Discord" },
 ];
 
 const Footer = () => {
   return (
     <footer className="bg-foreground text-background">
       <div className="container py-16">
-        {/* Newsletter Section */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-12 border-b border-muted-foreground/20">
-          <div>
-            <h3 className="text-xl font-semibold mb-2">Stay up to date</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+          {/* Left Column - Logo, Address, Social, Newsletter */}
+          <div className="lg:col-span-5 space-y-6">
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-lg">N</span>
+              </div>
+              <span className="font-bold text-xl">NexusAI</span>
+            </div>
+
+            {/* Address */}
             <p className="text-muted-foreground text-sm">
-              Get the latest news and updates from NexusAI
+              278 Castro St, Mountain View, CA 94041
             </p>
-          </div>
-          <form className="flex gap-2 w-full md:w-auto">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full md:w-64 bg-muted-foreground/10 border-muted-foreground/20 text-background placeholder:text-muted-foreground"
-            />
-            <Button type="submit" className="shrink-0">
-              Subscribe
-              <ArrowRight className="h-4 w-4 ml-1" />
-            </Button>
-          </form>
-        </div>
 
-        {/* Links Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12">
-          <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider">
-              Products
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.products.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.href}
-                    className="text-muted-foreground hover:text-background transition-colors text-sm"
+            {/* Social Icons */}
+            <div className="flex items-center gap-4">
+              {socialLinks.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-background hover:text-primary transition-colors"
+                    aria-label={social.label}
                   >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                    <IconComponent className="h-5 w-5" />
+                  </a>
+                );
+              })}
+            </div>
 
-          <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider">
-              Solutions
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.solutions.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.href}
-                    className="text-muted-foreground hover:text-background transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {/* Newsletter */}
+            <div className="pt-4">
+              <h3 className="text-base font-medium mb-4">Subscribe to our newsletter</h3>
+              <form className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder="Enter email"
+                  className="w-full max-w-xs bg-muted-foreground/10 border-muted-foreground/30 text-background placeholder:text-muted-foreground"
+                />
+                <Button type="submit" className="shrink-0 px-6">
+                  Subscribe
+                </Button>
+              </form>
+            </div>
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider">
-              Company
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.href}
-                    className="text-muted-foreground hover:text-background transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* Right Columns - Navigation Links */}
+          <div className="lg:col-span-5 grid grid-cols-3 gap-8">
+            {footerColumns.map((column, idx) => (
+              <ul key={idx} className="space-y-4">
+                {column.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      to={link.href}
+                      className="text-muted-foreground hover:text-background transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ))}
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider">
-              Resources
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.href}
-                    className="text-muted-foreground hover:text-background transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* Compliance Badges */}
+          <div className="lg:col-span-2 flex lg:justify-end items-start">
+            <div className="flex gap-3">
+              {/* SOC 2 Type II Badge */}
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center border border-accent">
+                <span className="text-[6px] text-accent-foreground font-bold text-center leading-tight">SOC 2<br/>Type II</span>
+              </div>
+              {/* SGS Badge */}
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-destructive to-destructive/80 flex items-center justify-center border border-destructive">
+                <svg className="w-6 h-6 text-destructive-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+              </div>
+              {/* AICPA SOC Badge */}
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center border border-primary">
+                <span className="text-[6px] text-primary-foreground font-bold text-center leading-tight">AICPA<br/>SOC</span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-muted-foreground/20">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">N</span>
-            </div>
-            <span className="font-bold">NexusAI</span>
-          </div>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-12 mt-12 border-t border-muted-foreground/20">
+          <span className="text-sm text-muted-foreground">
+            © 2025 All Rights Reserved.
+          </span>
 
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <Link to="/privacy" className="hover:text-background transition-colors">
               Privacy Policy
             </Link>
             <Link to="/terms" className="hover:text-background transition-colors">
-              Terms of Service
+              Terms of Use
             </Link>
-            <span>© 2026 NexusAI. All rights reserved.</span>
-          </div>
-
-          <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-background transition-colors"
-                aria-label={social.label}
-              >
-                <social.icon className="h-5 w-5" />
-              </a>
-            ))}
           </div>
         </div>
       </div>
