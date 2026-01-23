@@ -1,101 +1,101 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Brain, Layers, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import inferenceCube from "@/assets/home/inference-cube.jpg";
 
-const features = [
+const models = [
   {
-    icon: Brain,
-    brand: "NVIDIA AI",
-    title: "Enterprise AI Platform",
-    description:
-      "Deploy and scale AI models with NVIDIA's enterprise-grade infrastructure and optimized frameworks.",
-    link: "/products#nvidia",
+    type: "Chat",
+    name: "DeepSeek R1",
+    description: "Open-source reasoning model, rivaling OpenAI o1, excelling in math, coding, and multi-step reasoning.",
+    icon: "🐋",
+    iconColor: "text-blue-500",
+    free: false,
   },
   {
-    icon: Layers,
-    brand: "Meta Llama",
-    title: "Open Source Models",
-    description:
-      "Access the latest open-source LLMs including Llama 3.1, fine-tuned for your specific use cases.",
-    link: "/products#llama",
+    type: "Chat",
+    name: "DeepSeek R1 Distill Llama 70B Free",
+    description: "Free endpoint to experience powerful reasoning model, this distilled version retains excellent reasoning capabilities.",
+    icon: "🐋",
+    iconColor: "text-blue-500",
+    free: true,
   },
   {
-    icon: Sparkles,
-    brand: "Custom Models",
-    title: "Bring Your Own Model",
-    description:
-      "Deploy your proprietary models on our optimized infrastructure with full security and compliance.",
-    link: "/products#custom",
+    type: "Chat",
+    name: "Llama 3.3 70B Instruct Turbo Free",
+    description: "Open-source reasoning model, supports multi-language dialogue optimization, specifically tuned for dialogue fluency.",
+    icon: "∞",
+    iconColor: "text-blue-600",
+    free: true,
   },
 ];
 
 const InferenceSection = () => {
   return (
-    <section className="py-20 md:py-24 bg-background">
+    <section className="py-16 md:py-20 bg-background">
       <div className="container">
-        {/* Header with cube visual */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        {/* Header */}
+        <div className="grid lg:grid-cols-2 gap-8 items-start mb-12">
           <div>
-            <span className="inline-block bg-primary/10 text-primary text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-              Inference Engine
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              The Most Trusted AI Models
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              推論引擎 Inference Engine
             </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Access industry-leading AI models optimized for inference at scale.
-              From foundation models to custom deployments, power your AI applications with unmatched performance.
-            </p>
-            <Button asChild variant="outline">
-              <Link to="/products/inference-engine">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+            <Button asChild variant="default" size="sm">
+              <Link to="/products/inference-engine">Learn More</Link>
             </Button>
           </div>
-          <div className="relative">
-            <img
-              src={inferenceCube}
-              alt="Inference Engine"
-              className="w-full max-w-sm mx-auto"
-            />
+          <div className="space-y-4">
+            <p className="text-muted-foreground">
+              GMI Cloud 推論引擎為開發者提供運行 AI 模型所需的超高速度與彈性擴展性，專為極低延遲、高併發處理以及頂尖效能優化設計。無論是深度學習、自然語言處理 (NLP) 還是計算機視覺 (CV)，皆能完美支援，實現更高的推論效率。
+            </p>
+            <p className="text-muted-foreground">
+              透過 GMI Cloud 的全球 GPU 節點佈局，開發者能夠即時部署模型，隨時隨地擴展計算力，自動化調整運算負載，大幅降低成本並提升效能。依需求彈性伸縮，即刻應對高流量運算挑戰，交付更快、更穩定且更精準的 AI 預測。
+            </p>
           </div>
         </div>
 
-        {/* Feature label */}
-        <p className="text-sm text-muted-foreground mb-8">
-          The most trusted AI models
+        {/* Models label */}
+        <p className="text-sm text-muted-foreground mb-6">
+          輕鬆運行 市場領先的 AI 模型
         </p>
 
-        {/* Features grid */}
+        {/* Models grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {features.map((feature) => (
+          {models.map((model) => (
             <Card
-              key={feature.title}
-              className="group border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+              key={model.name}
+              className="group border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg relative"
             >
               <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <feature.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <span className="text-sm font-semibold text-primary">
-                    {feature.brand}
-                  </span>
+                {/* Header with type and free badge */}
+                <div className="flex items-center justify-between mb-8">
+                  <span className="text-sm text-muted-foreground">{model.type}</span>
+                  {model.free && (
+                    <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded">
+                      免費
+                    </span>
+                  )}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                  {feature.description}
+                {/* Icon */}
+                <div className="flex justify-center mb-8">
+                  <span className={`text-6xl ${model.iconColor}`}>{model.icon}</span>
+                </div>
+
+                {/* Model name */}
+                <h3 className="text-lg font-semibold mb-3">{model.name}</h3>
+                
+                {/* Description */}
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  {model.description}
                 </p>
 
+                {/* Learn more link */}
                 <Link
-                  to={feature.link}
-                  className="inline-flex items-center text-sm font-medium text-primary hover:underline group"
+                  to="/products/model-library"
+                  className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary group"
                 >
-                  Learn more
+                  Learn More
                   <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </CardContent>
