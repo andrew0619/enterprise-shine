@@ -12,6 +12,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -25,6 +26,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 const GB200ContactForm = () => {
   const { toast } = useToast();
+  const { t } = useTranslation();
   
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -40,8 +42,8 @@ const GB200ContactForm = () => {
   const onSubmit = (data: ContactFormData) => {
     console.log("Form submitted:", data);
     toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
+      title: t("gb200Page.contact.successTitle"),
+      description: t("gb200Page.contact.successMessage"),
     });
     form.reset();
   };
@@ -52,10 +54,10 @@ const GB200ContactForm = () => {
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              Contact us
+              {t("gb200Page.contact.title")}
             </h2>
             <p className="text-zinc-400">
-              Get in touch with our team for more information
+              {t("gb200Page.contact.subtitle")}
             </p>
           </div>
           
@@ -68,7 +70,7 @@ const GB200ContactForm = () => {
                   <FormItem>
                     <FormControl>
                       <Input 
-                        placeholder="Name" 
+                        placeholder={t("gb200Page.contact.name")} 
                         className="bg-white text-slate-900 border-0 rounded-md h-12 placeholder:text-slate-400"
                         {...field} 
                       />
@@ -85,7 +87,7 @@ const GB200ContactForm = () => {
                   <FormItem>
                     <FormControl>
                       <Input 
-                        placeholder="Company" 
+                        placeholder={t("gb200Page.contact.company")} 
                         className="bg-white text-slate-900 border-0 rounded-md h-12 placeholder:text-slate-400"
                         {...field} 
                       />
@@ -103,7 +105,7 @@ const GB200ContactForm = () => {
                     <FormControl>
                       <Input 
                         type="email"
-                        placeholder="Email" 
+                        placeholder={t("gb200Page.contact.email")} 
                         className="bg-white text-slate-900 border-0 rounded-md h-12 placeholder:text-slate-400"
                         {...field} 
                       />
@@ -121,7 +123,7 @@ const GB200ContactForm = () => {
                     <FormControl>
                       <Input 
                         type="tel"
-                        placeholder="Phone Number" 
+                        placeholder={t("gb200Page.contact.phone")} 
                         className="bg-white text-slate-900 border-0 rounded-md h-12 placeholder:text-slate-400"
                         {...field} 
                       />
@@ -138,7 +140,7 @@ const GB200ContactForm = () => {
                   <FormItem>
                     <FormControl>
                       <Textarea 
-                        placeholder="Message" 
+                        placeholder={t("gb200Page.contact.message")} 
                         className="bg-white text-slate-900 border-0 rounded-md min-h-[120px] placeholder:text-slate-400 resize-none"
                         {...field} 
                       />
@@ -153,7 +155,7 @@ const GB200ContactForm = () => {
                 size="lg"
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white h-12 mt-2"
               >
-                Send Message
+                {t("gb200Page.contact.submit")}
               </Button>
             </form>
           </Form>

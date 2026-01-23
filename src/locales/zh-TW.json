@@ -236,7 +236,195 @@
   },
   "gpuPage": {
     "heroTitle": "GPU 算力租賃",
-    "heroSubtitle": "完整雲端整合的裸機伺服器，以最具競爭力的價格提供。"
+    "heroSubtitle": "完整雲端整合的裸機伺服器，以最具競爭力的價格提供。",
+    "features": {
+      "onDemand": {
+        "title": "彈性 On-Demand GPU 服務",
+        "description": "即時使用 NVIDIA GPU 算力，快速部署您的運算需求。我們的可擴展平台讓您依需求自由調整資源配置，完美支援 AI 與機器學習任務。價格實惠且無長期合約限制，讓您享有最大的使用彈性，無需預付成本。"
+      },
+      "hardware": {
+        "title": "頂尖硬體規格",
+        "description": "配備 3.2 Tbps InfiniBand 網路，為分散式訓練提供極速連線；搭載 NVIDIA H100 GPU的先進訓練叢集，釋放極致運算力。簡單的 SSH 連線、資料集下載，立即開始您的AI之旅。"
+      },
+      "privateCloud": {
+        "title": "企業專屬私有雲",
+        "description": "GMI Cloud 提供專屬於企業的雲端環境，確保端到端的安全與資料隔離。可客製化的環境配置滿足企業獨特的IT 策略。您可以依自己的方式建置、同時擁有完整的控制與彈性，在雲端與本地環境之間無縫切換。"
+      },
+      "security": {
+        "title": "安全網路架構",
+        "description": "我們以高 InfiniBand 網路效能為基礎打造穩定、高效的跨區域無縫連接網路，使應用程式或應用可乘載最佳承載，透過嚴格限制了網絡閒間的存取維護安全性。"
+      },
+      "selectHardware": "選擇硬體資源",
+      "numGpus": "GPU 數量",
+      "numCpus": "CPU 數量",
+      "ram": "記憶體",
+      "ephemeralStorage": "暫存空間"
+    }
+  },
+  "h200Page": {
+    "hero": {
+      "price": "起價 $2.15 / GPU-小時",
+      "title": "使用 NVIDIA H200 雲端 GPU 加速 AI 創新",
+      "description": "NVIDIA H200 Tensor Core GPU 以顛覆性的效能和記憶體能力，為生成式 AI 和高效能運算 (HPC) 工作負載提供強力支援。配備 141GB HBM3e 記憶體和 4.8TB/s 頻寬，為大型語言模型推論提供前所未有的吞吐量。",
+      "cta": "立即部署"
+    },
+    "features": {
+      "memory": {
+        "title": "更高的記憶體容量",
+        "description": "H200 配備 141GB HBM3e 記憶體，容量幾乎是 H100 的兩倍，使處理更大的模型和數據集成為可能，不再受記憶體限制。"
+      },
+      "bandwidth": {
+        "title": "增強的記憶體頻寬",
+        "description": "H200 擁有 4.8 TB/s 的記憶體頻寬，比 H100 高出 1.4 倍，大幅加速資料傳輸和處理任務。"
+      },
+      "performance": {
+        "title": "強化的 AI 效能",
+        "description": "H200 針對生成式 AI 和大型語言模型進行優化，為 Llama 2 70B 等模型提供高達 1.9 倍的推論效能提升。"
+      }
+    },
+    "chart": {
+      "title": "效能比較：H100 vs H200",
+      "benchmark1": "Llama 2 70B 推論 (tokens/秒)",
+      "benchmark2": "Llama 2 70B (FP8) 推論 (tokens/秒)",
+      "resultsTitle": "基準測試結果",
+      "resultsP1": "NVIDIA H200 在實際 AI 推論工作負載中展示出比 H100 顯著的效能提升。在 Llama 2 70B 推論基準測試中，H200 提供",
+      "resultsP1Highlight": "1.4 倍更快的吞吐量",
+      "resultsP1End": "。",
+      "resultsP2": "使用 FP8 精度時，效能提升更為顯著。H200 達到",
+      "resultsP2Highlight": "1.9 倍更快的推論",
+      "resultsP2End": "，使其成為需要兼顧速度和效率的生產 AI 部署的理想選擇。",
+      "resultsP3": "這些改進得益於 H200 增強的 HBM3e 記憶體架構，提供 4.8 TB/s 的頻寬——對於記憶體密集型的大型語言模型運算至關重要。"
+    },
+    "marketing": {
+      "title": "與 GMI Cloud 和 H200 一起面向未來",
+      "description": "隨著 AI 模型持續增長規模和複雜度，NVIDIA H200 為您提供領先所需的發展空間。憑藉其龐大的 141GB 記憶體容量和業界領先的頻寬，GMI Cloud 上的 H200 確保您的基礎設施能夠應對明日的 AI 工作負載。透過我們的企業級雲端平台，從開發無縫擴展到生產環境。",
+      "cta": "立即預訂"
+    },
+    "cta": {
+      "title": "不要錯過部署全球最強大 GPU 資源的機會。",
+      "button": "聯絡我們"
+    }
+  },
+  "gb200Page": {
+    "hero": {
+      "title": "NVIDIA GB200 NVL72 的下一代 AI 加速",
+      "description": "專為最苛刻的企業工作負載設計的先進 AI 基礎設施。GB200 NVL72 結合 Grace CPU 和 Blackwell GPU，提供前所未有的效能。",
+      "cta": "立即開始"
+    },
+    "features": {
+      "sectionTitle": "賦能 AI 創新",
+      "sectionDescription": "NVIDIA GB200 NVL72 代表 AI 運算的巨大飛躍，將最先進的 GPU 架構與專為企業級部署打造的基礎設施完美結合。",
+      "items": {
+        "performance": {
+          "title": "無與倫比的 AI 效能",
+          "description": "結合 Grace CPU 和 Blackwell GPU，實現前所未有的運算密度和效率，為 AI 訓練和推論提供突破性效能。"
+        },
+        "dataProcessing": {
+          "title": "企業 AI 的頂級資料處理",
+          "description": "輕鬆處理數萬億參數模型，使企業能夠應對最複雜的 AI 挑戰，不受基礎設施限制。"
+        },
+        "scalability": {
+          "title": "LLM 和 AI 工作負載的頂級可擴展性",
+          "description": "透過 NVLink 互連從單節點擴展至數千節點，隨著 AI 需求增長提供無縫擴展。"
+        },
+        "efficiency": {
+          "title": "節能架構",
+          "description": "優化的每 FLOP 功耗意味著更低的營運成本，同時維持峰值效能，實現可持續的 AI 基礎設施。"
+        }
+      },
+      "cta": "聯繫銷售"
+    },
+    "solutions": {
+      "title": "為您的 AI 需求量身打造的 GPU 雲端解決方案",
+      "training": {
+        "title": "AI 訓練基礎設施",
+        "description": "配備高速 NVLink 連接的專用 AI 訓練基礎設施，實現數千個 GPU 間的分散式訓練，延遲極低。"
+      },
+      "inference": {
+        "title": "生產推論",
+        "description": "針對生產 AI 應用優化的低延遲推論解決方案，為關鍵任務工作負載提供即時回應。"
+      },
+      "scaling": {
+        "title": "彈性擴展",
+        "description": "從單一 GPU 到多節點叢集的彈性擴展選項，按需配置以適應您的工作負載需求。"
+      }
+    },
+    "futureProof": {
+      "title": "與 GMI Cloud 和 GB200 NVL72 一起面向未來",
+      "description": "隨著 AI 模型持續增長複雜度，GB200 NVL72 確保您的基礎設施始終領先。憑藉其突破性架構和無縫可擴展性，您可以自信地投資明日的 AI 能力。GMI Cloud 提供平台，以企業級可靠性和支援駕馭這股力量。",
+      "cta": "了解更多"
+    },
+    "contact": {
+      "title": "聯絡我們",
+      "subtitle": "與我們的團隊聯繫，獲取更多資訊",
+      "name": "姓名",
+      "company": "公司",
+      "email": "電子郵件",
+      "phone": "電話號碼",
+      "message": "訊息",
+      "submit": "發送訊息",
+      "successTitle": "訊息已送出！",
+      "successMessage": "我們會盡快回覆您。"
+    }
+  },
+  "hgxb200Page": {
+    "hero": {
+      "title": "釋放 NVIDIA HGX™ B200 的強大力量",
+      "description": "為複雜模型和企業級 AI 部署提供頂級效能。終極 8-GPU 平台，適用於 AI 訓練和推論。",
+      "cta": "聯繫銷售",
+      "learnMore": "了解更多"
+    },
+    "features": {
+      "sectionTitle": "下一代 AI 運算",
+      "sectionDescription": "NVIDIA HGX B200 平台代表 AI 基礎設施的巔峰，結合 8 個 Blackwell 架構 GPU 與先進的 NVLink 互連技術。專為推動人工智慧邊界的組織設計，從訓練前沿模型到大規模部署即時推論。",
+      "items": {
+        "performance": {
+          "title": "針對 AI 訓練和推論優化的 GPU 效能",
+          "description": "HGX B200 透過第 5 代 NVLink 連接 8 個 Blackwell GPU，提供前所未有的運算密度，實現 1.8TB/s 的 GPU 對 GPU 頻寬，無縫並行處理。"
+        },
+        "architecture": {
+          "title": "適用於苛刻 AI 工作負載的高擴展架構",
+          "description": "專為數萬億參數模型和企業 AI 部署打造。統一記憶體架構可高效處理最大型的基礎模型。"
+        },
+        "scalability": {
+          "title": "無縫 AI 可擴展性",
+          "description": "連接多個 HGX B200 系統實現機架級 AI 超級運算。NVLink Switch 為最苛刻的訓練工作負載提供數千個 GPU 的線性擴展。"
+        }
+      },
+      "datasheet": "查看 NVIDIA HGX B200 平台規格書"
+    },
+    "solutions": {
+      "title": "為您的 AI 需求量身打造的彈性 GPU 解決方案",
+      "onDemand": {
+        "title": "隨需存取",
+        "description": "彈性按小時計費，適用於實驗和開發工作負載，即時配置。非常適合探索新模型架構或執行定期訓練任務的團隊。"
+      },
+      "reserved": {
+        "title": "預留容量",
+        "description": "為長期 AI 專案提供折扣定價，保證可用性和效能。適合需要可預測運算資源的生產工作負載。"
+      },
+      "dedicated": {
+        "title": "專屬叢集",
+        "description": "為大規模訓練提供 HGX B200 系統的自訂配置，配備專用網路和儲存。專為訓練前沿 AI 模型的組織設計。"
+      }
+    },
+    "elevate": {
+      "title": "與 GMI Cloud 和 NVIDIA HGX B200 提升您的 AI 能力",
+      "description": "透過 GMI Cloud 的企業基礎設施，善用全球最強大的 AI 平台。無需資本投資即可立即存取 HGX B200 系統，並獲得 24/7 支援和優化的 MLOps 工具，加速價值實現。",
+      "cta": "申請存取"
+    },
+    "contact": {
+      "title": "聯絡我們",
+      "subtitle": "與我們的團隊聯繫，獲取更多資訊",
+      "name": "姓名",
+      "company": "公司",
+      "email": "電子郵件",
+      "phone": "電話號碼",
+      "message": "訊息",
+      "submit": "發送訊息",
+      "successTitle": "訊息已送出！",
+      "successMessage": "我們會盡快回覆您。"
+    }
   },
   "contact": {
     "title": "聯絡我們",

@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import heroGpu from "@/assets/h200/hero-gpu.jpg";
 
 const H200Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container">
@@ -10,19 +13,19 @@ const H200Hero = () => {
           {/* Left Content */}
           <div className="space-y-6">
             <span className="text-primary text-sm font-semibold">
-              Starts from $2.15 / GPU-hour
+              {t("h200Page.hero.price")}
             </span>
             
             <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-              Accelerate AI Innovation with NVIDIA H200 Cloud GPUs
+              {t("h200Page.hero.title")}
             </h1>
             
             <p className="text-muted-foreground text-lg leading-relaxed">
-              The NVIDIA H200 Tensor Core GPU supercharges generative AI and high-performance computing (HPC) workloads with game-changing performance and memory capabilities. With 141GB of HBM3e memory and 4.8TB/s bandwidth, it delivers unprecedented throughput for large language model inference.
+              {t("h200Page.hero.description")}
             </p>
             
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8">
-              <Link to="/contact">Deploy Now</Link>
+              <Link to="/contact">{t("h200Page.hero.cta")}</Link>
             </Button>
           </div>
           
