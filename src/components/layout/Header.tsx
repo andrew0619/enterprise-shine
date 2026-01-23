@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Globe } from "lucide-react";
+import { Menu, ChevronDown, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -9,11 +9,27 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
 
-const navLinks = [
-  { href: "/products", label: "Products" },
-  { href: "/gpu-compute", label: "GPUs" },
+const productsDropdown = [
+  { href: "/products/gpu-compute", label: "GPU Compute" },
+  { href: "/products/cluster-engine", label: "Cluster Engine" },
+  { href: "/products/inference-engine", label: "Inference Engine" },
+  { href: "/products/model-library", label: "Model Library" },
+];
+
+const gpusDropdown = [
+  { href: "/gpus/h200", label: "NVIDIA H200" },
+  { href: "/gpus/gb200", label: "NVIDIA GB200 NVL72" },
+  { href: "/gpus/hgx-b200", label: "NVIDIA HGX™ B200" },
+];
+
+const simpleNavLinks = [
   { href: "/studio", label: "Studio", isNew: true },
   { href: "/solutions", label: "Solutions" },
   { href: "/pricing", label: "Pricing" },
@@ -22,6 +38,8 @@ const navLinks = [
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [gpusOpen, setGpusOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -31,6 +49,13 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const isProductsActive = productsDropdown.some(
+    (item) => location.pathname === item.href
+  );
+  const isGpusActive = gpusDropdown.some(
+    (item) => location.pathname === item.href
+  );
 
   return (
     <header
@@ -50,7 +75,64 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {/* Products Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                "flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary outline-none",
+                isProductsActive ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              Products
+              <ChevronDown className="h-3 w-3" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="bg-popover w-48">
+              {productsDropdown.map((item) => (
+                <DropdownMenuItem key={item.href} asChild>
+                  <Link
+                    to={item.href}
+                    className={cn(
+                      "w-full cursor-pointer",
+                      location.pathname === item.href && "text-primary"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* GPUs Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                "flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary outline-none",
+                isGpusActive ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              GPUs
+              <ChevronDown className="h-3 w-3" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="bg-popover w-52">
+              {gpusDropdown.map((item) => (
+                <DropdownMenuItem key={item.href} asChild>
+                  <Link
+                    to={item.href}
+                    className={cn(
+                      "w-full cursor-pointer",
+                      location.pathname === item.href && "text-primary"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Simple Nav Links */}
+          {simpleNavLinks.map((link) => (
             <Link
               key={link.href}
               to={link.href}
@@ -62,7 +144,7 @@ const Header = () => {
               )}
             >
               {link.label}
-              {"isNew" in link && link.isNew && (
+              {link.isNew && (
                 <span className="bg-destructive text-destructive-foreground text-[10px] font-semibold px-1.5 py-0.5 rounded">
                   NEW
                 </span>
@@ -111,9 +193,70 @@ const Header = () => {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[350px]">
-            <div className="flex flex-col gap-6 mt-8">
-              <nav className="flex flex-col gap-4">
-                {navLinks.map((link) => (
+            <div className="flex flex-col gap-4 mt-8">
+              <nav className="flex flex-col gap-2">
+                {/* Products Collapsible */}
+                <Collapsible open={productsOpen} onOpenChange={setProductsOpen}>
+                  <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-lg font-medium">
+                    Products
+                    <ChevronDown
+                      className={cn(
+                        "h-4 w-4 transition-transform",
+                        productsOpen && "rotate-180"
+                      )}
+                    />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="pl-4 space-y-2">
+                    {productsDropdown.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={cn(
+                          "block py-2 text-base transition-colors hover:text-primary",
+                          location.pathname === item.href
+                            ? "text-primary"
+                            : "text-muted-foreground"
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
+
+                {/* GPUs Collapsible */}
+                <Collapsible open={gpusOpen} onOpenChange={setGpusOpen}>
+                  <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-lg font-medium">
+                    GPUs
+                    <ChevronDown
+                      className={cn(
+                        "h-4 w-4 transition-transform",
+                        gpusOpen && "rotate-180"
+                      )}
+                    />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="pl-4 space-y-2">
+                    {gpusDropdown.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={cn(
+                          "block py-2 text-base transition-colors hover:text-primary",
+                          location.pathname === item.href
+                            ? "text-primary"
+                            : "text-muted-foreground"
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
+
+                {/* Simple Links */}
+                {simpleNavLinks.map((link) => (
                   <Link
                     key={link.href}
                     to={link.href}
@@ -126,7 +269,7 @@ const Header = () => {
                     )}
                   >
                     {link.label}
-                    {"isNew" in link && link.isNew && (
+                    {link.isNew && (
                       <span className="bg-destructive text-destructive-foreground text-[10px] font-semibold px-1.5 py-0.5 rounded">
                         NEW
                       </span>
