@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import postDatacenter from "@/assets/blog/post-datacenter.jpg";
+import postAiNetwork from "@/assets/blog/post-ai-network.jpg";
+import postTeam from "@/assets/blog/post-team.jpg";
 
 type ThumbnailType = "servers" | "abstract" | "event" | "tech";
 type CategoryColor = "blue" | "purple" | "green" | "orange";
@@ -20,55 +23,11 @@ const categoryColorClasses: Record<CategoryColor, string> = {
   orange: "bg-orange-500 text-white",
 };
 
-const ThumbnailServers = () => (
-  <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800">
-    <div className="absolute inset-0 flex flex-col justify-around px-6 py-4">
-      {[...Array(4)].map((_, i) => (
-        <div key={i} className="h-4 bg-slate-700/60 rounded flex items-center px-2 gap-2">
-          <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-          <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-          <div className="flex-1 h-1 bg-slate-600/50 rounded ml-2" />
-        </div>
-      ))}
-    </div>
-    <div className="absolute bottom-3 right-3 w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-  </div>
-);
-
-const ThumbnailAbstract = () => (
-  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800">
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.15),transparent)]" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.3),transparent)]" />
-  </div>
-);
-
-const ThumbnailEvent = () => (
-  <div className="absolute inset-0 bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-600">
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent)]" />
-    <div className="absolute bottom-4 left-4 right-4 h-8 bg-white/10 rounded backdrop-blur-sm" />
-  </div>
-);
-
-const ThumbnailTech = () => (
-  <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-    <div className="absolute inset-0 opacity-30">
-      <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <pattern id="circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-          <path d="M10 0 L10 10 M0 10 L20 10" stroke="currentColor" strokeWidth="0.5" fill="none" className="text-cyan-500" />
-          <circle cx="10" cy="10" r="2" fill="currentColor" className="text-cyan-500" />
-        </pattern>
-        <rect width="100" height="100" fill="url(#circuit)" />
-      </svg>
-    </div>
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-cyan-500/20 rounded-full blur-xl" />
-  </div>
-);
-
-const thumbnailComponents: Record<ThumbnailType, React.ComponentType> = {
-  servers: ThumbnailServers,
-  abstract: ThumbnailAbstract,
-  event: ThumbnailEvent,
-  tech: ThumbnailTech,
+const thumbnailImages: Record<ThumbnailType, string> = {
+  servers: postDatacenter,
+  abstract: postAiNetwork,
+  event: postTeam,
+  tech: postAiNetwork,
 };
 
 const BlogPostCard = ({
@@ -79,13 +38,17 @@ const BlogPostCard = ({
   categoryColor,
   thumbnail,
 }: BlogPostCardProps) => {
-  const ThumbnailComponent = thumbnailComponents[thumbnail];
+  const thumbnailImage = thumbnailImages[thumbnail];
 
   return (
     <Link to={`/blog/${id}`} className="group block">
       {/* Thumbnail */}
       <div className="relative aspect-[16/10] rounded-lg overflow-hidden mb-4">
-        <ThumbnailComponent />
+        <img
+          src={thumbnailImage}
+          alt=""
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
         
         {/* Category Badge */}
         <span

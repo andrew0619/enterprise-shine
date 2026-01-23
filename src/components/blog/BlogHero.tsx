@@ -1,10 +1,15 @@
+import heroIridescent from "@/assets/blog/hero-iridescent.jpg";
+
 const BlogHero = () => {
   return (
     <section className="relative bg-[#020617] py-20 md:py-28 overflow-hidden">
-      {/* Rainbow/Iridescent Visual - Top Right */}
-      <div className="absolute top-0 right-0 w-72 h-72 md:w-96 md:h-96 opacity-70">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-400 rounded-full blur-3xl transform translate-x-1/4 -translate-y-1/4" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 via-violet-500 to-fuchsia-400 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3 opacity-60" />
+      {/* Iridescent Sphere Visual - Top Right */}
+      <div className="absolute top-0 right-0 w-72 h-72 md:w-96 md:h-96 opacity-80">
+        <img
+          src={heroIridescent}
+          alt=""
+          className="w-full h-full object-contain transform translate-x-1/4 -translate-y-1/4"
+        />
       </div>
 
       {/* Subtle secondary glow - bottom left */}
