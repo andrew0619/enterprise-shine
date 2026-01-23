@@ -26,6 +26,7 @@ import GPUHGXB200 from "./pages/gpus/GPUHGXB200";
 // Developer pages
 import DemoApps from "./pages/developers/DemoApps";
 import DocsHub from "./pages/developers/DocsHub";
+import Docs from "./pages/Docs";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/developers/demo-apps" element={<DemoApps />} />
           <Route path="/developers/docs-hub" element={<DocsHub />} />
+          <Route path="/docs" element={<Docs />} />
           <Route path="/about" element={<About />} />
           <Route path="/studio" element={<Studio />} />
           <Route path="/contact" element={<Contact />} />
