@@ -1,22 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Play, TrendingDown, Zap } from "lucide-react";
-
-const stats = [
-  {
-    icon: TrendingDown,
-    value: "50%",
-    label: "Cost Savings",
-    description: "Average reduction in infrastructure costs",
-  },
-  {
-    icon: Zap,
-    value: "8x",
-    label: "Faster Deployment",
-    description: "From weeks to hours for new GPU clusters",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const CaseStudySection = () => {
+  const { t } = useTranslation();
+
+  const stats = [
+    {
+      icon: TrendingDown,
+      value: "50%",
+      label: t("home.costSavings"),
+      description: t("home.costSavingsDesc"),
+    },
+    {
+      icon: Zap,
+      value: "8x",
+      label: t("home.fasterDeployment"),
+      description: t("home.fasterDeploymentDesc"),
+    },
+  ];
+
   return (
     <section className="py-20 md:py-24 bg-secondary/30">
       <div className="container">
@@ -36,8 +39,7 @@ const CaseStudySection = () => {
                 </div>
                 <blockquote className="text-center max-w-md">
                   <p className="text-lg md:text-xl font-medium mb-4">
-                    "NexusAI transformed how we deploy AI models. What used to
-                    take weeks now takes hours."
+                    "{t("home.caseStudyQuote")}"
                   </p>
                   <footer className="text-sm opacity-80">
                     <cite className="not-italic font-semibold">
@@ -55,7 +57,7 @@ const CaseStudySection = () => {
               className="absolute bottom-6 left-1/2 -translate-x-1/2"
             >
               <Play className="h-4 w-4 mr-2" />
-              Watch Story
+              {t("common.watchStory")}
             </Button>
           </div>
 
@@ -63,11 +65,10 @@ const CaseStudySection = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl md:text-4xl font-normal mb-4">
-                Proven Results
+                {t("home.caseStudyTitle")}
               </h2>
               <p className="text-lg text-muted-foreground">
-                Our customers achieve measurable improvements in cost,
-                performance, and time-to-market.
+                {t("home.caseStudySubtitle")}
               </p>
             </div>
 

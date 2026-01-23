@@ -1,61 +1,61 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import postDatacenter from "@/assets/blog/post-datacenter.jpg";
 import postAiNetwork from "@/assets/blog/post-ai-network.jpg";
 import postTeam from "@/assets/blog/post-team.jpg";
 
-const articles = [
-  {
-    id: 1,
-    title: "Scaling AI Infrastructure: Lessons from 10,000 GPUs",
-    excerpt:
-      "How enterprise teams are managing GPU clusters at unprecedented scale.",
-    date: "Jan 15, 2026",
-    category: "Engineering",
-    categoryColor: "bg-primary",
-    image: postDatacenter,
-  },
-  {
-    id: 2,
-    title: "The Future of Inference: H100 vs A100 Benchmarks",
-    excerpt:
-      "Real-world performance comparisons for production AI workloads.",
-    date: "Jan 12, 2026",
-    category: "Research",
-    categoryColor: "bg-purple-500",
-    image: postAiNetwork,
-  },
-  {
-    id: 3,
-    title: "Cost Optimization Strategies for AI Teams",
-    excerpt:
-      "Practical tips to reduce your GPU infrastructure costs by up to 50%.",
-    date: "Jan 8, 2026",
-    category: "Business",
-    categoryColor: "bg-green-500",
-    image: postTeam,
-  },
-];
-
 const NewsSection = () => {
+  const { t } = useTranslation();
+
+  const articles = [
+    {
+      id: 1,
+      title: t("news.articles.article1.title"),
+      excerpt: t("news.articles.article1.excerpt"),
+      date: "Jan 15, 2026",
+      category: t("news.articles.article1.category"),
+      categoryColor: "bg-primary",
+      image: postDatacenter,
+    },
+    {
+      id: 2,
+      title: t("news.articles.article2.title"),
+      excerpt: t("news.articles.article2.excerpt"),
+      date: "Jan 12, 2026",
+      category: t("news.articles.article2.category"),
+      categoryColor: "bg-purple-500",
+      image: postAiNetwork,
+    },
+    {
+      id: 3,
+      title: t("news.articles.article3.title"),
+      excerpt: t("news.articles.article3.excerpt"),
+      date: "Jan 8, 2026",
+      category: t("news.articles.article3.category"),
+      categoryColor: "bg-green-500",
+      image: postTeam,
+    },
+  ];
+
   return (
     <section className="py-20 md:py-24 bg-background">
       <div className="container">
         <div className="flex items-end justify-between mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-normal mb-4">
-              Latest Insights
+              {t("home.newsTitle")}
             </h2>
             <p className="text-lg text-muted-foreground">
-              Stay updated with the latest in AI infrastructure and GPU computing.
+              {t("home.newsSubtitle")}
             </p>
           </div>
           <Link
             to="/blog"
             className="hidden md:inline-flex items-center text-primary font-medium hover:underline"
           >
-            View all articles
+            {t("common.viewAllArticles")}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </div>
@@ -98,7 +98,7 @@ const NewsSection = () => {
             to="/blog"
             className="inline-flex items-center text-primary font-medium hover:underline"
           >
-            View all articles
+            {t("common.viewAllArticles")}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </div>

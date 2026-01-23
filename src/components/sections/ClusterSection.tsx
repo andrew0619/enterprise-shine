@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const dashboardData = [
   { id: "gpu-001", name: "NVIDIA H100", status: "active", utilization: "94%" },
@@ -11,20 +12,22 @@ const dashboardData = [
 ];
 
 const ClusterSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-16 md:py-20 bg-muted/30">
       <div className="container">
         {/* First Row - Cluster Engine Overview */}
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Cluster Engine</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">{t("home.clusterTitle")}</h2>
             <Button asChild variant="default" size="sm">
-              <Link to="/products/cluster-engine">Learn More</Link>
+              <Link to="/products/cluster-engine">{t("common.learnMore")}</Link>
             </Button>
           </div>
           <div>
             <p className="text-muted-foreground">
-              GMI Cloud's Cluster Engine is your all-in-one AI cloud management platform, designed to streamline GPU resource coordination, workload scheduling, and cost optimization. Whether you're managing AI training, fine-tuning, or inference workloads, Cluster Engine provides real-time visibility and control.
+              {t("home.clusterDescription")}
             </p>
           </div>
         </div>
@@ -32,9 +35,9 @@ const ClusterSection = () => {
         {/* Centralized Management */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h3 className="text-lg font-semibold text-muted-foreground mb-2">Centralized Management</h3>
+            <h3 className="text-lg font-semibold text-muted-foreground mb-2">{t("cluster.centralizedManagement")}</h3>
             <p className="text-muted-foreground text-sm">
-              Unify your GPU resources across multiple regions and manage workloads from a single, intuitive dashboard.
+              {t("cluster.centralizedManagementDesc")}
             </p>
           </div>
           <div className="bg-card rounded-xl shadow-lg overflow-hidden border">
@@ -48,8 +51,8 @@ const ClusterSection = () => {
             <div className="p-4 overflow-x-auto">
               <div className="min-w-[400px]">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-medium">Active GPUs</span>
-                  <span className="text-xs text-muted-foreground">Last updated: Just now</span>
+                  <span className="text-sm font-medium">{t("cluster.activeGPUs")}</span>
+                  <span className="text-xs text-muted-foreground">{t("cluster.lastUpdated")}</span>
                 </div>
                 <table className="w-full text-sm">
                   <thead>
@@ -92,27 +95,27 @@ const ClusterSection = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-muted/30 rounded-lg p-4">
                   <div className="text-2xl font-bold text-primary">87%</div>
-                  <div className="text-xs text-muted-foreground">Avg. GPU Usage</div>
+                  <div className="text-xs text-muted-foreground">{t("cluster.avgGPUUsage")}</div>
                 </div>
                 <div className="bg-muted/30 rounded-lg p-4">
                   <div className="text-2xl font-bold text-green-600">24</div>
-                  <div className="text-xs text-muted-foreground">Active Nodes</div>
+                  <div className="text-xs text-muted-foreground">{t("cluster.activeNodes")}</div>
                 </div>
                 <div className="bg-muted/30 rounded-lg p-4">
                   <div className="text-2xl font-bold text-blue-600">1.2TB</div>
-                  <div className="text-xs text-muted-foreground">Memory Used</div>
+                  <div className="text-xs text-muted-foreground">{t("cluster.memoryUsed")}</div>
                 </div>
                 <div className="bg-muted/30 rounded-lg p-4">
                   <div className="text-2xl font-bold text-amber-600">99.9%</div>
-                  <div className="text-xs text-muted-foreground">Uptime</div>
+                  <div className="text-xs text-muted-foreground">{t("cluster.uptime")}</div>
                 </div>
               </div>
             </div>
           </div>
           <div className="order-1 lg:order-2">
-            <h3 className="text-lg font-semibold text-muted-foreground mb-2">Real-Time Dashboard</h3>
+            <h3 className="text-lg font-semibold text-muted-foreground mb-2">{t("cluster.realtimeDashboard")}</h3>
             <p className="text-muted-foreground text-sm">
-              Monitor performance metrics, track resource utilization, and get instant alerts for any anomalies in your infrastructure.
+              {t("cluster.realtimeDashboardDesc")}
             </p>
           </div>
         </div>
@@ -120,15 +123,15 @@ const ClusterSection = () => {
         {/* Access Management */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h3 className="text-lg font-semibold mb-2">Access Management</h3>
+            <h3 className="text-lg font-semibold mb-2">{t("cluster.accessManagement")}</h3>
             <p className="text-muted-foreground text-sm">
-              Securely manage user permissions and control access to GPU resources with role-based access controls and team workspaces.
+              {t("cluster.accessManagementDesc")}
             </p>
           </div>
           <div className="bg-card rounded-xl shadow-lg overflow-hidden border p-6">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-sm font-medium">Team Members</span>
-              <Button variant="outline" size="sm">+ Invite</Button>
+              <span className="text-sm font-medium">{t("cluster.teamMembers")}</span>
+              <Button variant="outline" size="sm">{t("cluster.invite")}</Button>
             </div>
             <div className="space-y-3">
               {[
