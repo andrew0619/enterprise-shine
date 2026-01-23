@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const ModelLibraryHero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative bg-[#020617] py-20 md:py-28 overflow-hidden">
       {/* Floating 3D Cubes - Left */}
@@ -58,10 +62,10 @@ const ModelLibraryHero = () => {
       {/* Content */}
       <div className="container relative z-10 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-          Model Library
+          {t("modelLibrary.heroTitle")}
         </h1>
         <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
-          Explore our curated library of powerful open-source models and accelerate your AI apps.
+          {t("modelLibrary.heroSubtitle")}
         </p>
       </div>
     </section>

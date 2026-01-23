@@ -38,25 +38,148 @@
     "applyNow": "Apply Now",
     "joinNow": "Join Now",
     "subscribe": "Subscribe",
-    "new": "NEW"
+    "new": "New",
+    "viewModel": "View Model",
+    "contactSales": "Contact Sales",
+    "seeModelList": "See Model List",
+    "showingModels": "Showing {{count}} models",
+    "noModelsFound": "No models found matching your criteria.",
+    "active": "Active"
   },
   "footer": {
-    "stayUpToDate": "Stay up to date",
-    "getLatestNews": "Get the latest news and updates from NexusAI",
-    "enterEmail": "Enter your email",
-    "products": "PRODUCTS",
-    "solutions": "SOLUTIONS",
-    "company": "COMPANY",
-    "resources": "RESOURCES",
+    "subscribeNewsletter": "Subscribe to our newsletter",
+    "enterEmail": "Enter email",
+    "gpuCloud": "GPU Cloud",
+    "clusterEngine": "Cluster Engine",
+    "inferenceEngine": "Inference Engine",
+    "pricing": "Pricing",
+    "modelLibrary": "Model Library",
+    "glossary": "Glossary",
+    "blog": "Blog",
+    "careers": "Careers",
+    "aboutUs": "About Us",
+    "partners": "Partners",
+    "contactUs": "Contact Us",
     "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service",
-    "allRightsReserved": "All rights reserved"
+    "termsOfUse": "Terms of Use",
+    "allRightsReserved": "© 2025 All Rights Reserved."
   },
   "home": {
     "heroTitle": "Enterprise GPU Cloud for AI",
     "heroSubtitle": "Deploy AI workloads on the latest NVIDIA GPUs with enterprise-grade reliability and performance.",
     "getStarted": "Get Started",
     "viewPricing": "View Pricing"
+  },
+  "modelLibrary": {
+    "heroTitle": "Model Library",
+    "heroSubtitle": "Explore our curated library of powerful open-source models and accelerate your AI apps.",
+    "filters": {
+      "all": "All",
+      "llm": "LLM",
+      "vision": "Vision",
+      "embedding": "Embedding"
+    },
+    "searchPlaceholder": "Search models...",
+    "ctaTitle": "Not sure which product fits your needs? Let's talk.",
+    "ctaSubtitle": "Our team is here to help you choose the right infrastructure and models for your AI applications.",
+    "types": {
+      "textGeneration": "Text Generation",
+      "codeGeneration": "Code Generation",
+      "imageGeneration": "Image Generation",
+      "visionLanguage": "Vision Language",
+      "textEmbedding": "Text Embedding"
+    }
+  },
+  "inferenceEngine": {
+    "heroTitle": "NexusAI Cloud Inference Engine",
+    "heroSubtitle": "Run and scale generative AI models with ease. Deploy pre-trained models for fast, low-latency inference deployment with blazing speed and scalability at scale you can rely on.",
+    "cubeLabel": "Inference",
+    "cubeSubLabel": "Engine",
+    "smarterWayTitle": "A Smarter Way to Inference",
+    "features": {
+      "deployment": {
+        "title": "Rapid Deployment, Zero Hassle",
+        "description": "Scale instantly with fully managed infrastructure. Our inference engine comes with all the automation and tooling you need to ship faster, so you can focus on building."
+      },
+      "efficiency": {
+        "title": "Optimized for Efficiency",
+        "description": "Advanced GPU optimization and model caching minimize latency while maximizing throughput. Get more inferences per dollar with our intelligent resource allocation."
+      }
+    },
+    "modelShowcase": {
+      "title": "Pre-Built AI Models for Fast Inference",
+      "subtitle": "Choose from our curated library of pre-optimized models or bring your own",
+      "inference": "Inference",
+      "viewAllModels": "View all models in our library →",
+      "models": {
+        "llama2": {
+          "name": "Llama 2",
+          "description": "Open-source large language model for text generation and chat"
+        },
+        "stableDiffusion": {
+          "name": "Stable Diffusion",
+          "description": "State-of-the-art image generation model"
+        },
+        "mpt7b": {
+          "name": "MPT-7B",
+          "description": "Efficient transformer model for commercial use"
+        }
+      }
+    },
+    "scaling": {
+      "kicker": "Auto-Scale",
+      "title": "Effortless Scaling for Your AI Workloads",
+      "description": "Scale from zero to thousands of concurrent requests automatically. Our intelligent auto-scaling adjusts resources in real-time based on traffic patterns.",
+      "dynamicScaling": {
+        "title": "Dynamic Scaling",
+        "description": "Automatically provisions GPUs as demand increases, scales down during quiet periods."
+      },
+      "flexibility": {
+        "title": "Blazing Flexibility",
+        "description": "Choose your minimum and maximum replicas, set custom scaling metrics."
+      },
+      "cta": "Get Started Now"
+    },
+    "monitoring": {
+      "kicker": "Monitor",
+      "title": "Real-Time AI Performance Monitoring",
+      "description": "Keep your finger on the pulse with comprehensive dashboards. Track latency, throughput, and error rates in real-time to ensure optimal performance.",
+      "totalInferences": "Total Inferences",
+      "avgLatency": "Avg Latency",
+      "throughput": "Throughput",
+      "uptime": "Uptime",
+      "costPerInference": "Cost/1K inferences"
+    },
+    "cta": {
+      "title": "Start Inferencing Now",
+      "subtitle": "Deploy your first model in minutes. No complex setup required. Just bring your model and start serving predictions at scale."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "Get quick answers to common questions about Inference Engine",
+      "items": {
+        "q1": {
+          "question": "What is the NexusAI Cloud Inference Engine?",
+          "answer": "The Inference Engine is our managed platform for deploying and scaling AI models in production. It handles all the infrastructure complexity so you can focus on building great AI applications. Deploy pre-trained models or bring your own with minimal configuration."
+        },
+        "q2": {
+          "question": "How fast is deployment and how much latency to expect?",
+          "answer": "Deployment typically takes under 2 minutes for pre-built models. For latency, most models achieve sub-100ms inference times, with optimized models like Llama 2 reaching as low as 30-50ms for typical requests. Cold starts are minimized through intelligent caching."
+        },
+        "q3": {
+          "question": "How does it optimize performance and cost?",
+          "answer": "Our engine uses GPU batching, model caching, and intelligent request routing to maximize throughput while minimizing costs. Auto-scaling ensures you only pay for what you use, scaling down to zero when there's no traffic."
+        },
+        "q4": {
+          "question": "How does auto-scaling handle fluctuating traffic?",
+          "answer": "The auto-scaler monitors request queue depth, latency, and GPU utilization in real-time. When traffic spikes, new replicas spin up in seconds. During quiet periods, resources scale down automatically. You can configure min/max replicas and custom scaling triggers."
+        },
+        "q5": {
+          "question": "Do I get built-in monitoring and operational insights?",
+          "answer": "Yes! Every deployment includes a comprehensive dashboard with real-time metrics: latency percentiles, throughput, error rates, GPU utilization, and cost tracking. Set up alerts for anomalies and export data to your observability stack."
+        }
+      }
+    }
   },
   "clusterEngine": {
     "heroTitle": "NexusAI Cloud Cluster Engine",

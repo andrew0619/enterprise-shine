@@ -4,46 +4,44 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-const faqs = [
-  {
-    question: "What is the NexusAI Cloud Inference Engine?",
-    answer:
-      "The Inference Engine is our managed platform for deploying and scaling AI models in production. It handles all the infrastructure complexity so you can focus on building great AI applications. Deploy pre-trained models or bring your own with minimal configuration.",
-  },
-  {
-    question: "How fast is deployment and how much latency to expect?",
-    answer:
-      "Deployment typically takes under 2 minutes for pre-built models. For latency, most models achieve sub-100ms inference times, with optimized models like Llama 2 reaching as low as 30-50ms for typical requests. Cold starts are minimized through intelligent caching.",
-  },
-  {
-    question: "How does it optimize performance and cost?",
-    answer:
-      "Our engine uses GPU batching, model caching, and intelligent request routing to maximize throughput while minimizing costs. Auto-scaling ensures you only pay for what you use, scaling down to zero when there's no traffic.",
-  },
-  {
-    question: "How does auto-scaling handle fluctuating traffic?",
-    answer:
-      "The auto-scaler monitors request queue depth, latency, and GPU utilization in real-time. When traffic spikes, new replicas spin up in seconds. During quiet periods, resources scale down automatically. You can configure min/max replicas and custom scaling triggers.",
-  },
-  {
-    question: "Do I get built-in monitoring and operational insights?",
-    answer:
-      "Yes! Every deployment includes a comprehensive dashboard with real-time metrics: latency percentiles, throughput, error rates, GPU utilization, and cost tracking. Set up alerts for anomalies and export data to your observability stack.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const InferenceFAQSection = () => {
+  const { t } = useTranslation();
+
+  const faqs = [
+    {
+      question: t("inferenceEngine.faq.items.q1.question"),
+      answer: t("inferenceEngine.faq.items.q1.answer"),
+    },
+    {
+      question: t("inferenceEngine.faq.items.q2.question"),
+      answer: t("inferenceEngine.faq.items.q2.answer"),
+    },
+    {
+      question: t("inferenceEngine.faq.items.q3.question"),
+      answer: t("inferenceEngine.faq.items.q3.answer"),
+    },
+    {
+      question: t("inferenceEngine.faq.items.q4.question"),
+      answer: t("inferenceEngine.faq.items.q4.answer"),
+    },
+    {
+      question: t("inferenceEngine.faq.items.q5.question"),
+      answer: t("inferenceEngine.faq.items.q5.answer"),
+    },
+  ];
+
   return (
     <section className="bg-slate-50 py-16 md:py-24">
       <div className="container max-w-3xl">
         {/* Section Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Frequently asked questions
+            {t("inferenceEngine.faq.title")}
           </h2>
           <p className="text-muted-foreground">
-            Get quick answers to common questions about Inference Engine
+            {t("inferenceEngine.faq.subtitle")}
           </p>
         </div>
 

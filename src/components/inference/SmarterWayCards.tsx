@@ -1,23 +1,25 @@
-const featureCards = [
-  {
-    title: "Rapid Deployment, Zero Hassle",
-    description:
-      "Scale instantly with fully managed infrastructure. Our inference engine comes with all the automation and tooling you need to ship faster, so you can focus on building.",
-  },
-  {
-    title: "Optimized for Efficiency",
-    description:
-      "Advanced GPU optimization and model caching minimize latency while maximizing throughput. Get more inferences per dollar with our intelligent resource allocation.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const SmarterWayCards = () => {
+  const { t } = useTranslation();
+
+  const featureCards = [
+    {
+      title: t("inferenceEngine.features.deployment.title"),
+      description: t("inferenceEngine.features.deployment.description"),
+    },
+    {
+      title: t("inferenceEngine.features.efficiency.title"),
+      description: t("inferenceEngine.features.efficiency.description"),
+    },
+  ];
+
   return (
     <section className="bg-background py-16 md:py-24">
       <div className="container">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
-          A Smarter Way to Inference
+          {t("inferenceEngine.smarterWayTitle")}
         </h2>
 
         {/* Cards Grid */}
