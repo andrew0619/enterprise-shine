@@ -1,37 +1,63 @@
+import { useTranslation } from "react-i18next";
 import DemoAppCard from "./DemoAppCard";
 
-const demoApps = [
-  {
-    title: "Multimodal RAG Chatbot",
-    description: "Intelligent multimodal RAG chatbot granting natural Q&A capabilities, generated answers, and interactive visuals for Q&A, summarization, and multimedia workflows.",
-    tags: ["RAG", "Chatbot", "Q&A", "PDF Upload", "Multimedia", "Knowledge Grounding", "AI Assistant"],
-    mockupType: "chat" as const,
-  },
-  {
-    title: "Deep Research Agent",
-    description: "Long-context agent analyzing sources and producing a structured, citation-based report — a shortcut reasoning for complex research.",
-    tags: ["Research", "Long Context", "Summarization", "Analysis", "Citations", "Multi-Document", "Knowledge Synthesis"],
-    mockupType: "form" as const,
-  },
-  {
-    title: "Company Research Agent",
-    description: "Specialized agent for company analysis, synthesizing funding, products, competitors, and market position into a narrative basis for business growth.",
-    tags: ["Company Research", "Business Intelligence", "Competitor Analysis", "Web Generation", "Sales Enablement", "Market Research"],
-    mockupType: "agent" as const,
-  },
-];
-
 const DemoAppsGrid = () => {
+  const { t } = useTranslation();
+
+  const demoApps = [
+    {
+      titleKey: "developers.demoApps.ragChatbot.title",
+      descriptionKey: "developers.demoApps.ragChatbot.description",
+      tagKeys: [
+        "developers.demoTags.rag",
+        "developers.demoTags.chatbot",
+        "developers.demoTags.qa",
+        "developers.demoTags.pdfUpload",
+        "developers.demoTags.multimedia",
+        "developers.demoTags.knowledgeGrounding",
+        "developers.demoTags.aiAssistant",
+      ],
+      mockupType: "chat" as const,
+    },
+    {
+      titleKey: "developers.demoApps.deepResearch.title",
+      descriptionKey: "developers.demoApps.deepResearch.description",
+      tagKeys: [
+        "developers.demoTags.research",
+        "developers.demoTags.longContext",
+        "developers.demoTags.summarization",
+        "developers.demoTags.analysis",
+        "developers.demoTags.citations",
+        "developers.demoTags.multiDocument",
+        "developers.demoTags.knowledgeSynthesis",
+      ],
+      mockupType: "form" as const,
+    },
+    {
+      titleKey: "developers.demoApps.companyResearch.title",
+      descriptionKey: "developers.demoApps.companyResearch.description",
+      tagKeys: [
+        "developers.demoTags.companyResearch",
+        "developers.demoTags.businessIntelligence",
+        "developers.demoTags.competitorAnalysis",
+        "developers.demoTags.webGeneration",
+        "developers.demoTags.salesEnablement",
+        "developers.demoTags.marketResearch",
+      ],
+      mockupType: "agent" as const,
+    },
+  ];
+
   return (
     <section className="bg-white pb-16">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {demoApps.map((app) => (
             <DemoAppCard
-              key={app.title}
-              title={app.title}
-              description={app.description}
-              tags={app.tags}
+              key={app.titleKey}
+              title={t(app.titleKey)}
+              description={t(app.descriptionKey)}
+              tags={app.tagKeys.map((key) => t(key))}
               mockupType={app.mockupType}
             />
           ))}

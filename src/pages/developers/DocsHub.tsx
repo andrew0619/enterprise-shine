@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { FileText, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const DocsHub = () => {
+  const { t } = useTranslation();
+
   return (
     <Layout>
       <section className="bg-white py-24">
@@ -11,7 +14,7 @@ const DocsHub = () => {
           <div className="max-w-2xl mx-auto text-center">
             {/* Badge */}
             <span className="bg-slate-100 text-slate-600 text-sm font-medium px-4 py-1.5 rounded-full inline-block mb-6">
-              Documentation
+              {t("developers.docsHub.badge")}
             </span>
 
             {/* Icon */}
@@ -21,26 +24,25 @@ const DocsHub = () => {
 
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              Docs Hub
+              {t("developers.docsHub.title")}
             </h1>
 
             {/* Description */}
             <p className="text-slate-600 text-lg mb-8">
-              Comprehensive documentation, API references, and integration guides 
-              to help you build with GMI Cloud. Coming soon.
+              {t("developers.docsHub.subtitle")}
             </p>
 
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
                 <Link to="/contact" className="gap-2">
-                  Get Early Access
+                  {t("developers.docsHub.earlyAccess")}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/developers/demo-apps">
-                  Explore Demo Apps
+                  {t("developers.docsHub.exploreDemos")}
                 </Link>
               </Button>
             </div>

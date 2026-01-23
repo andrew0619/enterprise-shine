@@ -499,6 +499,166 @@
     },
     "free": "免費"
   },
+  "gpuFaq": {
+    "title": "常見問題",
+    "subtitle": "快速取得常見問題的解答",
+    "items": {
+      "q1": {
+        "question": "提供哪些類型的 GPU？",
+        "questionEn": "What types of GPUs do you offer?",
+        "answer": "我們提供最新的 NVIDIA GPU，包括 H100（80GB HBM3 記憶體）、H200（HBM3e 記憶體）和即將推出的 Blackwell 系列。所有配置都包含 NVLink 和 InfiniBand，以實現最佳的分散式訓練效能。"
+      },
+      "q2": {
+        "question": "如何管理 GPU 叢集和網路以進行分散式訓練？",
+        "questionEn": "How do I manage GPU clusters for distributed training?",
+        "answer": "我們的平台包含全面的叢集管理儀表板。您可以透過我們的網頁主控台或 API 來配置節點、監控使用率、設定網路和管理作業。我們也支援 Kubernetes 和 Slurm 等流行的編排工具。"
+      },
+      "q3": {
+        "question": "支援哪些軟體和深度學習框架？可以客製化嗎？",
+        "questionEn": "Which deep learning frameworks are supported? Can I customize?",
+        "answer": "我們支援所有主要框架，包括 PyTorch、TensorFlow、JAX 和 ONNX。您可以使用我們預先配置的容器，或自帶 Docker 映像。我們還提供優化版本以實現最大 GPU 使用率。"
+      },
+      "q4": {
+        "question": "GPU 的價格方案如何？有提供成本最佳化功能嗎？",
+        "questionEn": "What are the pricing options? Do you offer cost optimization?",
+        "answer": "我們提供靈活的定價方案，包括按需計時費率、具有大幅折扣的預留容量，以及承諾使用合約。我們的平台內建成本優化工具，幫助您在最大化效能的同時將支出降到最低。"
+      }
+    }
+  },
+  "developers": {
+    "demoApps": "示範應用",
+    "docsHub": "文件中心",
+    "demoHero": {
+      "badge": "示範",
+      "title": "開發者示範應用",
+      "subtitle": "在 GMI Cloud 上探索和測試即時 AI 模型。建構原型、進行實驗，並將生成式 AI 整合到您的應用程式中。"
+    },
+    "demoApps": {
+      "ragChatbot": {
+        "title": "多模態 RAG 聊天機器人",
+        "description": "智慧多模態 RAG 聊天機器人，提供自然問答功能、生成式回答和互動視覺化，適用於問答、摘要和多媒體工作流程。"
+      },
+      "deepResearch": {
+        "title": "深度研究代理",
+        "description": "長文本代理，分析來源並產生結構化、基於引用的報告——複雜研究的捷徑推理。"
+      },
+      "companyResearch": {
+        "title": "企業研究代理",
+        "description": "專門用於企業分析的代理，綜合資金、產品、競爭對手和市場定位，為業務增長提供敘事基礎。"
+      }
+    },
+    "demoTags": {
+      "rag": "RAG",
+      "chatbot": "聊天機器人",
+      "qa": "問答",
+      "pdfUpload": "PDF 上傳",
+      "multimedia": "多媒體",
+      "knowledgeGrounding": "知識基礎",
+      "aiAssistant": "AI 助手",
+      "research": "研究",
+      "longContext": "長文本",
+      "summarization": "摘要",
+      "analysis": "分析",
+      "citations": "引用",
+      "multiDocument": "多文件",
+      "knowledgeSynthesis": "知識綜合",
+      "companyResearch": "企業研究",
+      "businessIntelligence": "商業智慧",
+      "competitorAnalysis": "競爭分析",
+      "webGeneration": "網頁生成",
+      "salesEnablement": "銷售賦能",
+      "marketResearch": "市場研究"
+    },
+    "readyBanner": {
+      "title": "準備好建構了嗎？",
+      "subtitle": "探索強大的 AI 模型，只需幾次點擊即可啟動您的專案。"
+    },
+    "link": "連結",
+    "code": "程式碼",
+    "docsHub": {
+      "badge": "文件",
+      "title": "文件中心",
+      "subtitle": "全面的文件、API 參考和整合指南，幫助您使用 GMI Cloud 進行建構。即將推出。",
+      "earlyAccess": "搶先體驗",
+      "exploreDemos": "探索示範應用"
+    }
+  },
+  "h200Faq": {
+    "title": "常見問題",
+    "subtitle": "關於 GMI Cloud 上的 NVIDIA H200 您需要知道的一切",
+    "items": {
+      "q1": {
+        "question": "GMI Cloud 提供的 NVIDIA H200 GPU 是什麼？",
+        "answer": "NVIDIA H200 是 NVIDIA 最新的高效能 GPU，配備 141GB HBM3e 記憶體和 4.8 TB/s 頻寬。GMI Cloud 在我們的企業級雲端基礎設施中提供 H200 GPU 的隨需存取，讓您無需資本投資即可運行最苛刻的 AI 和 HPC 工作負載。"
+      },
+      "q2": {
+        "question": "H200 與之前的 GPU 型號（如 H100）有何不同？",
+        "answer": "H200 提供近乎兩倍的記憶體容量（141GB vs 80GB）和比 H100 多 1.4 倍的記憶體頻寬。在實際基準測試中，這轉化為 Llama 2 70B 等大型語言模型 1.4x-1.9x 更快的推論效能。"
+      },
+      "q3": {
+        "question": "H200 如何增強生成式 AI 和 LLM 開發？",
+        "answer": "H200 的大規模記憶體容量和頻寬專為大型語言模型設計。它可以處理更大的批次大小、更長的上下文視窗和更大的模型，而不會受到記憶體限制，實現更快的迭代和更高效的訓練和推論工作流程。"
+      },
+      "q4": {
+        "question": "在 GMI Cloud 中使用 H200 有什麼好處？",
+        "answer": "GMI Cloud 提供 H200 GPU 的即時存取，採用隨用隨付定價，起價 $2.15/GPU-小時。優勢包括企業 SLA、用於多 GPU 工作負載的 NVLink 連接、預配置的 ML 環境和 24/7 技術支援。"
+      },
+      "q5": {
+        "question": "用戶如何在 GMI Cloud 上存取 H200 GPU？",
+        "answer": "開始使用很簡單：註冊 GMI Cloud 帳戶，選擇符合您工作負載需求的 H200 GPU 配置，幾分鐘內即可部署。我們的團隊也可以協助自訂配置和企業部署。"
+      }
+    }
+  },
+  "gb200Faq": {
+    "title": "常見問題",
+    "items": {
+      "q1": {
+        "question": "什麼是 NVIDIA GB200 NVL72，為什麼它是獨特的？",
+        "answer": "NVIDIA GB200 NVL72 是下一代 AI 超級運算，在單一機架規模系統中結合 72 個 Blackwell GPU 和 Grace CPU。與前幾代相比，它提供前所未有的 AI 訓練和推論效能，每瓦效能提升高達 30 倍。"
+      },
+      "q2": {
+        "question": "GB200 NVL72 提供哪些效能改進？",
+        "answer": "與基於 H100 的系統相比，GB200 NVL72 提供高達 30 倍更快的 AI 推論和 4 倍更快的訓練。憑藉 13.5TB 的統一 HBM3e 記憶體和 130TB/s 的記憶體頻寬，它可以輕鬆處理最大的 AI 模型。"
+      },
+      "q3": {
+        "question": "GB200 NVL72 如何支援可擴展性？",
+        "answer": "該系統使用第 5 代 NVLink，具備 1.8TB/s 的 GPU 對 GPU 頻寬，實現整個 72-GPU 系統的無縫擴展。多個 NVL72 機架可以透過高速網路連接以進行更大規模的部署。"
+      },
+      "q4": {
+        "question": "在 GMI Cloud 中使用 GB200 NVL72 有什麼好處？",
+        "answer": "GMI Cloud 提供完全託管的 GB200 NVL72 基礎設施，包括企業 SLA、專屬支援和靈活的部署選項。用戶無需資本投資即可立即存取，並獲得優化的軟體堆疊和 MLOps 工具。"
+      },
+      "q5": {
+        "question": "用戶如何存取 GB200 NVL72？",
+        "answer": "請聯繫我們的銷售團隊討論您的需求並加入我們的優先存取計畫。我們提供靈活的部署選項，包括專屬叢集、預留容量和隨需存取，視您的需求而定。"
+      }
+    }
+  },
+  "hgxb200Faq": {
+    "title": "常見問題",
+    "items": {
+      "q1": {
+        "question": "什麼是 NVIDIA HGX B200，它用於什麼？",
+        "answer": "NVIDIA HGX B200 是一個高效能 AI 運算平台，在單一基板上配備 8 個 Blackwell 架構 GPU。它專為最苛刻的 AI 訓練和推論工作負載設計，包括訓練大型語言模型、生成式 AI 和科學運算應用。"
+      },
+      "q2": {
+        "question": "HGX B200 的效能有什麼獨特之處？",
+        "answer": "HGX B200 配備 8 個 Blackwell GPU，可提供高達 144 petaflops 的 AI 效能。每個 GPU 都配備支援 FP4 的下一代 Tensor Core，相比前幾代可實現 4 倍更快的推論。統一的 HBM3e 記憶體池提供 1.4TB 的高頻寬記憶體。"
+      },
+      "q3": {
+        "question": "HGX B200 提供哪些架構優勢？",
+        "answer": "該平台配備第 5 代 NVLink，具備 1.8TB/s 的 GPU 對 GPU 頻寬，使所有 8 個 GPU 能夠作為統一運算引擎運作。解壓縮引擎加速資料庫查詢，而 Transformer 引擎自動優化 LLM 工作負載。"
+      },
+      "q4": {
+        "question": "HGX B200 如何確保可擴展性？",
+        "answer": "多個 HGX B200 系統可以透過 NVLink Switch 和高速網路連接，創建具有數千個 GPU 的 AI 超級電腦。該架構支援訓練和推論工作負載的線性擴展，非常適合前沿 AI 開發。"
+      },
+      "q5": {
+        "question": "客戶如何存取 HGX B200 平台？",
+        "answer": "GMI Cloud 提供靈活的 HGX B200 基礎設施存取，包括隨需每小時存取、具有批量折扣的預留容量和完全專屬叢集。請聯繫我們的銷售團隊討論您的需求並開始自訂部署。"
+      }
+    }
+  },
   "languages": {
     "en": "English",
     "zh-TW": "繁體中文",

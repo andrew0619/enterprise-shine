@@ -212,5 +212,161 @@
   "careers": { "heroTitle": "Build the Future of AI with NexusAI", "heroSubtitle": "We're shaping the future of AI and high-performance computing.", "joinButton": "Join NexusAI", "seePositions": "See Open Positions", "valuesKicker": "We're offering the chance to shape the future of AI.", "values": { "engineering": { "title": "Engineering Excellence", "description": "Build complex, cutting-edge technology." }, "business": { "title": "Business at the Forefront", "description": "Join a team of bold thinkers." }, "startup": { "title": "Startup Energy, Big Ambitions", "description": "We move fast and value fresh ideas." } }, "officesKicker": "Our team is at the forefront of global AI development.", "joinTeamTitle": "Join a Global Team of Innovators", "joinTeamSubtitle": "We want to bring together bold thinkers from around the world." },
   "partners": { "heroTitle": "Join the NexusAI Partner Program", "heroSubtitle": "Join a robust ecosystem of technology leaders.", "stats": { "founded": "Founded", "partners": "Partners", "gpuHours": "GPU Hours" }, "diverseTitle": "Diverse Partners, Tailored Success", "whyJoinTitle": "Why Join the NexusAI Partner Program?", "benefits": { "access": { "title": "Exclusive Access", "description": "Get priority access to new GPU infrastructure." }, "marketing": { "title": "Co-Marketing", "description": "Amplify your brand through joint marketing campaigns." }, "support": { "title": "Technical Support", "description": "Receive dedicated technical resources." } }, "newProductTitle": "New product", "faqTitle": "Frequently asked questions" },
   "blog": { "heroTitle": "NexusAI Blog", "heroSubtitle": "Discover the latest news, updates, and insights from our team." },
+  "gpuFaq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Get quick answers to common questions",
+    "items": {
+      "q1": {
+        "question": "What types of GPUs do you offer?",
+        "answer": "We offer the latest NVIDIA GPUs including H100 (80GB HBM3 memory), H200 (HBM3e memory), and the upcoming Blackwell series. All configurations include NVLink and InfiniBand for optimal distributed training performance."
+      },
+      "q2": {
+        "question": "How do I manage GPU clusters for distributed training?",
+        "answer": "Our platform includes a comprehensive cluster management dashboard. You can configure nodes, monitor utilization, set up networking, and manage jobs through our web console or API. We also support popular orchestration tools like Kubernetes and Slurm."
+      },
+      "q3": {
+        "question": "Which deep learning frameworks are supported? Can I customize?",
+        "answer": "We support all major frameworks including PyTorch, TensorFlow, JAX, and ONNX. You can use our pre-configured containers or bring your own Docker images. We also offer optimized versions for maximum GPU utilization."
+      },
+      "q4": {
+        "question": "What are the pricing options? Do you offer cost optimization?",
+        "answer": "We offer flexible pricing options including on-demand hourly rates, reserved capacity with significant discounts, and committed use contracts. Our platform includes built-in cost optimization tools to help you minimize spending while maximizing performance."
+      }
+    }
+  },
+  "developers": {
+    "demoApps": "Demo Apps",
+    "docsHub": "Docs Hub",
+    "demoHero": {
+      "badge": "Demo",
+      "title": "Demo Apps for Developers",
+      "subtitle": "Explore and test live AI models on GMI Cloud. Build prototypes, run experiments, and integrate generative AI into your apps."
+    },
+    "demoApps": {
+      "ragChatbot": {
+        "title": "Multimodal RAG Chatbot",
+        "description": "Intelligent multimodal RAG chatbot granting natural Q&A capabilities, generated answers, and interactive visuals for Q&A, summarization, and multimedia workflows."
+      },
+      "deepResearch": {
+        "title": "Deep Research Agent",
+        "description": "Long-context agent analyzing sources and producing a structured, citation-based report — a shortcut reasoning for complex research."
+      },
+      "companyResearch": {
+        "title": "Company Research Agent",
+        "description": "Specialized agent for company analysis, synthesizing funding, products, competitors, and market position into a narrative basis for business growth."
+      }
+    },
+    "demoTags": {
+      "rag": "RAG",
+      "chatbot": "Chatbot",
+      "qa": "Q&A",
+      "pdfUpload": "PDF Upload",
+      "multimedia": "Multimedia",
+      "knowledgeGrounding": "Knowledge Grounding",
+      "aiAssistant": "AI Assistant",
+      "research": "Research",
+      "longContext": "Long Context",
+      "summarization": "Summarization",
+      "analysis": "Analysis",
+      "citations": "Citations",
+      "multiDocument": "Multi-Document",
+      "knowledgeSynthesis": "Knowledge Synthesis",
+      "companyResearch": "Company Research",
+      "businessIntelligence": "Business Intelligence",
+      "competitorAnalysis": "Competitor Analysis",
+      "webGeneration": "Web Generation",
+      "salesEnablement": "Sales Enablement",
+      "marketResearch": "Market Research"
+    },
+    "readyBanner": {
+      "title": "Ready to build?",
+      "subtitle": "Explore powerful AI models and launch your project in just a few clicks."
+    },
+    "link": "Link",
+    "code": "Code",
+    "docsHub": {
+      "badge": "Documentation",
+      "title": "Docs Hub",
+      "subtitle": "Comprehensive documentation, API references, and integration guides to help you build with GMI Cloud. Coming soon.",
+      "earlyAccess": "Get Early Access",
+      "exploreDemos": "Explore Demo Apps"
+    }
+  },
+  "h200Faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about the NVIDIA H200 on GMI Cloud",
+    "items": {
+      "q1": {
+        "question": "What is the NVIDIA H200 GPU offered by GMI Cloud?",
+        "answer": "The NVIDIA H200 is the latest high-performance GPU from NVIDIA, featuring 141GB of HBM3e memory and 4.8 TB/s bandwidth. GMI Cloud offers on-demand access to H200 GPUs in our enterprise-grade cloud infrastructure, enabling you to run the most demanding AI and HPC workloads without capital investment."
+      },
+      "q2": {
+        "question": "How does the H200 differ from previous GPU models like the H100?",
+        "answer": "The H200 offers nearly double the memory capacity (141GB vs 80GB) and 1.4x more memory bandwidth compared to the H100. In practical benchmarks, this translates to 1.4x-1.9x faster inference performance for large language models like Llama 2 70B."
+      },
+      "q3": {
+        "question": "How does the H200 enhance generative AI and LLM development?",
+        "answer": "The H200's massive memory capacity and bandwidth are specifically designed for large language models. It can handle larger batch sizes, longer context windows, and bigger models without memory constraints, enabling faster iteration and more efficient training and inference workflows."
+      },
+      "q4": {
+        "question": "What are the benefits of using the H200 within GMI Cloud?",
+        "answer": "GMI Cloud provides instant access to H200 GPUs with pay-as-you-go pricing starting at $2.15/GPU-hour. Benefits include enterprise SLAs, NVLink connectivity for multi-GPU workloads, pre-configured ML environments, and 24/7 technical support."
+      },
+      "q5": {
+        "question": "How can users access the H200 GPU on GMI Cloud?",
+        "answer": "Getting started is simple: sign up for a GMI Cloud account, select the H200 GPU configuration that matches your workload needs, and deploy within minutes. Our team is also available to help with custom configurations and enterprise deployments."
+      }
+    }
+  },
+  "gb200Faq": {
+    "title": "Frequently asked questions",
+    "items": {
+      "q1": {
+        "question": "What is the NVIDIA GB200 NVL72 and why is it unique?",
+        "answer": "The NVIDIA GB200 NVL72 is the next generation of AI supercomputing, combining 72 Blackwell GPUs with Grace CPUs in a single rack-scale system. It delivers unprecedented AI training and inference performance with up to 30x better performance per watt compared to previous generations."
+      },
+      "q2": {
+        "question": "What performance improvements does the GB200 NVL72 provide?",
+        "answer": "The GB200 NVL72 delivers up to 30x faster AI inference and 4x faster training compared to H100-based systems. With 13.5TB of unified HBM3e memory and 130TB/s of memory bandwidth, it can handle the largest AI models with ease."
+      },
+      "q3": {
+        "question": "How does the GB200 NVL72 support scalability?",
+        "answer": "The system uses 5th-generation NVLink with 1.8TB/s GPU-to-GPU bandwidth, enabling seamless scaling across the entire 72-GPU system. Multiple NVL72 racks can be connected via high-speed networking for even larger deployments."
+      },
+      "q4": {
+        "question": "What benefits does the GB200 NVL72 bring when used within GMI Cloud?",
+        "answer": "GMI Cloud provides fully managed GB200 NVL72 infrastructure with enterprise SLAs, dedicated support, and flexible deployment options. Users get immediate access without capital investment, along with optimized software stack and MLOps tooling."
+      },
+      "q5": {
+        "question": "How can users access the GB200 NVL72?",
+        "answer": "Contact our sales team to discuss your requirements and join our priority access program. We offer flexible deployment options including dedicated clusters, reserved capacity, and on-demand access depending on your needs."
+      }
+    }
+  },
+  "hgxb200Faq": {
+    "title": "Frequently asked questions",
+    "items": {
+      "q1": {
+        "question": "What is the NVIDIA HGX B200 and what is it used for?",
+        "answer": "The NVIDIA HGX B200 is a high-performance AI computing platform featuring 8 Blackwell architecture GPUs on a single baseboard. It's designed for the most demanding AI training and inference workloads, including training large language models, generative AI, and scientific computing applications."
+      },
+      "q2": {
+        "question": "What makes the HGX B200's performance unique?",
+        "answer": "The HGX B200 delivers up to 144 petaflops of AI performance with 8 Blackwell GPUs. Each GPU features next-generation Tensor Cores with FP4 support, enabling 4x faster inference compared to previous generations. The unified HBM3e memory pool provides 1.4TB of high-bandwidth memory."
+      },
+      "q3": {
+        "question": "What architectural advantages does the HGX B200 provide?",
+        "answer": "The platform features 5th-generation NVLink with 1.8TB/s of GPU-to-GPU bandwidth, enabling all 8 GPUs to work as a unified compute engine. The decompression engine accelerates database queries, while the transformer engine optimizes LLM workloads automatically."
+      },
+      "q4": {
+        "question": "How does the HGX B200 ensure scalability?",
+        "answer": "Multiple HGX B200 systems can be connected via NVLink Switch and high-speed networking to create AI supercomputers with thousands of GPUs. The architecture supports linear scaling for both training and inference workloads, making it ideal for frontier AI development."
+      },
+      "q5": {
+        "question": "How can customers access the HGX B200 platform?",
+        "answer": "GMI Cloud offers flexible access to HGX B200 infrastructure including on-demand hourly access, reserved capacity with volume discounts, and fully dedicated clusters. Contact our sales team to discuss your requirements and get started with a customized deployment."
+      }
+    }
+  },
   "languages": { "en": "English", "zh-TW": "繁體中文", "ja": "日本語", "ko": "한국어" }
 }
