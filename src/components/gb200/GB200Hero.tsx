@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import heroRack from "@/assets/gb200/hero-rack.jpg";
 
 const GB200Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-[#000000] py-20 md:py-28">
       <div className="container">
@@ -10,11 +13,11 @@ const GB200Hero = () => {
           {/* Left Content */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-              Next-Gen AI Acceleration with NVIDIA GB200 NVL72
+              {t("gb200Page.hero.title")}
             </h1>
             
             <p className="text-zinc-400 text-lg leading-relaxed">
-              Advanced AI infrastructure designed for the most demanding enterprise workloads. The GB200 NVL72 combines Grace CPUs with Blackwell GPUs for unprecedented performance.
+              {t("gb200Page.hero.description")}
             </p>
             
             <Button 
@@ -22,7 +25,7 @@ const GB200Hero = () => {
               size="lg" 
               className="bg-white text-black hover:bg-zinc-200 px-8"
             >
-              <Link to="/contact">Get Started</Link>
+              <Link to="/contact">{t("gb200Page.hero.cta")}</Link>
             </Button>
           </div>
           

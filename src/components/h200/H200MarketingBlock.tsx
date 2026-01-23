@@ -1,26 +1,32 @@
+import { forwardRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-const H200MarketingBlock = () => {
+const H200MarketingBlock = forwardRef<HTMLElement>((_, ref) => {
+  const { t } = useTranslation();
+
   return (
-    <section className="py-20 bg-background">
+    <section ref={ref} className="py-20 bg-background">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Future-Proof Your AI with GMI Cloud and the H200
+            {t("h200Page.marketing.title")}
           </h2>
           
           <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-            As AI models continue to grow in size and complexity, the NVIDIA H200 provides the headroom you need to stay ahead. With its massive 141GB memory capacity and industry-leading bandwidth, the H200 on GMI Cloud ensures your infrastructure can handle tomorrow's AI workloads today. Scale from development to production seamlessly with our enterprise-grade cloud platform.
+            {t("h200Page.marketing.description")}
           </p>
           
           <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8">
-            <Link to="/contact">Reserve Now</Link>
+            <Link to="/contact">{t("h200Page.marketing.cta")}</Link>
           </Button>
         </div>
       </div>
     </section>
   );
-};
+});
+
+H200MarketingBlock.displayName = "H200MarketingBlock";
 
 export default H200MarketingBlock;

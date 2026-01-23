@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const H200PerformanceChart = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20 bg-background">
       <div className="container">
@@ -6,13 +10,13 @@ const H200PerformanceChart = () => {
           {/* Left - Chart */}
           <div className="bg-secondary/30 rounded-2xl p-8">
             <h3 className="text-lg font-semibold text-foreground mb-8">
-              Performance Comparison: H100 vs H200
+              {t("h200Page.chart.title")}
             </h3>
             
             <div className="space-y-10">
               {/* Llama 2 70B Benchmark */}
               <div>
-                <p className="text-sm text-muted-foreground mb-4">Llama 2 70B Inference (tokens/sec)</p>
+                <p className="text-sm text-muted-foreground mb-4">{t("h200Page.chart.benchmark1")}</p>
                 <div className="flex items-end gap-6">
                   <div className="flex flex-col items-center">
                     <div 
@@ -34,7 +38,7 @@ const H200PerformanceChart = () => {
               
               {/* Llama 2 70B FP8 Benchmark */}
               <div>
-                <p className="text-sm text-muted-foreground mb-4">Llama 2 70B (FP8) Inference (tokens/sec)</p>
+                <p className="text-sm text-muted-foreground mb-4">{t("h200Page.chart.benchmark2")}</p>
                 <div className="flex items-end gap-6">
                   <div className="flex flex-col items-center">
                     <div 
@@ -59,20 +63,20 @@ const H200PerformanceChart = () => {
           {/* Right - Text Content */}
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Benchmark Results
+              {t("h200Page.chart.resultsTitle")}
             </h2>
             
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                The NVIDIA H200 demonstrates significant performance improvements over the H100 in real-world AI inference workloads. In Llama 2 70B inference benchmarks, the H200 delivers <span className="text-primary font-semibold">1.4x faster throughput</span> compared to the H100.
+                {t("h200Page.chart.resultsP1")} <span className="text-primary font-semibold">{t("h200Page.chart.resultsP1Highlight")}</span> {t("h200Page.chart.resultsP1End")}
               </p>
               
               <p>
-                When utilizing FP8 precision, the performance gains are even more dramatic. The H200 achieves <span className="text-primary font-semibold">1.9x faster inference</span> for Llama 2 70B models, making it the ideal choice for production AI deployments requiring both speed and efficiency.
+                {t("h200Page.chart.resultsP2")} <span className="text-primary font-semibold">{t("h200Page.chart.resultsP2Highlight")}</span> {t("h200Page.chart.resultsP2End")}
               </p>
               
               <p>
-                These improvements are driven by the H200's enhanced HBM3e memory architecture, delivering 4.8 TB/s of bandwidth – crucial for memory-intensive large language model operations.
+                {t("h200Page.chart.resultsP3")}
               </p>
             </div>
           </div>

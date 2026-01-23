@@ -168,7 +168,198 @@
       }
     }
   },
-  "gpuPage": { "heroTitle": "GPU Compute Rental", "heroSubtitle": "Bare metal servers with full cloud integration, offered at the most competitive prices." },
+  "gpuPage": {
+    "heroTitle": "GPU Compute Rental",
+    "heroSubtitle": "Bare metal servers with full cloud integration, offered at the most competitive prices.",
+    "features": {
+      "onDemand": {
+        "title": "Flexible On-Demand GPU Service",
+        "description": "Instantly access NVIDIA GPU compute power and rapidly deploy your workloads. Our scalable platform lets you freely adjust resources to perfectly support AI and machine learning tasks. Affordable pricing with no long-term contracts gives you maximum flexibility without upfront costs."
+      },
+      "hardware": {
+        "title": "Top-Tier Hardware Specs",
+        "description": "Equipped with 3.2 Tbps InfiniBand networking for ultra-fast distributed training connections; powered by advanced NVIDIA H100 GPU training clusters for ultimate compute power. Simple SSH access and dataset downloads let you start your AI journey immediately."
+      },
+      "privateCloud": {
+        "title": "Enterprise Private Cloud",
+        "description": "GMI Cloud provides dedicated cloud environments for enterprises, ensuring end-to-end security and data isolation. Customizable configurations meet your unique IT policies. Build your way with complete control and flexibility, seamlessly switching between cloud and on-premises environments."
+      },
+      "security": {
+        "title": "Secure Network Architecture",
+        "description": "Built on high-performance InfiniBand networking for stable, efficient cross-region connectivity. Applications run with optimal performance while strict network access controls maintain security."
+      },
+      "selectHardware": "Select hardware resources",
+      "numGpus": "Number of GPUs",
+      "numCpus": "Number of CPUs",
+      "ram": "RAM",
+      "ephemeralStorage": "Ephemeral Storage"
+    }
+  },
+  "h200Page": {
+    "hero": {
+      "price": "Starts from $2.15 / GPU-hour",
+      "title": "Accelerate AI Innovation with NVIDIA H200 Cloud GPUs",
+      "description": "The NVIDIA H200 Tensor Core GPU supercharges generative AI and high-performance computing (HPC) workloads with game-changing performance and memory capabilities. With 141GB of HBM3e memory and 4.8TB/s bandwidth, it delivers unprecedented throughput for large language model inference.",
+      "cta": "Deploy Now"
+    },
+    "features": {
+      "memory": {
+        "title": "Higher Memory Capacity",
+        "description": "The H200 features 141GB of HBM3e memory, nearly double the capacity of the H100, enabling the processing of larger models and datasets without memory constraints."
+      },
+      "bandwidth": {
+        "title": "Increased Memory Bandwidth",
+        "description": "With 4.8 TB/s of memory bandwidth, the H200 offers 1.4x more bandwidth than the H100, significantly speeding up data transfer and processing tasks."
+      },
+      "performance": {
+        "title": "Enhanced AI Performance",
+        "description": "The H200 is optimized for generative AI and large language models, delivering up to 1.9x faster inference performance for models like Llama 2 70B."
+      }
+    },
+    "chart": {
+      "title": "Performance Comparison: H100 vs H200",
+      "benchmark1": "Llama 2 70B Inference (tokens/sec)",
+      "benchmark2": "Llama 2 70B (FP8) Inference (tokens/sec)",
+      "resultsTitle": "Benchmark Results",
+      "resultsP1": "The NVIDIA H200 demonstrates significant performance improvements over the H100 in real-world AI inference workloads. In Llama 2 70B inference benchmarks, the H200 delivers",
+      "resultsP1Highlight": "1.4x faster throughput",
+      "resultsP1End": "compared to the H100.",
+      "resultsP2": "When utilizing FP8 precision, the performance gains are even more dramatic. The H200 achieves",
+      "resultsP2Highlight": "1.9x faster inference",
+      "resultsP2End": "for Llama 2 70B models, making it the ideal choice for production AI deployments requiring both speed and efficiency.",
+      "resultsP3": "These improvements are driven by the H200's enhanced HBM3e memory architecture, delivering 4.8 TB/s of bandwidth – crucial for memory-intensive large language model operations."
+    },
+    "marketing": {
+      "title": "Future-Proof Your AI with GMI Cloud and the H200",
+      "description": "As AI models continue to grow in size and complexity, the NVIDIA H200 provides the headroom you need to stay ahead. With its massive 141GB memory capacity and industry-leading bandwidth, the H200 on GMI Cloud ensures your infrastructure can handle tomorrow's AI workloads today. Scale from development to production seamlessly with our enterprise-grade cloud platform.",
+      "cta": "Reserve Now"
+    },
+    "cta": {
+      "title": "Don't miss out on the opportunity to deploy the most powerful GPU resources in the world.",
+      "button": "Contact Us"
+    }
+  },
+  "gb200Page": {
+    "hero": {
+      "title": "Next-Gen AI Acceleration with NVIDIA GB200 NVL72",
+      "description": "Advanced AI infrastructure designed for the most demanding enterprise workloads. The GB200 NVL72 combines Grace CPUs with Blackwell GPUs for unprecedented performance.",
+      "cta": "Get Started"
+    },
+    "features": {
+      "sectionTitle": "Empowering AI Innovation",
+      "sectionDescription": "The NVIDIA GB200 NVL72 represents a quantum leap in AI computing, bringing together the most advanced GPU architecture with purpose-built infrastructure for enterprise-scale deployments.",
+      "items": {
+        "performance": {
+          "title": "Unmatched AI Performance",
+          "description": "Combines Grace CPUs with Blackwell GPUs for unprecedented compute density and efficiency, delivering breakthrough performance for AI training and inference."
+        },
+        "dataProcessing": {
+          "title": "Next-Level Data Processing for Enterprise AI",
+          "description": "Handles multi-trillion parameter models with ease, enabling organizations to tackle the most complex AI challenges without infrastructure limitations."
+        },
+        "scalability": {
+          "title": "Next-Level Scalability for LLM and AI Workloads",
+          "description": "Scale from single node to thousands with NVLink interconnect, providing seamless expansion as your AI requirements grow."
+        },
+        "efficiency": {
+          "title": "Energy-Efficient Architecture",
+          "description": "Optimized power consumption per FLOP means lower operational costs while maintaining peak performance for sustainable AI infrastructure."
+        }
+      },
+      "cta": "Contact Sales"
+    },
+    "solutions": {
+      "title": "Custom GPU Cloud Solutions Built for Your AI Needs",
+      "training": {
+        "title": "AI Training Infrastructure",
+        "description": "Dedicated infrastructure for AI training with high-speed NVLink connectivity, enabling distributed training across thousands of GPUs with minimal latency."
+      },
+      "inference": {
+        "title": "Production Inference",
+        "description": "Low-latency inference solutions optimized for production AI applications, delivering real-time responses for mission-critical workloads."
+      },
+      "scaling": {
+        "title": "Flexible Scaling",
+        "description": "Flexible scaling options from single GPU to multi-node clusters, with on-demand provisioning that adapts to your workload requirements."
+      }
+    },
+    "futureProof": {
+      "title": "Future-Proof Your AI with GMI Cloud and the GB200 NVL72",
+      "description": "As AI models continue to grow in complexity, the GB200 NVL72 ensures your infrastructure stays ahead of the curve. With its groundbreaking architecture and seamless scalability, you can confidently invest in tomorrow's AI capabilities today. GMI Cloud provides the platform to harness this power with enterprise-grade reliability and support.",
+      "cta": "Learn More"
+    },
+    "contact": {
+      "title": "Contact us",
+      "subtitle": "Get in touch with our team for more information",
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone Number",
+      "message": "Message",
+      "submit": "Send Message",
+      "successTitle": "Message sent!",
+      "successMessage": "We'll get back to you as soon as possible."
+    }
+  },
+  "hgxb200Page": {
+    "hero": {
+      "title": "Unleash the Power of NVIDIA HGX™ B200",
+      "description": "Top-tier performance for complex models and enterprise-scale AI deployments. The ultimate 8-GPU platform for AI training and inference.",
+      "cta": "Contact Sales",
+      "learnMore": "Learn more"
+    },
+    "features": {
+      "sectionTitle": "Next-Generation AI Compute",
+      "sectionDescription": "The NVIDIA HGX B200 platform represents the pinnacle of AI infrastructure, combining 8 Blackwell architecture GPUs with advanced NVLink interconnect technology. Designed for organizations pushing the boundaries of artificial intelligence, from training frontier models to deploying real-time inference at scale.",
+      "items": {
+        "performance": {
+          "title": "Optimized GPU Performance for AI Training & Inference",
+          "description": "The HGX B200 delivers unprecedented compute density with 8 Blackwell GPUs connected via 5th-generation NVLink, providing 1.8TB/s of GPU-to-GPU bandwidth for seamless parallel processing."
+        },
+        "architecture": {
+          "title": "Highly-Scaled Architecture for Demanding AI Workloads",
+          "description": "Purpose-built for multi-trillion parameter models and enterprise AI deployments. The unified memory architecture enables efficient handling of the largest foundation models."
+        },
+        "scalability": {
+          "title": "Seamless AI Scalability",
+          "description": "Connect multiple HGX B200 systems for rack-scale AI supercomputing. NVLink Switch enables linear scaling across thousands of GPUs for the most demanding training workloads."
+        }
+      },
+      "datasheet": "View NVIDIA HGX B200 Platform Datasheet"
+    },
+    "solutions": {
+      "title": "Flexible GPU Solutions Tailored to Your AI Needs",
+      "onDemand": {
+        "title": "On-Demand Access",
+        "description": "Flexible hourly billing for experimentation and development workloads with instant provisioning. Perfect for teams exploring new model architectures or running periodic training jobs."
+      },
+      "reserved": {
+        "title": "Reserved Capacity",
+        "description": "Discounted pricing for long-term AI projects with guaranteed availability and performance. Ideal for production workloads requiring predictable compute resources."
+      },
+      "dedicated": {
+        "title": "Dedicated Clusters",
+        "description": "Custom configurations of HGX B200 systems for large-scale training with dedicated networking and storage. Designed for organizations training frontier AI models."
+      }
+    },
+    "elevate": {
+      "title": "Elevate Your AI Capabilities with GMI Cloud and NVIDIA HGX B200",
+      "description": "Leverage the world's most powerful AI platform with GMI Cloud's enterprise infrastructure. Get immediate access to HGX B200 systems without capital investment, backed by 24/7 support and optimized MLOps tooling for accelerated time-to-value.",
+      "cta": "Request Access"
+    },
+    "contact": {
+      "title": "Contact us",
+      "subtitle": "Get in touch with our team for more information",
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone Number",
+      "message": "Message",
+      "submit": "Send Message",
+      "successTitle": "Message sent!",
+      "successMessage": "We'll get back to you as soon as possible."
+    }
+  },
   "contact": {
     "title": "Contact Us",
     "subtitle": "Get in touch with our team for more information and support.",
