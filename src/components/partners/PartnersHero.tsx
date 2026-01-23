@@ -1,27 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import heroFluid from "@/assets/partners/hero-fluid.jpg";
 
 const PartnersHero = () => {
   return (
     <section className="relative bg-black py-20 md:py-28 overflow-hidden min-h-[80vh] flex items-center">
-      {/* Metallic Fluid Ribbon - Top Right */}
+      {/* Metallic Fluid Image - Top Right */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] md:w-[700px] md:h-[700px]">
-        {/* Gold/Bronze layer */}
-        <div className="absolute top-20 right-10 w-64 h-64 md:w-96 md:h-96 opacity-80">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-600 rounded-full blur-3xl transform rotate-12" />
-        </div>
-        {/* Blue metallic layer */}
-        <div className="absolute top-10 right-20 w-72 h-72 md:w-[400px] md:h-[400px] opacity-70">
-          <div className="absolute inset-0 bg-gradient-to-tl from-blue-500 via-cyan-400 to-blue-600 rounded-full blur-3xl transform -rotate-12" />
-        </div>
-        {/* Silver/white accent */}
-        <div className="absolute top-32 right-32 w-48 h-48 md:w-64 md:h-64 opacity-60">
-          <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-200 to-slate-400 rounded-full blur-2xl" />
-        </div>
-        {/* Ribbon curve simulation */}
-        <div className="absolute top-16 right-8 w-80 h-40 md:w-[450px] md:h-56 opacity-50">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300/50 to-transparent blur-xl transform skew-y-12 rotate-[-20deg]" />
-        </div>
+        <img
+          src={heroFluid}
+          alt=""
+          className="w-full h-full object-contain object-right-top"
+        />
+        {/* Subtle glow overlay */}
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/50" />
       </div>
 
       <div className="container relative z-10">
