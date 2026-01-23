@@ -19,10 +19,10 @@ const HeroSection = () => {
       <div className="container">
         {/* Main Content */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 animate-fade-in">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight mb-6 animate-fade-in">
             Build AI Without Limits
           </h1>
-          <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
             We build complete GPU infrastructure so you can focus on what really matters — your AI.
           </p>
           <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
