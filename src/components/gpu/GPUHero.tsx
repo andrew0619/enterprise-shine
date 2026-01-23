@@ -1,40 +1,33 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import HolographicVisual from "./HolographicVisual";
+import heroHolographic from "@/assets/gpu/hero-holographic.jpg";
 
 const GPUHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#020617] via-slate-900 to-purple-950 py-20 md:py-28 lg:py-32">
-      {/* Subtle grid overlay */}
-      <div 
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
-        }}
-      />
-      
+    <section className="relative overflow-hidden bg-heading py-20 md:py-28">
       <div className="container relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-16">
-          {/* Left Content */}
-          <div className="flex-1 text-center md:text-left max-w-xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              GPU 算力租賃
-            </h1>
-            <p className="text-lg md:text-xl text-slate-300 mb-8">
-              Global high-performance computing infrastructure for enterprise AI workloads.
-            </p>
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8">
-              <Link to="/contact">Contact Sales</Link>
-            </Button>
-          </div>
-          
-          {/* Right Visual */}
-          <div className="flex-1 flex justify-center md:justify-end">
-            <HolographicVisual />
-          </div>
+        <div className="text-center max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4">
+            GPU 算力租賃
+          </h1>
+          <p className="text-lg text-white/70 mb-8">
+            完整雲端整合的裸機伺服器，以最具競爭力的價格提供。
+          </p>
+          <Button asChild size="lg" className="px-8">
+            <Link to="/contact">Contact Sales</Link>
+          </Button>
         </div>
+      </div>
+      
+      {/* Holographic Visual - Right Side */}
+      <div className="absolute top-0 right-0 w-1/3 h-full hidden lg:block">
+        <img
+          src={heroHolographic}
+          alt=""
+          className="w-full h-full object-cover opacity-90"
+        />
+        {/* Gradient fade to blend with background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-heading via-transparent to-transparent" />
       </div>
     </section>
   );

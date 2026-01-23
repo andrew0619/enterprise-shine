@@ -31,54 +31,55 @@ PlusAccordionTrigger.displayName = "PlusAccordionTrigger";
 
 const faqs = [
   {
-    question: "What types of GPUs do you offer?",
+    question: "提供哪些類型的 GPU ？",
+    questionEn: "What types of GPUs do you offer?",
     answer:
-      "We offer the latest NVIDIA GPUs including H100 with 80GB HBM3 memory, A100 with 80GB HBM2e, and L40S with 48GB GDDR6. All configurations include NVLink and InfiniBand for optimal distributed training performance.",
+      "我們提供最新的 NVIDIA GPU，包括 H100（80GB HBM3 記憶體）、H200（HBM3e 記憶體）和即將推出的 Blackwell 系列。所有配置都包含 NVLink 和 InfiniBand，以實現最佳的分散式訓練效能。",
   },
   {
-    question: "How do I manage GPU clusters for distributed training?",
+    question: "如何管理 GPU 叢集和網路以進行分散式訓練？",
+    questionEn: "How do I manage GPU clusters for distributed training?",
     answer:
-      "Our platform includes a comprehensive cluster management dashboard. You can provision nodes, monitor utilization, configure networking, and manage jobs through our web console or API. We also support popular orchestration tools like Kubernetes and Slurm.",
+      "我們的平台包含全面的叢集管理儀表板。您可以透過我們的網頁主控台或 API 來配置節點、監控使用率、設定網路和管理作業。我們也支援 Kubernetes 和 Slurm 等流行的編排工具。",
   },
   {
-    question: "Which deep learning frameworks are supported? Can I customize?",
+    question: "支援哪些軟體和深度學習框架？可以客製化嗎？",
+    questionEn: "Which deep learning frameworks are supported? Can I customize?",
     answer:
-      "We support all major frameworks including PyTorch, TensorFlow, JAX, and ONNX. You can use our pre-configured containers or bring your own custom Docker images. We also provide optimized builds for maximum GPU utilization.",
+      "我們支援所有主要框架，包括 PyTorch、TensorFlow、JAX 和 ONNX。您可以使用我們預先配置的容器，或自帶 Docker 映像。我們還提供優化版本以實現最大 GPU 使用率。",
   },
   {
-    question: "What are the pricing options? Do you offer cost optimization?",
+    question: "GPU 的價格方案如何？有提供成本最佳化功能嗎？",
+    questionEn: "What are the pricing options? Do you offer cost optimization?",
     answer:
-      "We offer flexible pricing including on-demand hourly rates, reserved capacity with significant discounts, and committed use contracts. Our platform includes built-in cost optimization tools to help you minimize spend while maximizing performance.",
-  },
-  {
-    question: "How do I get started with GPU rental?",
-    answer:
-      "Getting started is simple. Contact our sales team for a consultation, and we'll help you determine the right configuration for your needs. Most clusters can be provisioned within hours, and we provide full onboarding support.",
+      "我們提供靈活的定價方案，包括按需計時費率、具有大幅折扣的預留容量，以及承諾使用合約。我們的平台內建成本優化工具，幫助您在最大化效能的同時將支出降到最低。",
   },
 ];
 
 const GPUFAQSection = () => {
   return (
-    <section className="py-20 md:py-24 bg-[#F8FAFC]">
+    <section className="py-16 md:py-20 bg-background">
       <div className="container max-w-3xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-heading">
+          <h2 className="text-3xl md:text-4xl font-normal text-heading">
             常見問題
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Frequently Asked Questions
-          </p>
         </div>
 
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="w-full space-y-3">
           {faqs.map((faq, index) => (
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="bg-card border border-card-border rounded-xl mb-3 px-6 data-[state=open]:shadow-sm"
+              className="bg-card border border-card-border rounded-xl px-6 data-[state=open]:shadow-sm"
             >
               <PlusAccordionTrigger className="text-base font-medium hover:no-underline">
-                {faq.question}
+                <div className="text-left">
+                  <p className="text-heading">{faq.question}</p>
+                  {faq.questionEn && (
+                    <p className="text-sm text-muted-foreground mt-1">{faq.questionEn}</p>
+                  )}
+                </div>
               </PlusAccordionTrigger>
               <AccordionContent className="text-muted-foreground pb-5">
                 {faq.answer}
@@ -86,6 +87,10 @@ const GPUFAQSection = () => {
             </AccordionItem>
           ))}
         </Accordion>
+
+        <p className="text-center text-sm text-muted-foreground mt-8">
+          快速取得常見問題的解答
+        </p>
       </div>
     </section>
   );
