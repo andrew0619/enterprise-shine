@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import TeamMemberCard from "./TeamMemberCard";
 
 const leadershipTeam = [
@@ -64,17 +65,21 @@ const advisors = [
 ];
 
 const TeamSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-muted-foreground text-sm font-medium mb-2">經營團隊</p>
+          <p className="text-muted-foreground text-sm font-medium mb-2">
+            {t("about.teamKicker", { defaultValue: "經營團隊" })}
+          </p>
           <h2 className="text-3xl md:text-4xl font-bold text-heading mb-4">
-            頂尖團隊，引領創新
+            {t("about.teamTitle", { defaultValue: "頂尖團隊，引領創新" })}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Top Team, Leading Innovation - 由來自 Google、NVIDIA、Meta 等頂尖科技公司的專家組成
+            {t("about.teamSubtitle", { defaultValue: "Top Team, Leading Innovation - 由來自 Google、NVIDIA、Meta 等頂尖科技公司的專家組成" })}
           </p>
         </div>
         
@@ -96,9 +101,11 @@ const TeamSection = () => {
         <div className="border-t pt-16">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-heading">
-              顧問與投資
+              {t("about.advisorsTitle", { defaultValue: "顧問與投資" })}
             </h3>
-            <p className="text-muted-foreground mt-2">Advisors & Investors</p>
+            <p className="text-muted-foreground mt-2">
+              {t("about.advisorsSubtitle", { defaultValue: "Advisors & Investors" })}
+            </p>
           </div>
           
           <div className="grid grid-cols-2 gap-8 md:gap-12 max-w-md mx-auto">

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import cityMountainView from "@/assets/careers/city-mountain-view.jpg";
 import cityTaipei from "@/assets/careers/city-taipei.jpg";
 import cityHongkong from "@/assets/careers/city-hongkong.jpg";
@@ -36,6 +37,7 @@ const offices: Office[] = [
 ];
 
 const GlobalOfficesSection = () => {
+  const { t } = useTranslation();
   const [times, setTimes] = useState<string[]>([]);
 
   useEffect(() => {
@@ -63,7 +65,7 @@ const GlobalOfficesSection = () => {
       <div className="container">
         {/* Section Title */}
         <p className="text-muted-foreground text-sm mb-10">
-          Our team is at the forefront of global AI development.
+          {t("careers.officesKicker")}
         </p>
 
         {/* Offices Grid */}

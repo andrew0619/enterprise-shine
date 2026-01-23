@@ -1,6 +1,9 @@
 import heroIridescent from "@/assets/blog/hero-iridescent.jpg";
+import { useTranslation } from "react-i18next";
 
 const BlogHero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative bg-[#020617] py-20 md:py-28 overflow-hidden">
       {/* Iridescent Sphere Visual - Top Right */}
@@ -19,10 +22,10 @@ const BlogHero = () => {
 
       <div className="container relative z-10 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-          NexusAI Blog
+          {t("blog.heroTitle")}
         </h1>
         <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto">
-          Discover the latest news, updates, and insights from our team.
+          {t("blog.heroSubtitle")}
         </p>
       </div>
     </section>

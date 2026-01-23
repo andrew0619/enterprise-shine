@@ -1,48 +1,53 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
-
-const newsItems = [
-  {
-    id: 1,
-    title: "GMI Cloud 宣布擴展亞太區數據中心",
-    date: "2024-01-15",
-    image: "linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%)",
-    category: "公司新聞",
-  },
-  {
-    id: 2,
-    title: "全新雲端架構提升 AI 訓練效能 3 倍",
-    date: "2024-01-10",
-    image: "linear-gradient(135deg, #0066FF 0%, #00BFFF 50%, #87CEEB 100%)",
-    category: "技術",
-  },
-  {
-    id: 3,
-    title: "AI 推論引擎正式上線：低延遲高吞吐量",
-    date: "2024-01-05",
-    image: "linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #d946ef 100%)",
-    category: "產品更新",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const AboutNewsSection = () => {
+  const { t } = useTranslation();
+
+  const newsItems = [
+    {
+      id: 1,
+      title: t("about.news.article1.title", { defaultValue: "GMI Cloud 宣布擴展亞太區數據中心" }),
+      date: "2024-01-15",
+      image: "linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%)",
+      category: t("about.news.article1.category", { defaultValue: "公司新聞" }),
+    },
+    {
+      id: 2,
+      title: t("about.news.article2.title", { defaultValue: "全新雲端架構提升 AI 訓練效能 3 倍" }),
+      date: "2024-01-10",
+      image: "linear-gradient(135deg, #0066FF 0%, #00BFFF 50%, #87CEEB 100%)",
+      category: t("about.news.article2.category", { defaultValue: "技術" }),
+    },
+    {
+      id: 3,
+      title: t("about.news.article3.title", { defaultValue: "AI 推論引擎正式上線：低延遲高吞吐量" }),
+      date: "2024-01-05",
+      image: "linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #d946ef 100%)",
+      category: t("about.news.article3.category", { defaultValue: "產品更新" }),
+    },
+  ];
+
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
           <div>
-            <p className="text-muted-foreground text-sm font-medium mb-2">最新消息</p>
+            <p className="text-muted-foreground text-sm font-medium mb-2">
+              {t("about.news.kicker", { defaultValue: "最新消息" })}
+            </p>
             <h2 className="text-3xl md:text-4xl font-bold text-heading">
-              GMI Cloud 新聞
+              {t("about.news.title", { defaultValue: "GMI Cloud 新聞" })}
             </h2>
           </div>
           <Link
             to="/blog"
             className="hidden md:inline-flex items-center gap-2 text-primary hover:underline font-medium"
           >
-            查看所有文章
+            {t("about.news.viewAll", { defaultValue: "查看所有文章" })}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -86,7 +91,7 @@ const AboutNewsSection = () => {
             to="/blog"
             className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
           >
-            查看所有文章
+            {t("about.news.viewAll", { defaultValue: "查看所有文章" })}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

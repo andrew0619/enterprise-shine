@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Import server images
 import serverStackImg from "@/assets/cluster/server-stack.jpg";
@@ -117,75 +118,72 @@ const ServerRackVisual = () => (
   </div>
 );
 
-const features = [
-  {
-    title: "Efficient Scaling",
-    description:
-      "Automatically scale your GPU clusters up or down based on workload demands. Our intelligent orchestration ensures optimal resource utilization.",
-    subtitle: "Auto-scaling",
-    bulletPoints: [
-      "Dynamic resource allocation",
-      "Cost-optimized scaling policies",
-    ],
-    visual: ServerStackVisual,
-    imageFirst: false,
-    showButton: true,
-  },
-  {
-    title: "Real-time Monitoring",
-    description:
-      "Monitor every aspect of your cluster with comprehensive dashboards. Track instance health, resource usage, and job progress in real-time.",
-    subtitle: "observability",
-    bulletPoints: [
-      "Live metrics dashboard",
-      "Alerting and notifications",
-    ],
-    visual: MonitoringDashboard,
-    imageFirst: true,
-    showButton: true,
-  },
-  {
-    title: "Usage Analytics",
-    description:
-      "Gain deep insights into your compute usage patterns. Visualize trends, optimize costs, and make data-driven infrastructure decisions.",
-    subtitle: "Unified Analytics",
-    bulletPoints: [
-      "Cost breakdown reports",
-      "Usage trend analysis",
-    ],
-    visual: ServerClusterVisual,
-    imageFirst: false,
-    showButton: true,
-  },
-  {
-    title: "Resource Management",
-    description:
-      "Fine-grained control over every GPU, node, and container. Allocate resources precisely where they're needed with our intuitive management interface.",
-    subtitle: "Smart Allocation",
-    bulletPoints: [
-      "Priority-based scheduling",
-      "Multi-tenant isolation",
-    ],
-    visual: ResourceTable,
-    imageFirst: true,
-    showButton: true,
-  },
-  {
-    title: "Enterprise Security",
-    description:
-      "Bank-grade security for your AI workloads. Role-based access control, encryption at rest and in transit, and comprehensive audit logging.",
-    subtitle: "Zero Trust Security",
-    bulletPoints: [
-      "SOC 2 Type II certified",
-      "End-to-end encryption",
-    ],
-    visual: ServerRackVisual,
-    imageFirst: false,
-    showButton: true,
-  },
-];
-
 const FeatureZigZag = () => {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      title: t("clusterEngine.features.scaling.title"),
+      description: t("clusterEngine.features.scaling.description"),
+      subtitle: t("clusterEngine.features.scaling.subtitle", { defaultValue: "Auto-scaling" }),
+      bulletPoints: [
+        t("clusterEngine.features.scaling.bullet1", { defaultValue: "Dynamic resource allocation" }),
+        t("clusterEngine.features.scaling.bullet2", { defaultValue: "Cost-optimized scaling policies" }),
+      ],
+      visual: ServerStackVisual,
+      imageFirst: false,
+      showButton: true,
+    },
+    {
+      title: t("clusterEngine.features.monitoring.title"),
+      description: t("clusterEngine.features.monitoring.description"),
+      subtitle: t("clusterEngine.features.monitoring.subtitle", { defaultValue: "Observability" }),
+      bulletPoints: [
+        t("clusterEngine.features.monitoring.bullet1", { defaultValue: "Live metrics dashboard" }),
+        t("clusterEngine.features.monitoring.bullet2", { defaultValue: "Alerting and notifications" }),
+      ],
+      visual: MonitoringDashboard,
+      imageFirst: true,
+      showButton: true,
+    },
+    {
+      title: t("clusterEngine.features.analytics.title"),
+      description: t("clusterEngine.features.analytics.description"),
+      subtitle: t("clusterEngine.features.analytics.subtitle", { defaultValue: "Unified Analytics" }),
+      bulletPoints: [
+        t("clusterEngine.features.analytics.bullet1", { defaultValue: "Cost breakdown reports" }),
+        t("clusterEngine.features.analytics.bullet2", { defaultValue: "Usage trend analysis" }),
+      ],
+      visual: ServerClusterVisual,
+      imageFirst: false,
+      showButton: true,
+    },
+    {
+      title: t("clusterEngine.features.resources.title"),
+      description: t("clusterEngine.features.resources.description"),
+      subtitle: t("clusterEngine.features.resources.subtitle", { defaultValue: "Smart Allocation" }),
+      bulletPoints: [
+        t("clusterEngine.features.resources.bullet1", { defaultValue: "Priority-based scheduling" }),
+        t("clusterEngine.features.resources.bullet2", { defaultValue: "Multi-tenant isolation" }),
+      ],
+      visual: ResourceTable,
+      imageFirst: true,
+      showButton: true,
+    },
+    {
+      title: t("clusterEngine.features.security.title"),
+      description: t("clusterEngine.features.security.description"),
+      subtitle: t("clusterEngine.features.security.subtitle", { defaultValue: "Zero Trust Security" }),
+      bulletPoints: [
+        t("clusterEngine.features.security.bullet1", { defaultValue: "SOC 2 Type II certified" }),
+        t("clusterEngine.features.security.bullet2", { defaultValue: "End-to-end encryption" }),
+      ],
+      visual: ServerRackVisual,
+      imageFirst: false,
+      showButton: true,
+    },
+  ];
+
   return (
     <section className="bg-background">
       {features.map((feature, index) => (
@@ -217,7 +215,7 @@ const FeatureZigZag = () => {
                 )}
                 {feature.showButton && (
                   <Button asChild variant="outline" size="sm">
-                    <Link to="/contact">Learn More</Link>
+                    <Link to="/contact">{t("common.learnMore")}</Link>
                   </Button>
                 )}
               </div>

@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import ctaNature from "@/assets/studio/cta-nature.jpg";
 
 const StudioCTABanner = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-[#000000] py-16 px-4">
       <div className="container mx-auto max-w-6xl">
@@ -17,7 +20,7 @@ const StudioCTABanner = () => {
             {/* Text */}
             <div className="text-center md:text-left flex-1">
               <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Create at the rhythm of your imagination.
+                {t("studio.ctaTitle", { defaultValue: "Create at the rhythm of your imagination." })}
               </h2>
             </div>
 
@@ -29,14 +32,14 @@ const StudioCTABanner = () => {
                 size="lg"
                 className="border-white text-white hover:bg-white/10 bg-transparent rounded-full px-8"
               >
-                <Link to="/contact">Request Demo</Link>
+                <Link to="/contact">{t("studio.requestDemo", { defaultValue: "Request Demo" })}</Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 className="bg-white text-black hover:bg-zinc-200 rounded-full px-8"
               >
-                <Link to="/contact">Start Now</Link>
+                <Link to="/contact">{t("common.startNow")}</Link>
               </Button>
             </div>
           </div>

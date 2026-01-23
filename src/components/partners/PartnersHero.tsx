@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import heroFluid from "@/assets/partners/hero-fluid.jpg";
 
 const PartnersHero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative bg-black py-20 md:py-28 overflow-hidden min-h-[80vh] flex items-center">
       {/* Metallic Fluid Image - Top Right */}
@@ -20,12 +23,12 @@ const PartnersHero = () => {
         <div className="max-w-2xl">
           {/* Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Join the <span className="text-primary">NexusAI</span> Partner Program
+            {t("partners.heroTitle")}
           </h1>
           
           {/* Subtext */}
           <p className="text-zinc-400 text-lg md:text-xl mb-8 max-w-xl">
-            Join a robust ecosystem of technology leaders to drive growth and innovation in AI infrastructure.
+            {t("partners.heroSubtitle")}
           </p>
 
           {/* CTA Button */}
@@ -34,7 +37,7 @@ const PartnersHero = () => {
             size="lg"
             className="bg-white text-black hover:bg-zinc-100 font-semibold px-8"
           >
-            <Link to="/contact">Join Now</Link>
+            <Link to="/contact">{t("common.joinNow")}</Link>
           </Button>
         </div>
 
@@ -42,15 +45,15 @@ const PartnersHero = () => {
         <div className="mt-16 md:mt-24 grid grid-cols-3 gap-8 max-w-2xl">
           <div>
             <div className="text-3xl md:text-4xl font-mono font-bold text-white">2023</div>
-            <div className="text-sm text-zinc-500 mt-1">Founded</div>
+            <div className="text-sm text-zinc-500 mt-1">{t("partners.stats.founded")}</div>
           </div>
           <div>
             <div className="text-3xl md:text-4xl font-mono font-bold text-white">60+</div>
-            <div className="text-sm text-zinc-500 mt-1">Partners</div>
+            <div className="text-sm text-zinc-500 mt-1">{t("partners.stats.partners")}</div>
           </div>
           <div>
             <div className="text-3xl md:text-4xl font-mono font-bold text-primary">800K+</div>
-            <div className="text-sm text-zinc-500 mt-1">GPU Hours</div>
+            <div className="text-sm text-zinc-500 mt-1">{t("partners.stats.gpuHours")}</div>
           </div>
         </div>
       </div>
