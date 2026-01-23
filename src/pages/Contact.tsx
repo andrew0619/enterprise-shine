@@ -4,7 +4,6 @@ import { z } from "zod";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -22,44 +21,32 @@ import {
 } from "@/components/ui/form";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 
 const contactSchema = z.object({
-  firstName: z.string().min(1, "First name is required").max(50),
-  lastName: z.string().min(1, "Last name is required").max(50),
-  email: z.string().email("Please enter a valid email"),
-  company: z.string().min(1, "Company name is required").max(100),
-  role: z.string().min(1, "Please select your role"),
-  gpuCount: z.string().min(1, "Please select GPU requirements"),
-  message: z.string().min(10, "Message must be at least 10 characters").max(1000),
+  firstName: z.string().trim().min(1, "First name is required").max(50),
+  lastName: z.string().trim().min(1, "Last name is required").max(50),
+  email: z.string().trim().email("Please enter a valid email").max(255),
+  interestType: z.string().min(1, "Please select an interest type"),
+  company: z.string().trim().min(1, "Company name is required").max(100),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-const contactInfo = [
+const contactCards = [
   {
-    icon: Mail,
-    title: "Email",
-    content: "sales@nexusai.com",
-    href: "mailto:sales@nexusai.com",
+    title: "Sales",
+    description: "Contact our sales team to learn more about our offerings and pricing.",
+    email: "sales@gmicloud.ai",
   },
   {
-    icon: Phone,
-    title: "Phone",
-    content: "+1 (888) 555-0123",
-    href: "tel:+18885550123",
+    title: "Help & Support",
+    description: "Reach out to our support team for technical assistance and customer service.",
+    email: "support@gmicloud.ai",
   },
   {
-    icon: MapPin,
-    title: "Address",
-    content: "100 AI Boulevard, San Francisco, CA 94105",
-    href: null,
-  },
-  {
-    icon: Clock,
-    title: "Hours",
-    content: "24/7 Support Available",
-    href: null,
+    title: "Media & Press",
+    description: "For media inquiries, connect with our press team.",
+    email: "info@gmicloud.ai",
   },
 ];
 
@@ -72,15 +59,12 @@ const ContactPage = () => {
       firstName: "",
       lastName: "",
       email: "",
+      interestType: "",
       company: "",
-      role: "",
-      gpuCount: "",
-      message: "",
     },
   });
 
   const onSubmit = (data: ContactFormData) => {
-    console.log("Form submitted:", data);
     toast({
       title: "Message sent!",
       description: "We'll get back to you within 24 hours.",
@@ -90,80 +74,75 @@ const ContactPage = () => {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="py-16 md:py-20 bg-background">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Contact Sales
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Ready to scale your AI infrastructure? Our team is here to help
-              you find the perfect solution.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form & Info */}
-      <section className="py-12 pb-20 bg-secondary/30">
-        <div className="container">
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
-                <p className="text-muted-foreground">
-                  Have questions? We'd love to hear from you. Fill out the form
-                  or reach out directly.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                {contactInfo.map((item) => (
-                  <Card key={item.title} className="border border-card-border">
-                    <CardContent className="p-4 flex items-center gap-4">
-                      <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                        <item.icon className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">
-                          {item.title}
-                        </p>
-                        {item.href ? (
-                          <a
-                            href={item.href}
-                            className="font-medium hover:text-primary transition-colors"
-                          >
-                            {item.content}
-                          </a>
-                        ) : (
-                          <p className="font-medium">{item.content}</p>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+      <div className="min-h-screen bg-[hsl(210,40%,98%)]">
+        {/* Page Header */}
+        <section className="pt-20 pb-12">
+          <div className="container">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Contact Us
+              </h1>
+              <p className="text-muted-foreground text-lg">
+                Get in touch with our team for more information and support.
+              </p>
             </div>
+          </div>
+        </section>
 
-            {/* Form */}
-            <Card className="lg:col-span-2 border border-card-border">
-              <CardContent className="p-8">
+        {/* Contact Info Grid */}
+        <section className="pb-12">
+          <div className="container">
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {contactCards.map((card) => (
+                <Card 
+                  key={card.title} 
+                  className="bg-background border-0 shadow-sm rounded-xl"
+                >
+                  <CardContent className="p-8">
+                    <h3 className="text-xl font-bold text-foreground mb-3">
+                      {card.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                      {card.description}
+                    </p>
+                    <a
+                      href={`mailto:${card.email}`}
+                      className="font-semibold text-foreground underline hover:text-primary transition-colors"
+                    >
+                      {card.email}
+                    </a>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Form */}
+        <section className="pb-20">
+          <div className="container">
+            <Card className="max-w-4xl mx-auto bg-background border-0 shadow-sm rounded-xl">
+              <CardContent className="p-8 md:p-10">
                 <Form {...form}>
                   <form
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="space-y-6"
                   >
+                    {/* Row 1: First Name & Last Name */}
                     <div className="grid sm:grid-cols-2 gap-6">
                       <FormField
                         control={form.control}
                         name="firstName"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>First Name</FormLabel>
+                            <FormLabel className="text-foreground font-medium">
+                              First Name
+                            </FormLabel>
                             <FormControl>
-                              <Input placeholder="John" {...field} />
+                              <Input 
+                                className="border-border rounded-md focus-visible:ring-primary"
+                                {...field} 
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -175,123 +154,34 @@ const ContactPage = () => {
                         name="lastName"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Last Name</FormLabel>
+                            <FormLabel className="text-foreground font-medium">
+                              Last Name
+                            </FormLabel>
                             <FormControl>
-                              <Input placeholder="Doe" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Work Email</FormLabel>
-                            <FormControl>
-                              <Input
-                                type="email"
-                                placeholder="john@company.com"
-                                {...field}
+                              <Input 
+                                className="border-border rounded-md focus-visible:ring-primary"
+                                {...field} 
                               />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
                         )}
                       />
-
-                      <FormField
-                        control={form.control}
-                        name="company"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Company</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Acme Inc." {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <FormField
-                        control={form.control}
-                        name="role"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Your Role</FormLabel>
-                            <Select
-                              onValueChange={field.onChange}
-                              defaultValue={field.value}
-                            >
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select role" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent className="bg-popover">
-                                <SelectItem value="engineer">Engineer</SelectItem>
-                                <SelectItem value="manager">
-                                  Engineering Manager
-                                </SelectItem>
-                                <SelectItem value="director">Director</SelectItem>
-                                <SelectItem value="vp">VP / C-Level</SelectItem>
-                                <SelectItem value="researcher">
-                                  Researcher
-                                </SelectItem>
-                                <SelectItem value="other">Other</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
-                        name="gpuCount"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>GPU Requirements</FormLabel>
-                            <Select
-                              onValueChange={field.onChange}
-                              defaultValue={field.value}
-                            >
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select scale" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent className="bg-popover">
-                                <SelectItem value="1-8">1-8 GPUs</SelectItem>
-                                <SelectItem value="8-32">8-32 GPUs</SelectItem>
-                                <SelectItem value="32-128">32-128 GPUs</SelectItem>
-                                <SelectItem value="128+">128+ GPUs</SelectItem>
-                                <SelectItem value="unsure">Not sure yet</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
+                    {/* Row 2: Email */}
                     <FormField
                       control={form.control}
-                      name="message"
+                      name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Message</FormLabel>
+                          <FormLabel className="text-foreground font-medium">
+                            Email
+                          </FormLabel>
                           <FormControl>
-                            <Textarea
-                              placeholder="Tell us about your project and requirements..."
-                              className="min-h-[120px] resize-none"
+                            <Input
+                              type="email"
+                              className="border-border rounded-md focus-visible:ring-primary"
                               {...field}
                             />
                           </FormControl>
@@ -300,17 +190,73 @@ const ContactPage = () => {
                       )}
                     />
 
-                    <Button type="submit" size="lg" className="w-full sm:w-auto">
-                      <Send className="mr-2 h-4 w-4" />
-                      Send Message
+                    {/* Row 3: Interest Type */}
+                    <FormField
+                      control={form.control}
+                      name="interestType"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-foreground font-medium">
+                            Interest Type
+                          </FormLabel>
+                          <Select
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger className="border-border rounded-md">
+                                <SelectValue placeholder="Select one..." />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent className="bg-popover">
+                              <SelectItem value="gpu-cloud">GPU Cloud Services</SelectItem>
+                              <SelectItem value="inference">Inference Engine</SelectItem>
+                              <SelectItem value="cluster">Cluster Engine</SelectItem>
+                              <SelectItem value="enterprise">Enterprise Solutions</SelectItem>
+                              <SelectItem value="partnership">Partnership</SelectItem>
+                              <SelectItem value="other">Other</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    {/* Row 4: Company Name */}
+                    <FormField
+                      control={form.control}
+                      name="company"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-foreground font-medium">
+                            Company Name
+                          </FormLabel>
+                          <FormControl>
+                            <Input 
+                              className="border-border rounded-md focus-visible:ring-primary"
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    {/* Submit Button */}
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+                    >
+                      Submit
                     </Button>
                   </form>
                 </Form>
               </CardContent>
             </Card>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </Layout>
   );
 };
