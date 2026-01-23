@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 interface FloatingNodeCardProps {
-  gradient: string;
+  imageSrc: string;
   size: "sm" | "md" | "lg";
   animation: "float" | "float-slow" | "float-reverse";
   delay?: string;
@@ -15,7 +15,7 @@ const sizeClasses = {
 };
 
 const FloatingNodeCard = ({
-  gradient,
+  imageSrc,
   size,
   animation,
   delay = "0s",
@@ -33,7 +33,11 @@ const FloatingNodeCard = ({
       )}
       style={{ animationDelay: delay }}
     >
-      <div className={cn("w-full h-full bg-gradient-to-br", gradient)} />
+      <img 
+        src={imageSrc} 
+        alt="" 
+        className="w-full h-full object-cover"
+      />
     </div>
   );
 };
