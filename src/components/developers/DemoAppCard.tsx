@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Code } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface DemoAppCardProps {
   title: string;
@@ -9,6 +10,8 @@ interface DemoAppCardProps {
 }
 
 const DemoAppCard = ({ title, description, tags, mockupType }: DemoAppCardProps) => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col">
       {/* Window Mockup */}
@@ -89,11 +92,11 @@ const DemoAppCard = ({ title, description, tags, mockupType }: DemoAppCardProps)
       <div className="flex gap-3 mt-4">
         <Button size="sm" className="gap-1.5">
           <ExternalLink className="h-3.5 w-3.5" />
-          Link
+          {t("developers.link")}
         </Button>
         <Button variant="outline" size="sm" className="gap-1.5 border-slate-300 text-slate-700 hover:bg-slate-50">
           <Code className="h-3.5 w-3.5" />
-          Code
+          {t("developers.code")}
         </Button>
       </div>
 

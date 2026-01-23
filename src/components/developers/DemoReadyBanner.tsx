@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import ctaDeveloper from "@/assets/developers/cta-developer.jpg";
 
 const DemoReadyBanner = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="relative h-[280px] md:h-[300px] rounded-2xl overflow-hidden">
       {/* Background Image */}
@@ -20,13 +23,13 @@ const DemoReadyBanner = () => {
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-12 max-w-lg">
         <h2 className="text-2xl md:text-3xl font-bold text-white">
-          Ready to build?
+          {t("developers.readyBanner.title")}
         </h2>
         <p className="text-white/90 mt-3 text-sm md:text-base">
-          Explore powerful AI models and launch your project in just a few clicks.
+          {t("developers.readyBanner.subtitle")}
         </p>
         <Button asChild className="mt-6 w-fit">
-          <Link to="/contact">Get Started</Link>
+          <Link to="/contact">{t("common.getStarted")}</Link>
         </Button>
       </div>
     </div>

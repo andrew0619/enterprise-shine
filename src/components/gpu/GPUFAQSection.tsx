@@ -7,6 +7,7 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 // Custom trigger with Plus icon
 const PlusAccordionTrigger = React.forwardRef<
@@ -29,40 +30,38 @@ const PlusAccordionTrigger = React.forwardRef<
 ));
 PlusAccordionTrigger.displayName = "PlusAccordionTrigger";
 
-const faqs = [
-  {
-    question: "提供哪些類型的 GPU ？",
-    questionEn: "What types of GPUs do you offer?",
-    answer:
-      "我們提供最新的 NVIDIA GPU，包括 H100（80GB HBM3 記憶體）、H200（HBM3e 記憶體）和即將推出的 Blackwell 系列。所有配置都包含 NVLink 和 InfiniBand，以實現最佳的分散式訓練效能。",
-  },
-  {
-    question: "如何管理 GPU 叢集和網路以進行分散式訓練？",
-    questionEn: "How do I manage GPU clusters for distributed training?",
-    answer:
-      "我們的平台包含全面的叢集管理儀表板。您可以透過我們的網頁主控台或 API 來配置節點、監控使用率、設定網路和管理作業。我們也支援 Kubernetes 和 Slurm 等流行的編排工具。",
-  },
-  {
-    question: "支援哪些軟體和深度學習框架？可以客製化嗎？",
-    questionEn: "Which deep learning frameworks are supported? Can I customize?",
-    answer:
-      "我們支援所有主要框架，包括 PyTorch、TensorFlow、JAX 和 ONNX。您可以使用我們預先配置的容器，或自帶 Docker 映像。我們還提供優化版本以實現最大 GPU 使用率。",
-  },
-  {
-    question: "GPU 的價格方案如何？有提供成本最佳化功能嗎？",
-    questionEn: "What are the pricing options? Do you offer cost optimization?",
-    answer:
-      "我們提供靈活的定價方案，包括按需計時費率、具有大幅折扣的預留容量，以及承諾使用合約。我們的平台內建成本優化工具，幫助您在最大化效能的同時將支出降到最低。",
-  },
-];
-
 const GPUFAQSection = () => {
+  const { t } = useTranslation();
+
+  const faqs = [
+    {
+      question: t("gpuFaq.items.q1.question"),
+      questionEn: t("gpuFaq.items.q1.questionEn", { defaultValue: "" }),
+      answer: t("gpuFaq.items.q1.answer"),
+    },
+    {
+      question: t("gpuFaq.items.q2.question"),
+      questionEn: t("gpuFaq.items.q2.questionEn", { defaultValue: "" }),
+      answer: t("gpuFaq.items.q2.answer"),
+    },
+    {
+      question: t("gpuFaq.items.q3.question"),
+      questionEn: t("gpuFaq.items.q3.questionEn", { defaultValue: "" }),
+      answer: t("gpuFaq.items.q3.answer"),
+    },
+    {
+      question: t("gpuFaq.items.q4.question"),
+      questionEn: t("gpuFaq.items.q4.questionEn", { defaultValue: "" }),
+      answer: t("gpuFaq.items.q4.answer"),
+    },
+  ];
+
   return (
     <section className="py-16 md:py-20 bg-background">
       <div className="container max-w-3xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-normal text-heading">
-            常見問題
+            {t("gpuFaq.title")}
           </h2>
         </div>
 
@@ -89,7 +88,7 @@ const GPUFAQSection = () => {
         </Accordion>
 
         <p className="text-center text-sm text-muted-foreground mt-8">
-          快速取得常見問題的解答
+          {t("gpuFaq.subtitle")}
         </p>
       </div>
     </section>
