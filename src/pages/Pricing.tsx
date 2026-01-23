@@ -3,8 +3,11 @@ import PricingGPUCards from "@/components/pricing/PricingGPUCards";
 import ServiceEngineSection from "@/components/pricing/ServiceEngineSection";
 import PricingCTABanner from "@/components/pricing/PricingCTABanner";
 import PricingFAQSection from "@/components/pricing/PricingFAQSection";
+import { useTranslation } from "react-i18next";
 
 const PricingPage = () => {
+  const { t } = useTranslation();
+
   return (
     <Layout>
       {/* Page Header */}
@@ -12,10 +15,10 @@ const PricingPage = () => {
         <div className="container">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-heading mb-4">
-              定價
+              {t("pricing.title")}
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              有競爭力的透明價格彈性計費 — 為現代化 AI 部署量身打造
+              {t("pricing.subtitle")}
             </p>
           </div>
         </div>

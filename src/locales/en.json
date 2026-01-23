@@ -47,7 +47,10 @@
     "active": "Active",
     "viewPricing": "View Pricing",
     "watchStory": "Watch Story",
-    "viewAllArticles": "View all articles"
+    "viewAllArticles": "View all articles",
+    "submit": "Submit",
+    "startNow": "Start Now",
+    "reserve": "Reserve Now"
   },
   "footer": {
     "subscribeNewsletter": "Subscribe to our newsletter",
@@ -76,13 +79,13 @@
     "foundationSubtitle": "— Powered by GPU Cloud Solutions",
     "foundationDescription": "GMI Cloud provides everything you need to build scalable AI solutions — running entirely on GMI-owned, AI-optimized datacenters. From high-performance inference and containerized ops to on-demand access to top-tier GPUs for training and inference, we control the full stack.",
     "inferenceTitle": "Inference Engine",
-    "inferenceDescription1": "GMI Cloud Inference Engine provides developers with the ultra-fast speed and flexible scalability needed to run AI models, designed for extremely low latency, high concurrency processing, and top-tier performance optimization. Whether it's deep learning, natural language processing (NLP), or computer vision (CV), it supports everything perfectly for higher inference efficiency.",
-    "inferenceDescription2": "Through GMI Cloud's global GPU node layout, developers can instantly deploy models, scale computing power anytime and anywhere, automatically adjust computing loads, significantly reduce costs and improve performance. Scale elastically on demand to instantly handle high-traffic computing challenges, delivering faster, more stable, and more accurate AI predictions.",
+    "inferenceDescription1": "GMI Cloud Inference Engine provides developers with the ultra-fast speed and flexible scalability needed to run AI models, designed for extremely low latency, high concurrency processing, and top-tier performance optimization.",
+    "inferenceDescription2": "Through GMI Cloud's global GPU node layout, developers can instantly deploy models, scale computing power anytime and anywhere, automatically adjust computing loads, significantly reduce costs and improve performance.",
     "inferenceModelsLabel": "Easily run market-leading AI models",
     "clusterTitle": "Cluster Engine",
-    "clusterDescription": "GMI Cloud's Cluster Engine is your all-in-one AI cloud management platform, designed to streamline GPU resource coordination, workload scheduling, and cost optimization. Whether you're managing AI training, fine-tuning, or inference workloads, Cluster Engine provides real-time visibility and control.",
+    "clusterDescription": "GMI Cloud's Cluster Engine is your all-in-one AI cloud management platform, designed to streamline GPU resource coordination, workload scheduling, and cost optimization.",
     "gpuTitle": "GPUs",
-    "gpuDescription": "GMI Cloud offers a diverse portfolio of NVIDIA GPUs, designed for AI/ML training, inference, and data analytics. Our GPU infrastructure is purpose-built for the most demanding AI workloads with ultra-low latency, high memory bandwidth, and enterprise-grade reliability.",
+    "gpuDescription": "GMI Cloud offers a diverse portfolio of NVIDIA GPUs, designed for AI/ML training, inference, and data analytics. Our GPU infrastructure is purpose-built for the most demanding AI workloads.",
     "caseStudyTitle": "Proven Results",
     "caseStudySubtitle": "Our customers achieve measurable improvements in cost, performance, and time-to-market.",
     "caseStudyQuote": "NexusAI transformed how we deploy AI models. What used to take weeks now takes hours.",
@@ -99,54 +102,27 @@
     "title": "Frequently Asked Questions",
     "subtitle": "Everything you need to know about our GPU infrastructure platform.",
     "items": {
-      "q1": {
-        "question": "What GPU models do you offer?",
-        "answer": "We offer the latest NVIDIA GPUs including H100, A100, and L40S. All clusters are equipped with NVLink and InfiniBand for maximum performance in distributed training and inference workloads."
-      },
-      "q2": {
-        "question": "How quickly can I deploy a new cluster?",
-        "answer": "Most clusters can be provisioned within hours, not weeks. Our automated infrastructure allows for rapid scaling based on your needs, with pre-configured environments for popular ML frameworks."
-      },
-      "q3": {
-        "question": "What security certifications do you have?",
-        "answer": "We maintain SOC 2 Type II, HIPAA, and GDPR compliance. All data is encrypted at rest and in transit, with optional dedicated tenancy for maximum isolation."
-      },
-      "q4": {
-        "question": "Can I bring my own models?",
-        "answer": "Absolutely. Our platform supports any model format including PyTorch, TensorFlow, and ONNX. We also provide optimized serving infrastructure for popular open-source models like Llama, Mistral, and more."
-      },
-      "q5": {
-        "question": "How does billing work?",
-        "answer": "We offer flexible pricing including on-demand, reserved capacity, and committed use discounts. You only pay for the compute you use, with transparent pricing and no hidden fees."
-      }
+      "q1": { "question": "What GPU models do you offer?", "answer": "We offer the latest NVIDIA GPUs including H100, A100, and L40S. All clusters are equipped with NVLink and InfiniBand for maximum performance." },
+      "q2": { "question": "How quickly can I deploy a new cluster?", "answer": "Most clusters can be provisioned within hours, not weeks. Our automated infrastructure allows for rapid scaling." },
+      "q3": { "question": "What security certifications do you have?", "answer": "We maintain SOC 2 Type II, HIPAA, and GDPR compliance. All data is encrypted at rest and in transit." },
+      "q4": { "question": "Can I bring my own models?", "answer": "Absolutely. Our platform supports any model format including PyTorch, TensorFlow, and ONNX." },
+      "q5": { "question": "How does billing work?", "answer": "We offer flexible pricing including on-demand, reserved capacity, and committed use discounts." }
     }
   },
   "news": {
     "articles": {
-      "article1": {
-        "title": "Scaling AI Infrastructure: Lessons from 10,000 GPUs",
-        "excerpt": "How enterprise teams are managing GPU clusters at unprecedented scale.",
-        "category": "Engineering"
-      },
-      "article2": {
-        "title": "The Future of Inference: H100 vs A100 Benchmarks",
-        "excerpt": "Real-world performance comparisons for production AI workloads.",
-        "category": "Research"
-      },
-      "article3": {
-        "title": "Cost Optimization Strategies for AI Teams",
-        "excerpt": "Practical tips to reduce your GPU infrastructure costs by up to 50%.",
-        "category": "Business"
-      }
+      "article1": { "title": "Scaling AI Infrastructure: Lessons from 10,000 GPUs", "excerpt": "How enterprise teams are managing GPU clusters at unprecedented scale.", "category": "Engineering" },
+      "article2": { "title": "The Future of Inference: H100 vs A100 Benchmarks", "excerpt": "Real-world performance comparisons for production AI workloads.", "category": "Research" },
+      "article3": { "title": "Cost Optimization Strategies for AI Teams", "excerpt": "Practical tips to reduce your GPU infrastructure costs by up to 50%.", "category": "Business" }
     }
   },
   "cluster": {
     "centralizedManagement": "Centralized Management",
     "centralizedManagementDesc": "Unify your GPU resources across multiple regions and manage workloads from a single, intuitive dashboard.",
     "realtimeDashboard": "Real-Time Dashboard",
-    "realtimeDashboardDesc": "Monitor performance metrics, track resource utilization, and get instant alerts for any anomalies in your infrastructure.",
+    "realtimeDashboardDesc": "Monitor performance metrics, track resource utilization, and get instant alerts for any anomalies.",
     "accessManagement": "Access Management",
-    "accessManagementDesc": "Securely manage user permissions and control access to GPU resources with role-based access controls and team workspaces.",
+    "accessManagementDesc": "Securely manage user permissions and control access to GPU resources with role-based access controls.",
     "activeGPUs": "Active GPUs",
     "lastUpdated": "Last updated: Just now",
     "avgGPUUsage": "Avg. GPU Usage",
@@ -164,223 +140,77 @@
     "secureScalable": "Secure and Scalable",
     "secureScalableDesc": "Enterprise-grade security with SOC 2 Type II, HIPAA, and GDPR compliance. Scale from 1 to 1000+ GPUs."
   },
-  "modelLibrary": {
-    "heroTitle": "Model Library",
-    "heroSubtitle": "Explore our curated library of powerful open-source models and accelerate your AI apps.",
-    "filters": {
-      "all": "All",
-      "llm": "LLM",
-      "vision": "Vision",
-      "embedding": "Embedding"
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Competitive, transparent pricing with flexible billing — tailored for modern AI deployment",
+    "gpuPlans": {
+      "h200": { "label": "Highest Performance", "description": "For large-scale training needs, the most powerful compute option. Equipped with HBM3e memory for unmatched AI training performance.", "cta": "Contact Us" },
+      "h100": { "label": "Performance & Cost Balance", "description": "Ideal for high-volume inference tasks with cost-effective optimization. 80GB HBM3 memory for enterprise-grade AI deployment.", "cta": "Deploy Now" },
+      "blackwell": { "label": "Coming Soon", "headline": "Reserve Now", "description": "Blackwell launches in 2025 with higher efficiency and AI optimization features for next-gen AI workloads.", "cta": "Reserve Now" }
     },
-    "searchPlaceholder": "Search models...",
-    "ctaTitle": "Not sure which product fits your needs? Let's talk.",
-    "ctaSubtitle": "Our team is here to help you choose the right infrastructure and models for your AI applications.",
-    "types": {
-      "textGeneration": "Text Generation",
-      "codeGeneration": "Code Generation",
-      "imageGeneration": "Image Generation",
-      "visionLanguage": "Vision Language",
-      "textEmbedding": "Text Embedding"
-    }
-  },
-  "inferenceEngine": {
-    "heroTitle": "NexusAI Cloud Inference Engine",
-    "heroSubtitle": "Run and scale generative AI models with ease. Deploy pre-trained models for fast, low-latency inference deployment with blazing speed and scalability at scale you can rely on.",
-    "cubeLabel": "Inference",
-    "cubeSubLabel": "Engine",
-    "smarterWayTitle": "A Smarter Way to Inference",
-    "features": {
-      "deployment": {
-        "title": "Rapid Deployment, Zero Hassle",
-        "description": "Scale instantly with fully managed infrastructure. Our inference engine comes with all the automation and tooling you need to ship faster, so you can focus on building."
-      },
-      "efficiency": {
-        "title": "Optimized for Efficiency",
-        "description": "Advanced GPU optimization and model caching minimize latency while maximizing throughput. Get more inferences per dollar with our intelligent resource allocation."
-      }
+    "serviceEngine": {
+      "title": "Supercharge Your GPU Cloud Computing",
+      "subtitle": "Break through performance bottlenecks and accelerate AI training and inference.",
+      "serviceType": "Service Type",
+      "inference": { "title": "Inference Engine", "description": "GMI Cloud's inference service is optimized for high-throughput and low-latency scenarios. The optimized inference stack ensures models run at peak performance.", "cta": "Learn More" },
+      "cluster": { "title": "Cluster Engine", "description": "GMI Cluster service is optimized for distributed training and large-scale computing. InfiniBand high-speed networking enables multi-node coordination.", "cta": "Start Deploying" }
     },
-    "modelShowcase": {
-      "title": "Pre-Built AI Models for Fast Inference",
-      "subtitle": "Choose from our curated library of pre-optimized models or bring your own",
-      "inference": "Inference",
-      "viewAllModels": "View all models in our library →",
-      "models": {
-        "llama2": {
-          "name": "Llama 2",
-          "description": "Open-source large language model for text generation and chat"
-        },
-        "stableDiffusion": {
-          "name": "Stable Diffusion",
-          "description": "State-of-the-art image generation model"
-        },
-        "mpt7b": {
-          "name": "MPT-7B",
-          "description": "Efficient transformer model for commercial use"
-        }
-      }
-    },
-    "scaling": {
-      "kicker": "Auto-Scale",
-      "title": "Effortless Scaling for Your AI Workloads",
-      "description": "Scale from zero to thousands of concurrent requests automatically. Our intelligent auto-scaling adjusts resources in real-time based on traffic patterns.",
-      "dynamicScaling": {
-        "title": "Dynamic Scaling",
-        "description": "Automatically provisions GPUs as demand increases, scales down during quiet periods."
-      },
-      "flexibility": {
-        "title": "Blazing Flexibility",
-        "description": "Choose your minimum and maximum replicas, set custom scaling metrics."
-      },
-      "cta": "Get Started Now"
-    },
-    "monitoring": {
-      "kicker": "Monitor",
-      "title": "Real-Time AI Performance Monitoring",
-      "description": "Keep your finger on the pulse with comprehensive dashboards. Track latency, throughput, and error rates in real-time to ensure optimal performance.",
-      "totalInferences": "Total Inferences",
-      "avgLatency": "Avg Latency",
-      "throughput": "Throughput",
-      "uptime": "Uptime",
-      "costPerInference": "Cost/1K inferences"
-    },
-    "cta": {
-      "title": "Start Inferencing Now",
-      "subtitle": "Deploy your first model in minutes. No complex setup required. Just bring your model and start serving predictions at scale."
-    },
+    "cta": { "title": "Not sure which product fits your needs? Let's talk.", "subtitle": "Our team is here to help you choose the right GPU cloud solution and answer any questions about performance, pricing, or scaling." },
     "faq": {
-      "title": "Frequently asked questions",
-      "subtitle": "Get quick answers to common questions about Inference Engine",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Have questions about our services? Check out these common questions.",
       "items": {
-        "q1": {
-          "question": "What is the NexusAI Cloud Inference Engine?",
-          "answer": "The Inference Engine is our managed platform for deploying and scaling AI models in production. It handles all the infrastructure complexity so you can focus on building great AI applications. Deploy pre-trained models or bring your own with minimal configuration."
-        },
-        "q2": {
-          "question": "How fast is deployment and how much latency to expect?",
-          "answer": "Deployment typically takes under 2 minutes for pre-built models. For latency, most models achieve sub-100ms inference times, with optimized models like Llama 2 reaching as low as 30-50ms for typical requests. Cold starts are minimized through intelligent caching."
-        },
-        "q3": {
-          "question": "How does it optimize performance and cost?",
-          "answer": "Our engine uses GPU batching, model caching, and intelligent request routing to maximize throughput while minimizing costs. Auto-scaling ensures you only pay for what you use, scaling down to zero when there's no traffic."
-        },
-        "q4": {
-          "question": "How does auto-scaling handle fluctuating traffic?",
-          "answer": "The auto-scaler monitors request queue depth, latency, and GPU utilization in real-time. When traffic spikes, new replicas spin up in seconds. During quiet periods, resources scale down automatically. You can configure min/max replicas and custom scaling triggers."
-        },
-        "q5": {
-          "question": "Do I get built-in monitoring and operational insights?",
-          "answer": "Yes! Every deployment includes a comprehensive dashboard with real-time metrics: latency percentiles, throughput, error rates, GPU utilization, and cost tracking. Set up alerts for anomalies and export data to your observability stack."
-        }
+        "q1": { "question": "What types of GPUs are available?", "answer": "We offer the latest NVIDIA GPUs including H200 (with HBM3e memory), H100 80GB HBM3, and A100 80GB HBM2e. All configurations include NVLink and InfiniBand." },
+        "q2": { "question": "How does billing and payment work?", "answer": "We use an on-demand billing model calculated per GPU-hour. You can choose prepaid or postpaid plans with credit card, bank transfer, and more." },
+        "q3": { "question": "Are volume discounts available?", "answer": "Yes! We offer flexible discount programs including long-term subscription discounts (up to 40%), volume usage discounts, and enterprise-specific pricing." },
+        "q4": { "question": "Can I adjust resources anytime?", "answer": "Absolutely. You can increase or decrease GPU resources anytime via the console or API. Our elastic architecture supports instant scaling." },
+        "q5": { "question": "How do I get started?", "answer": "Getting started is simple. Contact our sales team for a consultation and we'll help determine the right configuration for your needs." }
       }
     }
   },
-  "clusterEngine": {
-    "heroTitle": "NexusAI Cloud Cluster Engine",
-    "heroSubtitle": "Automated orchestration for AI workloads at scale. Deploy, manage, and monitor GPU clusters with enterprise-grade reliability and performance.",
-    "deployNow": "Deploy Now",
-    "integrationTitle": "Your AI Control Plane for Cluster and Container Orchestration",
-    "integrationSubtitle": "Seamlessly integrate with your existing tools and infrastructure",
-    "features": {
-      "scaling": {
-        "title": "Efficient Scaling",
-        "description": "Automatically scale your GPU clusters up or down based on workload demands. Our intelligent orchestration ensures optimal resource utilization."
-      },
-      "monitoring": {
-        "title": "Real-time Monitoring",
-        "description": "Monitor every aspect of your cluster with comprehensive dashboards. Track instance health, resource usage, and job progress in real-time."
-      },
-      "analytics": {
-        "title": "Usage Analytics",
-        "description": "Gain deep insights into your compute usage patterns. Visualize trends, optimize costs, and make data-driven infrastructure decisions."
-      },
-      "resources": {
-        "title": "Resource Management",
-        "description": "Fine-grained control over every GPU, node, and container. Allocate resources precisely where they're needed with our intuitive management interface."
-      },
-      "security": {
-        "title": "Enterprise Security",
-        "description": "Bank-grade security for your AI workloads. Role-based access control, encryption at rest and in transit, and comprehensive audit logging."
-      }
-    },
-    "ctaTitle": "Ready to scale your AI infrastructure?",
-    "ctaSubtitle": "Get started with Cluster Engine today and experience enterprise-grade orchestration.",
-    "darkCtaTitle": "Manage Workloads Effortlessly",
-    "darkCtaSubtitle": "Deploy, monitor, and scale your AI workloads with our intuitive Cluster Engine. Built for teams who demand reliability at scale.",
-    "faqTitle": "Frequently asked questions",
-    "faqSubtitle": "Everything you need to know about Cluster Engine"
+  "gpuPage": { "heroTitle": "GPU Compute Rental", "heroSubtitle": "Bare metal servers with full cloud integration, offered at the most competitive prices." },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team for more information and support.",
+    "sales": { "title": "Sales", "description": "Contact our sales team to learn more about our offerings and pricing." },
+    "support": { "title": "Help & Support", "description": "Reach out to our support team for technical assistance and customer service." },
+    "media": { "title": "Media & Press", "description": "For media inquiries, connect with our press team." },
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "interestType": "Interest Type",
+      "selectOne": "Select one...",
+      "gpuCloud": "GPU Cloud Services",
+      "inference": "Inference Engine",
+      "cluster": "Cluster Engine",
+      "enterprise": "Enterprise Solutions",
+      "partnership": "Partnership",
+      "other": "Other",
+      "company": "Company Name",
+      "submit": "Submit",
+      "successTitle": "Message sent!",
+      "successMessage": "We'll get back to you within 24 hours."
+    }
   },
-  "careers": {
-    "heroTitle": "Build the Future of AI with NexusAI",
-    "heroSubtitle": "At NexusAI, we're not just building cutting-edge cloud infrastructure — we're shaping the future of AI and high-performance computing. Innovation thrives when brilliant minds have the freedom to push boundaries, which is why we foster a dynamic, fast-paced environment where creativity and expertise drive progress.",
-    "joinButton": "Join NexusAI",
-    "seePositions": "See Open Positions",
-    "valuesKicker": "We're not just offering jobs — we're offering the chance to shape the future of AI.",
-    "values": {
-      "engineering": {
-        "title": "Engineering Excellence",
-        "description": "Build complex, cutting-edge technology that push the limits of what's possible. If you're an engineer who thrives on innovation, this is where you can truly test your skills and grow."
-      },
-      "business": {
-        "title": "Business at the Forefront",
-        "description": "Join a team of bold thinkers charting a global business from the ground up. We're looking for exceptional problem solvers ready to make a real impact in a rapidly evolving industry."
-      },
-      "startup": {
-        "title": "Startup Energy, Big Ambitions",
-        "description": "We move fast, value fresh ideas, and believe in bold leaps. At NexusAI Cloud, proactivity, speed, and innovation aren't just encouraged — they're essential."
-      }
-    },
-    "officesKicker": "Our team is at the forefront of global AI development.",
-    "joinTeamTitle": "Join a Global Team of Innovators",
-    "joinTeamSubtitle": "We want to bring together bold thinkers from around the world to drive the future of AI and high-performance computing. Our diverse, multicultural team thrives on collaboration, fresh perspectives, and a shared passion for pushing boundaries."
+  "about": {
+    "kicker": "About GMI Cloud",
+    "heroTitle": "Building AI Infrastructure, Empowering Possibilities",
+    "heroSubtitle": "We are dedicated to building the most advanced GPU cloud computing platform, accelerating global AI innovation.",
+    "stats": { "year": "Year", "coreMembers": "Core Members", "globalOffices": "Global Offices" }
   },
-  "partners": {
-    "heroTitle": "Join the NexusAI Partner Program",
-    "heroSubtitle": "Join a robust ecosystem of technology leaders to drive growth and innovation in AI infrastructure.",
-    "stats": {
-      "founded": "Founded",
-      "partners": "Partners",
-      "gpuHours": "GPU Hours"
-    },
-    "diverseTitle": "Diverse Partners, Tailored Success",
-    "whyJoinTitle": "Why Join the NexusAI Partner Program?",
-    "benefits": {
-      "access": {
-        "title": "Exclusive Access",
-        "description": "Get priority access to new GPU infrastructure, beta features, and dedicated support channels."
-      },
-      "marketing": {
-        "title": "Co-Marketing",
-        "description": "Amplify your brand through joint marketing campaigns, case studies, and partner spotlights."
-      },
-      "support": {
-        "title": "Technical Support",
-        "description": "Receive dedicated technical resources, training materials, and priority engineering support."
-      }
-    },
-    "newProductTitle": "New product",
-    "faqTitle": "Frequently asked questions"
-  },
-  "blog": {
-    "heroTitle": "NexusAI Blog",
-    "heroSubtitle": "Discover the latest news, updates, and insights from our team."
-  },
+  "studio": { "heroTitle": "Creativity That Flows.", "heroSubtitle": "Your intelligent canvas for dreaming, iterating, and shaping workflows.", "startNow": "Start Now" },
   "models": {
-    "deepseekR1": {
-      "description": "Open-source reasoning model, rivaling OpenAI o1, excelling in math, coding, and multi-step reasoning."
-    },
-    "deepseekR1Distill": {
-      "description": "Free endpoint to experience powerful reasoning model, this distilled version retains excellent reasoning capabilities."
-    },
-    "llama33": {
-      "description": "Open-source reasoning model, supports multi-language dialogue optimization, specifically tuned for dialogue fluency."
-    },
+    "deepseekR1": { "description": "Open-source reasoning model, rivaling OpenAI o1, excelling in math, coding, and multi-step reasoning." },
+    "deepseekR1Distill": { "description": "Free endpoint to experience powerful reasoning model, this distilled version retains excellent reasoning capabilities." },
+    "llama33": { "description": "Open-source reasoning model, supports multi-language dialogue optimization, specifically tuned for dialogue fluency." },
     "free": "Free"
   },
-  "languages": {
-    "en": "English",
-    "zh-TW": "繁體中文",
-    "ja": "日本語",
-    "ko": "한국어"
-  }
+  "modelLibrary": { "heroTitle": "Model Library", "heroSubtitle": "Explore our curated library of powerful open-source models and accelerate your AI apps.", "filters": { "all": "All", "llm": "LLM", "vision": "Vision", "embedding": "Embedding" }, "searchPlaceholder": "Search models...", "ctaTitle": "Not sure which product fits your needs? Let's talk.", "ctaSubtitle": "Our team is here to help you choose the right infrastructure and models for your AI applications.", "types": { "textGeneration": "Text Generation", "codeGeneration": "Code Generation", "imageGeneration": "Image Generation", "visionLanguage": "Vision Language", "textEmbedding": "Text Embedding" } },
+  "inferenceEngine": { "heroTitle": "NexusAI Cloud Inference Engine", "heroSubtitle": "Run and scale generative AI models with ease.", "cubeLabel": "Inference", "cubeSubLabel": "Engine", "smarterWayTitle": "A Smarter Way to Inference", "features": { "deployment": { "title": "Rapid Deployment, Zero Hassle", "description": "Scale instantly with fully managed infrastructure." }, "efficiency": { "title": "Optimized for Efficiency", "description": "Advanced GPU optimization and model caching minimize latency." } }, "modelShowcase": { "title": "Pre-Built AI Models for Fast Inference", "subtitle": "Choose from our curated library of pre-optimized models or bring your own", "inference": "Inference", "viewAllModels": "View all models in our library →", "models": { "llama2": { "name": "Llama 2", "description": "Open-source large language model for text generation and chat" }, "stableDiffusion": { "name": "Stable Diffusion", "description": "State-of-the-art image generation model" }, "mpt7b": { "name": "MPT-7B", "description": "Efficient transformer model for commercial use" } } }, "scaling": { "kicker": "Auto-Scale", "title": "Effortless Scaling for Your AI Workloads", "description": "Scale from zero to thousands of concurrent requests automatically.", "dynamicScaling": { "title": "Dynamic Scaling", "description": "Automatically provisions GPUs as demand increases." }, "flexibility": { "title": "Blazing Flexibility", "description": "Choose your minimum and maximum replicas." }, "cta": "Get Started Now" }, "monitoring": { "kicker": "Monitor", "title": "Real-Time AI Performance Monitoring", "description": "Track latency, throughput, and error rates in real-time.", "totalInferences": "Total Inferences", "avgLatency": "Avg Latency", "throughput": "Throughput", "uptime": "Uptime", "costPerInference": "Cost/1K inferences" }, "cta": { "title": "Start Inferencing Now", "subtitle": "Deploy your first model in minutes." }, "faq": { "title": "Frequently asked questions", "subtitle": "Get quick answers to common questions about Inference Engine", "items": { "q1": { "question": "What is the NexusAI Cloud Inference Engine?", "answer": "The Inference Engine is our managed platform for deploying and scaling AI models in production." }, "q2": { "question": "How fast is deployment?", "answer": "Deployment typically takes under 2 minutes for pre-built models." }, "q3": { "question": "How does it optimize performance and cost?", "answer": "Our engine uses GPU batching, model caching, and intelligent request routing." }, "q4": { "question": "How does auto-scaling handle fluctuating traffic?", "answer": "The auto-scaler monitors request queue depth, latency, and GPU utilization in real-time." }, "q5": { "question": "Do I get built-in monitoring?", "answer": "Yes! Every deployment includes a comprehensive dashboard with real-time metrics." } } } },
+  "clusterEngine": { "heroTitle": "NexusAI Cloud Cluster Engine", "heroSubtitle": "Automated orchestration for AI workloads at scale.", "deployNow": "Deploy Now", "integrationTitle": "Your AI Control Plane", "integrationSubtitle": "Seamlessly integrate with your existing tools", "features": { "scaling": { "title": "Efficient Scaling", "description": "Automatically scale your GPU clusters." }, "monitoring": { "title": "Real-time Monitoring", "description": "Monitor every aspect of your cluster." }, "analytics": { "title": "Usage Analytics", "description": "Gain deep insights into your compute usage." }, "resources": { "title": "Resource Management", "description": "Fine-grained control over every GPU, node, and container." }, "security": { "title": "Enterprise Security", "description": "Bank-grade security for your AI workloads." } }, "ctaTitle": "Ready to scale your AI infrastructure?", "ctaSubtitle": "Get started with Cluster Engine today.", "darkCtaTitle": "Manage Workloads Effortlessly", "darkCtaSubtitle": "Deploy, monitor, and scale your AI workloads.", "faqTitle": "Frequently asked questions", "faqSubtitle": "Everything you need to know about Cluster Engine" },
+  "careers": { "heroTitle": "Build the Future of AI with NexusAI", "heroSubtitle": "We're shaping the future of AI and high-performance computing.", "joinButton": "Join NexusAI", "seePositions": "See Open Positions", "valuesKicker": "We're offering the chance to shape the future of AI.", "values": { "engineering": { "title": "Engineering Excellence", "description": "Build complex, cutting-edge technology." }, "business": { "title": "Business at the Forefront", "description": "Join a team of bold thinkers." }, "startup": { "title": "Startup Energy, Big Ambitions", "description": "We move fast and value fresh ideas." } }, "officesKicker": "Our team is at the forefront of global AI development.", "joinTeamTitle": "Join a Global Team of Innovators", "joinTeamSubtitle": "We want to bring together bold thinkers from around the world." },
+  "partners": { "heroTitle": "Join the NexusAI Partner Program", "heroSubtitle": "Join a robust ecosystem of technology leaders.", "stats": { "founded": "Founded", "partners": "Partners", "gpuHours": "GPU Hours" }, "diverseTitle": "Diverse Partners, Tailored Success", "whyJoinTitle": "Why Join the NexusAI Partner Program?", "benefits": { "access": { "title": "Exclusive Access", "description": "Get priority access to new GPU infrastructure." }, "marketing": { "title": "Co-Marketing", "description": "Amplify your brand through joint marketing campaigns." }, "support": { "title": "Technical Support", "description": "Receive dedicated technical resources." } }, "newProductTitle": "New product", "faqTitle": "Frequently asked questions" },
+  "blog": { "heroTitle": "NexusAI Blog", "heroSubtitle": "Discover the latest news, updates, and insights from our team." },
+  "languages": { "en": "English", "zh-TW": "繁體中文", "ja": "日本語", "ko": "한국어" }
 }

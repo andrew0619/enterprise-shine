@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import FloatingNodeCard from "./FloatingNodeCard";
 import NodeNetwork from "./NodeNetwork";
 
@@ -21,6 +22,8 @@ const floatingCards = [
 ];
 
 const StudioHero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
       {/* Grid Pattern Background */}
@@ -54,17 +57,17 @@ const StudioHero = () => {
       {/* Center Content */}
       <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
-          Creativity That Flows.
+          {t("studio.heroTitle")}
         </h1>
         <p className="text-lg md:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">
-          Your intelligent canvas for dreaming, iterating, and shaping workflows.
+          {t("studio.heroSubtitle")}
         </p>
         <Button
           asChild
           size="lg"
           className="bg-white text-black hover:bg-zinc-200 rounded-full px-10 py-6 text-lg font-medium"
         >
-          <Link to="/contact">Start Now</Link>
+          <Link to="/contact">{t("studio.startNow")}</Link>
         </Button>
       </div>
 

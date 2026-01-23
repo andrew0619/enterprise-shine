@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/form";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const contactSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(50),
@@ -32,26 +33,27 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-const contactCards = [
-  {
-    title: "Sales",
-    description: "Contact our sales team to learn more about our offerings and pricing.",
-    email: "sales@gmicloud.ai",
-  },
-  {
-    title: "Help & Support",
-    description: "Reach out to our support team for technical assistance and customer service.",
-    email: "support@gmicloud.ai",
-  },
-  {
-    title: "Media & Press",
-    description: "For media inquiries, connect with our press team.",
-    email: "info@gmicloud.ai",
-  },
-];
-
 const ContactPage = () => {
   const { toast } = useToast();
+  const { t } = useTranslation();
+
+  const contactCards = [
+    {
+      title: t("contact.sales.title"),
+      description: t("contact.sales.description"),
+      email: "sales@gmicloud.ai",
+    },
+    {
+      title: t("contact.support.title"),
+      description: t("contact.support.description"),
+      email: "support@gmicloud.ai",
+    },
+    {
+      title: t("contact.media.title"),
+      description: t("contact.media.description"),
+      email: "info@gmicloud.ai",
+    },
+  ];
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -66,8 +68,8 @@ const ContactPage = () => {
 
   const onSubmit = (data: ContactFormData) => {
     toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours.",
+      title: t("contact.form.successTitle"),
+      description: t("contact.form.successMessage"),
     });
     form.reset();
   };
@@ -80,10 +82,10 @@ const ContactPage = () => {
           <div className="container">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Contact Us
+                {t("contact.title")}
               </h1>
               <p className="text-muted-foreground text-lg">
-                Get in touch with our team for more information and support.
+                {t("contact.subtitle")}
               </p>
             </div>
           </div>
@@ -136,7 +138,7 @@ const ContactPage = () => {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="text-foreground font-medium">
-                              First Name
+                              {t("contact.form.firstName")}
                             </FormLabel>
                             <FormControl>
                               <Input 
@@ -155,7 +157,7 @@ const ContactPage = () => {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="text-foreground font-medium">
-                              Last Name
+                              {t("contact.form.lastName")}
                             </FormLabel>
                             <FormControl>
                               <Input 
@@ -176,7 +178,7 @@ const ContactPage = () => {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-foreground font-medium">
-                            Email
+                            {t("contact.form.email")}
                           </FormLabel>
                           <FormControl>
                             <Input
@@ -197,7 +199,7 @@ const ContactPage = () => {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-foreground font-medium">
-                            Interest Type
+                            {t("contact.form.interestType")}
                           </FormLabel>
                           <Select
                             onValueChange={field.onChange}
@@ -205,16 +207,16 @@ const ContactPage = () => {
                           >
                             <FormControl>
                               <SelectTrigger className="border-border rounded-md">
-                                <SelectValue placeholder="Select one..." />
+                                <SelectValue placeholder={t("contact.form.selectOne")} />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent className="bg-popover">
-                              <SelectItem value="gpu-cloud">GPU Cloud Services</SelectItem>
-                              <SelectItem value="inference">Inference Engine</SelectItem>
-                              <SelectItem value="cluster">Cluster Engine</SelectItem>
-                              <SelectItem value="enterprise">Enterprise Solutions</SelectItem>
-                              <SelectItem value="partnership">Partnership</SelectItem>
-                              <SelectItem value="other">Other</SelectItem>
+                              <SelectItem value="gpu-cloud">{t("contact.form.gpuCloud")}</SelectItem>
+                              <SelectItem value="inference">{t("contact.form.inference")}</SelectItem>
+                              <SelectItem value="cluster">{t("contact.form.cluster")}</SelectItem>
+                              <SelectItem value="enterprise">{t("contact.form.enterprise")}</SelectItem>
+                              <SelectItem value="partnership">{t("contact.form.partnership")}</SelectItem>
+                              <SelectItem value="other">{t("contact.form.other")}</SelectItem>
                             </SelectContent>
                           </Select>
                           <FormMessage />
@@ -229,7 +231,7 @@ const ContactPage = () => {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-foreground font-medium">
-                            Company Name
+                            {t("contact.form.company")}
                           </FormLabel>
                           <FormControl>
                             <Input 
@@ -248,7 +250,7 @@ const ContactPage = () => {
                       size="lg" 
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
                     >
-                      Submit
+                      {t("contact.form.submit")}
                     </Button>
                   </form>
                 </Form>
