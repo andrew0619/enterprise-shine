@@ -62,7 +62,7 @@ const CaseStudySection = () => {
           {/* Stats */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-normal mb-4">
                 Proven Results
               </h2>
               <p className="text-lg text-muted-foreground">
