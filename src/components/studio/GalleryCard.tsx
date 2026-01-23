@@ -4,7 +4,7 @@ interface GalleryCardProps {
   imageSrc: string;
   title: string;
   author: string;
-  aiTools: string[];
+  aiTools?: string[];
 }
 
 const GalleryCard = ({
@@ -36,16 +36,18 @@ const GalleryCard = ({
         <p className="text-zinc-400 text-sm mb-3">{author}</p>
         
         {/* AI Tools Tags */}
-        <div className="flex flex-wrap gap-1.5">
-          {aiTools.map((tool, index) => (
-            <span
-              key={index}
-              className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-white/70 backdrop-blur-sm"
-            >
-              {tool}
-            </span>
-          ))}
-        </div>
+        {aiTools && aiTools.length > 0 && (
+          <div className="flex flex-wrap gap-1.5">
+            {aiTools.map((tool, index) => (
+              <span
+                key={index}
+                className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-white/70 backdrop-blur-sm"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Hover Brightness Effect */}
