@@ -1,14 +1,13 @@
-import { forwardRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ctaTech from "@/assets/h200/cta-tech.jpg";
 
-const H200CTABanner = forwardRef<HTMLElement>((_, ref) => {
+const H200CTABanner = () => {
   const { t } = useTranslation();
 
   return (
-    <section ref={ref} className="py-20">
+    <section className="py-20">
       <div className="container">
         <div className="relative rounded-2xl overflow-hidden">
           {/* Background Image */}
@@ -40,8 +39,6 @@ const H200CTABanner = forwardRef<HTMLElement>((_, ref) => {
       </div>
     </section>
   );
-});
-
-H200CTABanner.displayName = "H200CTABanner";
+};
 
 export default H200CTABanner;
