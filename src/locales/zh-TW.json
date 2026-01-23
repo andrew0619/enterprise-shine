@@ -293,6 +293,7 @@
       "all": "全部",
       "llm": "大語言模型",
       "vision": "視覺",
+      "video": "影片",
       "embedding": "向量嵌入"
     },
     "searchPlaceholder": "搜尋模型...",

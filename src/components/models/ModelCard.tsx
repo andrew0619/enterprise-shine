@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 
@@ -8,7 +7,7 @@ export interface ModelCardProps {
   name: string;
   provider: string;
   type: string;
-  category: "LLM" | "Vision" | "Embedding";
+  category: "LLM" | "Vision" | "Embedding" | "Video";
   logoColor: string;
   logoIcon: string;
   isNew?: boolean;
@@ -17,7 +16,6 @@ export interface ModelCardProps {
 const ModelCard = ({
   id,
   name,
-  provider,
   type,
   logoColor,
   logoIcon,
@@ -28,14 +26,14 @@ const ModelCard = ({
   return (
     <Link
       to={`/models/${id}`}
-      className="group block bg-white border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+      className="group block bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-sm transition-all"
     >
-      {/* Top Row */}
-      <div className="flex items-start justify-between mb-3">
+      {/* Top Row - Logo and Badge */}
+      <div className="flex items-start justify-between mb-6">
         {/* Logo */}
         <div
           className={cn(
-            "w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-bold",
+            "w-12 h-12 rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-sm",
             logoColor
           )}
         >
@@ -44,28 +42,27 @@ const ModelCard = ({
 
         {/* New Badge */}
         {isNew && (
-          <span className="px-2 py-0.5 text-[10px] font-medium bg-blue-100 text-primary rounded-full">
-            {t("common.new")}
+          <span className="px-3 py-1 text-xs font-medium border border-rose-300 text-rose-500 rounded-full bg-rose-50">
+            NEW
           </span>
         )}
       </div>
 
-      {/* Provider */}
-      <p className="text-xs text-muted-foreground mb-1">{provider}</p>
-
       {/* Model Name */}
-      <h3 className="text-sm font-semibold text-foreground mb-1 line-clamp-1 group-hover:text-primary transition-colors">
+      <h3 className="text-base font-medium text-foreground mb-6 line-clamp-2 min-h-[48px]">
         {name}
       </h3>
 
-      {/* Type Tag */}
-      <p className="text-xs text-muted-foreground mb-3">{type}</p>
+      {/* Bottom Row - Type Tag and Action */}
+      <div className="flex items-center justify-between">
+        {/* Type Tag */}
+        <span className="px-3 py-1.5 text-xs font-medium text-muted-foreground bg-slate-100 rounded-full">
+          {type}
+        </span>
 
-      {/* Action */}
-      <div className="flex justify-end">
-        <span className="text-xs text-primary font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+        {/* Action */}
+        <span className="text-sm text-primary font-medium group-hover:underline transition-all">
           {t("common.viewModel")}
-          <ArrowRight className="h-3 w-3" />
         </span>
       </div>
     </Link>
