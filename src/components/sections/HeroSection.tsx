@@ -1,23 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Cpu, Server, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import heroCubes from "@/assets/home/hero-cubes.jpg";
 
 const pillars = [
-  {
-    label: "GPUs",
-    icon: Cpu,
-    gradient: "from-primary/80 to-primary",
-  },
-  {
-    label: "A100/H100",
-    icon: Server,
-    gradient: "from-primary to-primary/90",
-  },
-  {
-    label: "Inference",
-    icon: Zap,
-    gradient: "from-primary/90 to-primary/70",
-  },
+  { label: "GPUs" },
+  { label: "AI/ML Ops" },
+  { label: "Inference" },
 ];
 
 const partnerLogos = [
@@ -57,28 +46,24 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* 3D Pillars Visual */}
-        <div className="flex justify-center items-end gap-6 md:gap-10 mb-16 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-          {pillars.map((pillar, index) => (
-            <div
-              key={pillar.label}
-              className="group relative"
-              style={{ animationDelay: `${0.4 + index * 0.1}s` }}
-            >
-              <div
-                className={`w-24 md:w-32 h-40 md:h-56 rounded-xl bg-gradient-to-b ${pillar.gradient} shadow-2xl transform transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-2 flex flex-col items-center justify-center gap-3`}
+        {/* 3D Cubes Visual */}
+        <div className="relative max-w-2xl mx-auto mb-16 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <img
+            src={heroCubes}
+            alt="GPU, AI/ML Ops, and Inference cubes"
+            className="w-full h-auto"
+          />
+          {/* Labels overlay */}
+          <div className="absolute inset-0 flex items-end justify-center gap-8 md:gap-16 pb-4">
+            {pillars.map((pillar) => (
+              <span
+                key={pillar.label}
+                className="text-sm md:text-base font-semibold text-foreground bg-background/80 px-3 py-1 rounded-full"
               >
-                <pillar.icon className="h-8 w-8 md:h-12 md:w-12 text-primary-foreground" />
-                <span className="text-primary-foreground font-semibold text-sm md:text-base">
-                  {pillar.label}
-                </span>
-              </div>
-              {/* Reflection */}
-              <div
-                className={`absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 md:w-28 h-4 rounded-full bg-gradient-to-r ${pillar.gradient} opacity-20 blur-md`}
-              />
-            </div>
-          ))}
+                {pillar.label}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Partner Strip */}

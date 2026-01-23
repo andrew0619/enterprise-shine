@@ -1,24 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import ctaAbstract from "@/assets/home/cta-abstract.jpg";
 
 const CTASection = () => {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-heading via-foreground to-heading">
-        {/* Pattern overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:24px_24px]" />
-        </div>
-        {/* Gradient overlays */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={ctaAbstract}
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Content */}
       <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center text-primary-foreground">
+        <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Ready to Deploy AI at Scale?
           </h2>
@@ -30,7 +31,7 @@ const CTASection = () => {
             <Button
               asChild
               size="lg"
-              className="bg-primary-foreground text-heading hover:bg-primary-foreground/90 text-base px-8"
+              className="bg-white text-black hover:bg-white/90 text-base px-8"
             >
               <Link to="/contact">
                 Contact Sales
@@ -41,7 +42,7 @@ const CTASection = () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8"
+              className="border-white/30 text-white hover:bg-white/10 text-base px-8"
             >
               <Link to="/pricing">View Pricing</Link>
             </Button>
