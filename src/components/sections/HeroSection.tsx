@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import heroCubes from "@/assets/home/hero-cubes.jpg";
+import heroCubes from "@/assets/home/hero-cubes.png";
 
 const pillars = [
   { label: "GPUs" },
