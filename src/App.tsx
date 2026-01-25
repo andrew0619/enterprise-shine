@@ -39,8 +39,7 @@ import IntakeSuccess from "./pages/intake/IntakeSuccess";
 
 // Admin pages
 import AdminLayout from "./components/admin/AdminLayout";
-import { Dashboard, ProjectList, ProjectDetail } from "./pages/admin";
-import ThemePreview from "./pages/admin/ThemePreview";
+import { Dashboard, ProjectList, ProjectDetail, ThemePreview, PageBuilder } from "./pages/admin";
 
 // Workspace pages (Client Content Platform)
 import WorkspaceLayout from "./components/workspace/WorkspaceLayout";
@@ -88,6 +87,7 @@ const App = () => (
             <Route path="projects" element={<ProjectList />} />
             <Route path="projects/:id" element={<ProjectDetail />} />
             <Route path="themes" element={<ThemePreview />} />
+            <Route path="builder" element={<PageBuilder />} />
             <Route path="clients" element={<Dashboard />} />
             <Route path="files" element={<Dashboard />} />
             <Route path="settings" element={<Dashboard />} />
