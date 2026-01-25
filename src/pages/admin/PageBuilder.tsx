@@ -2,6 +2,7 @@
  * 📄 Page Builder - 頁面生成器
  * 
  * 整合劇本引擎、內容架構、頁面組合器的完整預覽系統
+ * 支持使用樣本網站的真實內容進行排版測試
  */
 
 import React, { useState, useMemo } from 'react';
@@ -15,21 +16,32 @@ import {
   type ScriptConfig,
   type PageScript
 } from '@/lib/script-engine';
-import { samplePageContent, type PageContent } from '@/lib/content-schema';
+import type { PageContent } from '@/lib/content-schema';
 import { composePage, generatePageCode } from '@/lib/page-composer';
 import { cn } from '@/lib/utils';
+
+// 樣本內容
+import { 
+  quantumHorizonsContent, 
+  enterpriseShineContent,
+  SAMPLE_OPTIONS,
+  type SampleId,
+} from '@/lib/sample-content';
 
 // ============================================================
 // 類型定義
 // ============================================================
 
-type ViewMode = 'preview' | 'code' | 'script';
+type ViewMode = 'preview' | 'code' | 'script' | 'compare';
 
 // ============================================================
 // 主組件
 // ============================================================
 
 export default function PageBuilder() {
+  // 樣本選擇
+  const [selectedSample, setSelectedSample] = useState<SampleId>('enterprise-shine');
+  
   // 劇本配置
   const [persona, setPersona] = useState<Persona>('executive');
   const [goal, setGoal] = useState<PageGoal>('lead-gen');
@@ -37,6 +49,13 @@ export default function PageBuilder() {
   
   // 視圖模式
   const [viewMode, setViewMode] = useState<ViewMode>('preview');
+  
+  // 獲取選中的內容
+  const content = useMemo<PageContent>(() => {
+    return selectedSample === 'quantum-horizons' 
+      ? quantumHorizonsContent 
+      : enterpriseShineContent;
+  }, [selectedSample]);
   
   // 生成劇本
   const script = useMemo<PageScript>(() => {
@@ -51,19 +70,24 @@ export default function PageBuilder() {
   
   // 生成頁面代碼
   const pageCode = useMemo(() => {
-    return generatePageCode(script, samplePageContent);
-  }, [script]);
+    return generatePageCode(script, content);
+  }, [script, content]);
   
   return (
     <div className="min-h-screen bg-background">
       {/* 頂部工具欄 */}
       <header className="border-b border-border bg-card sticky top-0 z-50">
         <div className="container flex items-center justify-between h-16">
-          <h1 className="text-xl font-bold">🎬 Page Builder</h1>
+          <div className="flex items-center gap-4">
+            <h1 className="text-xl font-bold">🎬 Page Builder</h1>
+            <span className="text-sm text-muted-foreground">
+              使用真實樣本內容測試排版
+            </span>
+          </div>
           
           {/* 視圖切換 */}
           <div className="flex items-center gap-2 bg-muted rounded-lg p-1">
-            {(['preview', 'code', 'script'] as ViewMode[]).map((mode) => (
+            {(['preview', 'compare', 'code', 'script'] as ViewMode[]).map((mode) => (
               <button
                 key={mode}
                 onClick={() => setViewMode(mode)}
@@ -75,6 +99,7 @@ export default function PageBuilder() {
                 )}
               >
                 {mode === 'preview' && '👁️ 預覽'}
+                {mode === 'compare' && '⚖️ 對比'}
                 {mode === 'code' && '💻 代碼'}
                 {mode === 'script' && '📜 劇本'}
               </button>
@@ -85,11 +110,49 @@ export default function PageBuilder() {
       
       <div className="flex">
         {/* 左側控制面板 */}
-        <aside className="w-80 border-r border-border bg-card p-6 min-h-[calc(100vh-4rem)] sticky top-16">
+        <aside className="w-80 border-r border-border bg-card p-6 min-h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto">
           <div className="space-y-6">
+            
+            {/* 樣本選擇 */}
+            <div className="p-4 rounded-xl bg-primary/5 border border-primary/20">
+              <label className="block text-sm font-medium mb-3">📦 選擇樣本網站</label>
+              <div className="space-y-2">
+                {SAMPLE_OPTIONS.map((sample) => (
+                  <button
+                    key={sample.id}
+                    onClick={() => setSelectedSample(sample.id)}
+                    className={cn(
+                      "w-full p-3 rounded-lg border text-left transition-all",
+                      selectedSample === sample.id
+                        ? "border-primary bg-primary/10 ring-2 ring-primary/20"
+                        : "border-border hover:border-primary/50"
+                    )}
+                  >
+                    <div className="font-medium">{sample.name}</div>
+                    <div className="text-xs text-muted-foreground mt-1">
+                      {sample.description}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+            
+            {/* 當前內容摘要 */}
+            <div className="p-4 rounded-lg bg-muted/30">
+              <h3 className="text-sm font-medium mb-2">📋 內容摘要</h3>
+              <div className="text-xs text-muted-foreground space-y-1">
+                <p>• Hero: {content.hero.title.substring(0, 30)}...</p>
+                <p>• Features: {content.features?.features.length || 0} 項</p>
+                <p>• FAQ: {content.faq?.items.length || 0} 項</p>
+                <p>• CTA: {content.cta.title.substring(0, 25)}...</p>
+              </div>
+            </div>
+            
+            <hr className="border-border" />
+            
             {/* 快速模板 */}
             <div>
-              <label className="block text-sm font-medium mb-2">快速模板</label>
+              <label className="block text-sm font-medium mb-2">🚀 快速模板</label>
               <div className="grid grid-cols-2 gap-2">
                 {Object.entries(SCRIPT_TEMPLATES).map(([key, template]) => (
                   <button
@@ -116,7 +179,7 @@ export default function PageBuilder() {
             
             {/* 受眾選擇 */}
             <div>
-              <label className="block text-sm font-medium mb-2">目標受眾</label>
+              <label className="block text-sm font-medium mb-2">🎯 目標受眾</label>
               <select
                 value={persona}
                 onChange={(e) => setPersona(e.target.value as Persona)}
@@ -132,7 +195,7 @@ export default function PageBuilder() {
             
             {/* 目標選擇 */}
             <div>
-              <label className="block text-sm font-medium mb-2">頁面目標</label>
+              <label className="block text-sm font-medium mb-2">🎪 頁面目標</label>
               <select
                 value={goal}
                 onChange={(e) => setGoal(e.target.value as PageGoal)}
@@ -148,7 +211,7 @@ export default function PageBuilder() {
             
             {/* 語調選擇 */}
             <div>
-              <label className="block text-sm font-medium mb-2">語調風格</label>
+              <label className="block text-sm font-medium mb-2">🎨 語調風格</label>
               <select
                 value={tone}
                 onChange={(e) => setTone(e.target.value as Tone)}
@@ -203,7 +266,11 @@ export default function PageBuilder() {
         {/* 主要內容區 */}
         <main className="flex-1 p-6">
           {viewMode === 'preview' && (
-            <PreviewPane script={script} content={samplePageContent} />
+            <PreviewPane script={script} content={content} />
+          )}
+          
+          {viewMode === 'compare' && (
+            <ComparePane content={content} />
           )}
           
           {viewMode === 'code' && (
@@ -237,10 +304,109 @@ function PreviewPane({ script, content }: PreviewPaneProps) {
           <span className="w-3 h-3 rounded-full bg-yellow-500" />
           <span className="w-3 h-3 rounded-full bg-green-500" />
         </div>
-        <span className="text-xs text-muted-foreground ml-2">preview</span>
+        <span className="text-xs text-muted-foreground ml-2">
+          {content.meta.title} - 重新排版預覽
+        </span>
       </div>
       <div className="max-h-[calc(100vh-12rem)] overflow-y-auto">
         {composePage({ script, content })}
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// 對比面板 - 顯示不同受眾的排版差異
+// ============================================================
+
+interface ComparePaneProps {
+  content: PageContent;
+}
+
+function ComparePane({ content }: ComparePaneProps) {
+  const personas: Persona[] = ['executive', 'developer', 'investor'];
+  
+  const scripts = personas.map(p => ({
+    persona: p,
+    script: generateScript({ persona: p, goal: 'lead-gen', tone: 'professional' }),
+  }));
+  
+  return (
+    <div className="space-y-6">
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-bold mb-2">📊 排版對比：同樣內容，不同受眾</h2>
+        <p className="text-muted-foreground">
+          使用「{content.meta.title}」的完整內容，展示針對不同受眾的排版差異
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-3 gap-6">
+        {scripts.map(({ persona, script }) => (
+          <div key={persona} className="border border-border rounded-xl overflow-hidden">
+            <div className="bg-muted px-4 py-3 border-b border-border">
+              <div className="font-medium">
+                {persona === 'executive' && '👔 決策者版'}
+                {persona === 'developer' && '💻 開發者版'}
+                {persona === 'investor' && '💰 投資者版'}
+              </div>
+              <div className="text-xs text-muted-foreground mt-1">
+                區塊順序：{script.sections.map(s => s.type).join(' → ')}
+              </div>
+            </div>
+            <div className="max-h-96 overflow-y-auto text-sm">
+              {/* 簡化版區塊列表 */}
+              <div className="p-4 space-y-2">
+                {script.sections.map((section, i) => (
+                  <div 
+                    key={i}
+                    className={cn(
+                      "p-3 rounded-lg border",
+                      section.aida === 'attention' && "border-red-200 bg-red-50",
+                      section.aida === 'interest' && "border-blue-200 bg-blue-50",
+                      section.aida === 'desire' && "border-purple-200 bg-purple-50",
+                      section.aida === 'action' && "border-green-200 bg-green-50",
+                    )}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-medium">{section.type}</span>
+                      <span className="text-xs px-2 py-0.5 rounded bg-white">
+                        {section.aida}
+                      </span>
+                    </div>
+                    <div className="text-xs text-muted-foreground mt-1">
+                      bg: {section.background} | priority: {section.priority}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      {/* 說明 */}
+      <div className="p-6 rounded-xl bg-muted/30 border border-border">
+        <h3 className="font-semibold mb-3">🔍 排版差異說明</h3>
+        <div className="grid grid-cols-3 gap-6 text-sm">
+          <div>
+            <div className="font-medium text-red-600 mb-1">👔 決策者版</div>
+            <p className="text-muted-foreground">
+              優先展示數據和成效，快速帶到 CTA。減少技術細節，強調 ROI。
+            </p>
+          </div>
+          <div>
+            <div className="font-medium text-blue-600 mb-1">💻 開發者版</div>
+            <p className="text-muted-foreground">
+              功能和技術規格優先，FAQ 放在顯眼位置。展示 API 和整合能力。
+            </p>
+          </div>
+          <div>
+            <div className="font-medium text-purple-600 mb-1">💰 投資者版</div>
+            <p className="text-muted-foreground">
+              信任和見證優先，展示市場地位和客戶案例。強調穩定性和市場規模。
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -313,7 +479,7 @@ function ScriptPane({ script }: ScriptPaneProps) {
       
       {/* 區塊序列 */}
       <div className="p-6 rounded-xl border border-border bg-card">
-        <h3 className="text-lg font-semibold mb-4">📦 區塊序列</h3>
+        <h3 className="text-lg font-semibold mb-4">📦 區塊序列（AIDA 模型）</h3>
         <div className="space-y-3">
           {script.sections.map((section, index) => (
             <div 
@@ -369,4 +535,3 @@ function ScriptPane({ script }: ScriptPaneProps) {
     </div>
   );
 }
-
