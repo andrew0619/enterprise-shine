@@ -506,3 +506,4 @@ export function getScoreBarColor(score: number): string {
   return 'bg-red-500';
 }
 
+

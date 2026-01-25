@@ -458,3 +458,4 @@ export function getVariantShortLabel(variant: DesignVariant): string {
   return `${variant.theme.nameZh.substring(0, 4)} | ${variant.hero} | ${variant.features}`;
 }
 
+

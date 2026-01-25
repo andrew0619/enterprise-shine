@@ -45,3 +45,4 @@ export interface HeroProps {
   alignment?: 'left' | 'center' | 'right';
 }
 
+

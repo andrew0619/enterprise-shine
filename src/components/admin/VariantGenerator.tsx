@@ -615,3 +615,4 @@ export function VariantGenerator({ clientBrief, onSelectVariant }: VariantGenera
   );
 }
 
+

@@ -283,3 +283,4 @@ SELECT
 FROM projects p
 JOIN clients c ON p.client_id = c.id;
 
+

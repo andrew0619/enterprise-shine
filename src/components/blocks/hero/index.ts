@@ -25,3 +25,4 @@ export function getHeroVariant(variant: HeroVariant) {
   return heroVariants[variant] || HeroCenter;
 }
 
+

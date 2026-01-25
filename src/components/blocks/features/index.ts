@@ -24,3 +24,4 @@ export function getFeaturesVariant(variant: FeaturesVariant) {
   return featuresVariants[variant] || FeaturesGrid;
 }
 
+

@@ -54,3 +54,4 @@ USING (bucket_id = 'project-files' AND auth.uid()::text = (storage.foldername(na
 -- 允許所有人刪除（開發用）
 -- CREATE POLICY "Allow all delete" ON storage.objects FOR DELETE TO public USING (bucket_id = 'project-files');
 
+

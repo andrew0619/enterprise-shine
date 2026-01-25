@@ -295,3 +295,4 @@ export function generateCSSVariables(theme: ThemeConfig): string {
   return vars.join('\n  ');
 }
 
+

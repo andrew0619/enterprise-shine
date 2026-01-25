@@ -186,3 +186,4 @@ export const homeSections = [
 
 export type HomeSection = typeof homeSections[number];
 
+

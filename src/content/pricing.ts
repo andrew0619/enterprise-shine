@@ -113,3 +113,4 @@ export const pricingFAQs = [
   { questionKey: "pricing.faq.q4.question", answerKey: "pricing.faq.q4.answer" },
 ];
 
+
