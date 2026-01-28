@@ -72,7 +72,7 @@ export const siteConfig = {
     showNewsletter: true,
     showSocialLinks: true,
     showComplianceBadges: true,
-    address: "278 Castro St, Mountain View, CA 94041",
+    address: "100 Innovation Way, San Francisco, CA 94105",
   },
 
   // 社交連結
