@@ -889,7 +889,7 @@ export function generateClientFacingSummary(
       items: checklist.phases.phase1.map(r => ({
         label: r.clientFacingLabel,
         description: r.clientFacingDescription,
-        type: r.type === 'image' || r.type === 'logo' || r.type === 'icon' ? 'image' : 'text',
+        type: (r.type === 'image' || r.type === 'logo' || r.type === 'icon' ? 'image' : 'text') as 'image' | 'text',
         required: r.required,
       })),
     },
@@ -900,7 +900,7 @@ export function generateClientFacingSummary(
       items: checklist.phases.phase2.map(r => ({
         label: r.clientFacingLabel,
         description: r.clientFacingDescription,
-        type: r.type === 'image' || r.type === 'logo' || r.type === 'icon' ? 'image' : 'text',
+        type: (r.type === 'image' || r.type === 'logo' || r.type === 'icon' ? 'image' : 'text') as 'image' | 'text',
         required: r.required,
       })),
     },
@@ -911,7 +911,7 @@ export function generateClientFacingSummary(
       items: checklist.phases.phase3.map(r => ({
         label: r.clientFacingLabel,
         description: r.clientFacingDescription,
-        type: r.type === 'image' || r.type === 'logo' || r.type === 'icon' ? 'image' : 'text',
+        type: (r.type === 'image' || r.type === 'logo' || r.type === 'icon' ? 'image' : 'text') as 'image' | 'text',
         required: r.required,
       })),
     },

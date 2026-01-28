@@ -51,7 +51,7 @@ export default function WorkspaceMessages() {
       // 載入專案資料以取得客戶名稱
       const { data: project } = await getProjectById(projectId!);
       if (project) {
-        setClientName(project.contactName || project.client?.contact_name || '客戶');
+        setClientName(project.client?.contact_name || '客戶');
       }
 
       // 載入留言
