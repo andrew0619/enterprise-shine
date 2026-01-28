@@ -20,17 +20,6 @@
     "gb200": "NVIDIA GB200 NVL72",
     "hgxb200": "NVIDIA HGX™ B200"
   },
-  "developers": {
-    "demoApps": "Demo Apps",
-    "docsHubLabel": "Docs Hub",
-    "docsHub": {
-      "badge": "Documentation",
-      "title": "Documentation Hub",
-      "subtitle": "Comprehensive guides, API references, and resources to help you build with NexusAI.",
-      "earlyAccess": "Request Early Access",
-      "exploreDemos": "Explore Demo Apps"
-    }
-  },
   "company": {
     "aboutUs": "About Us",
     "blog": "Blog",
@@ -434,7 +423,14 @@
   },
   "developers": {
     "demoApps": "Demo Apps",
-    "docsHub": "Docs Hub",
+    "docsHubLabel": "Docs Hub",
+    "docsHub": {
+      "badge": "Documentation",
+      "title": "Documentation Hub",
+      "subtitle": "Comprehensive guides, API references, and resources to help you build with NexusAI.",
+      "earlyAccess": "Request Early Access",
+      "exploreDemos": "Explore Demo Apps"
+    },
     "demoHero": {
       "badge": "Demo",
       "title": "Demo Apps for Developers",
