@@ -107,7 +107,7 @@ const DocsContent = () => {
                 size="sm"
                 className="h-6 px-2 text-slate-400 hover:text-white hover:bg-slate-700"
                 onClick={() => {
-                  navigator.clipboard.writeText('curl -X POST https://api.gmicloud.ai/v1/deploy \\\n  -H "Authorization: Bearer $API_KEY" \\\n  -H "Content-Type: application/json" \\\n  -d \'{"model": "llama-3.1-70b", "instances": 2}\'');
+                  navigator.clipboard.writeText('curl -X POST https://api.nexusai.dev/v1/deploy \\\n  -H "Authorization: Bearer $API_KEY" \\\n  -H "Content-Type: application/json" \\\n  -d \'{"model": "llama-3.1-70b", "instances": 2}\'');
                   toast({ description: "Code copied to clipboard" });
                 }}
               >
@@ -116,7 +116,7 @@ const DocsContent = () => {
             </div>
             <pre className="p-4 overflow-x-auto text-sm">
               <code className="text-slate-100">
-{`curl -X POST https://api.gmicloud.ai/v1/deploy \\
+{`curl -X POST https://api.nexusai.dev/v1/deploy \\
   -H "Authorization: Bearer $API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{"model": "llama-3.1-70b", "instances": 2}'`}
@@ -131,10 +131,10 @@ const DocsContent = () => {
             Migration Guides
           </h2>
           <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-3">
-            Moving AI Workloads to GMI Cloud
+            Moving AI Workloads to NexusAI
           </h3>
           <p className="text-slate-600 leading-relaxed">
-            You've made it. Moving to GMI Cloud is the best decision for your AI workloads, 
+            You've made it. Moving to NexusAI is the best decision for your AI workloads, 
             and we're here to make the transition smooth, fast, and stress-free. Follow this 
             guide, and you'll be up and running in no time. Let's get you settled into your 
             new AI home.

@@ -77,15 +77,15 @@
     "viewPricing": "View Pricing",
     "foundationTitle": "The Foundation for Your AI Success",
     "foundationSubtitle": "— Powered by GPU Cloud Solutions",
-    "foundationDescription": "GMI Cloud provides everything you need to build scalable AI solutions — running entirely on GMI-owned, AI-optimized datacenters. From high-performance inference and containerized ops to on-demand access to top-tier GPUs for training and inference, we control the full stack.",
+    "foundationDescription": "NexusAI provides everything you need to build scalable AI solutions — running entirely on NexusAI-owned, AI-optimized datacenters. From high-performance inference and containerized ops to on-demand access to top-tier GPUs for training and inference, we control the full stack.",
     "inferenceTitle": "Inference Engine",
-    "inferenceDescription1": "GMI Cloud Inference Engine provides developers with the ultra-fast speed and flexible scalability needed to run AI models, designed for extremely low latency, high concurrency processing, and top-tier performance optimization.",
-    "inferenceDescription2": "Through GMI Cloud's global GPU node layout, developers can instantly deploy models, scale computing power anytime and anywhere, automatically adjust computing loads, significantly reduce costs and improve performance.",
+    "inferenceDescription1": "NexusAI Inference Engine provides developers with the ultra-fast speed and flexible scalability needed to run AI models, designed for extremely low latency, high concurrency processing, and top-tier performance optimization.",
+    "inferenceDescription2": "Through NexusAI's global GPU node layout, developers can instantly deploy models, scale computing power anytime and anywhere, automatically adjust computing loads, significantly reduce costs and improve performance.",
     "inferenceModelsLabel": "Easily run market-leading AI models",
     "clusterTitle": "Cluster Engine",
-    "clusterDescription": "GMI Cloud's Cluster Engine is your all-in-one AI cloud management platform, designed to streamline GPU resource coordination, workload scheduling, and cost optimization.",
+    "clusterDescription": "NexusAI's Cluster Engine is your all-in-one AI cloud management platform, designed to streamline GPU resource coordination, workload scheduling, and cost optimization.",
     "gpuTitle": "GPUs",
-    "gpuDescription": "GMI Cloud offers a diverse portfolio of NVIDIA GPUs, designed for AI/ML training, inference, and data analytics. Our GPU infrastructure is purpose-built for the most demanding AI workloads.",
+    "gpuDescription": "NexusAI offers a diverse portfolio of NVIDIA GPUs, designed for AI/ML training, inference, and data analytics. Our GPU infrastructure is purpose-built for the most demanding AI workloads.",
     "caseStudyTitle": "Proven Results",
     "caseStudySubtitle": "Our customers achieve measurable improvements in cost, performance, and time-to-market.",
     "caseStudyQuote": "NexusAI transformed how we deploy AI models. What used to take weeks now takes hours.",
@@ -152,8 +152,8 @@
       "title": "Supercharge Your GPU Cloud Computing",
       "subtitle": "Break through performance bottlenecks and accelerate AI training and inference.",
       "serviceType": "Service Type",
-      "inference": { "title": "Inference Engine", "description": "GMI Cloud's inference service is optimized for high-throughput and low-latency scenarios. The optimized inference stack ensures models run at peak performance.", "cta": "Learn More" },
-      "cluster": { "title": "Cluster Engine", "description": "GMI Cluster service is optimized for distributed training and large-scale computing. InfiniBand high-speed networking enables multi-node coordination.", "cta": "Start Deploying" }
+      "inference": { "title": "Inference Engine", "description": "NexusAI's inference service is optimized for high-throughput and low-latency scenarios. The optimized inference stack ensures models run at peak performance.", "cta": "Learn More" },
+      "cluster": { "title": "Cluster Engine", "description": "NexusAI Cluster service is optimized for distributed training and large-scale computing. InfiniBand high-speed networking enables multi-node coordination.", "cta": "Start Deploying" }
     },
     "cta": { "title": "Not sure which product fits your needs? Let's talk.", "subtitle": "Our team is here to help you choose the right GPU cloud solution and answer any questions about performance, pricing, or scaling." },
     "faq": {
@@ -182,7 +182,7 @@
       },
       "privateCloud": {
         "title": "Enterprise Private Cloud",
-        "description": "GMI Cloud provides dedicated cloud environments for enterprises, ensuring end-to-end security and data isolation. Customizable configurations meet your unique IT policies. Build your way with complete control and flexibility, seamlessly switching between cloud and on-premises environments."
+        "description": "NexusAI provides dedicated cloud environments for enterprises, ensuring end-to-end security and data isolation. Customizable configurations meet your unique IT policies. Build your way with complete control and flexibility, seamlessly switching between cloud and on-premises environments."
       },
       "security": {
         "title": "Secure Network Architecture",
@@ -230,8 +230,8 @@
       "resultsP3": "These improvements are driven by the H200's enhanced HBM3e memory architecture, delivering 4.8 TB/s of bandwidth – crucial for memory-intensive large language model operations."
     },
     "marketing": {
-      "title": "Future-Proof Your AI with GMI Cloud and the H200",
-      "description": "As AI models continue to grow in size and complexity, the NVIDIA H200 provides the headroom you need to stay ahead. With its massive 141GB memory capacity and industry-leading bandwidth, the H200 on GMI Cloud ensures your infrastructure can handle tomorrow's AI workloads today. Scale from development to production seamlessly with our enterprise-grade cloud platform.",
+      "title": "Future-Proof Your AI with NexusAI and the H200",
+      "description": "As AI models continue to grow in size and complexity, the NVIDIA H200 provides the headroom you need to stay ahead. With its massive 141GB memory capacity and industry-leading bandwidth, the H200 on NexusAI ensures your infrastructure can handle tomorrow's AI workloads today. Scale from development to production seamlessly with our enterprise-grade cloud platform.",
       "cta": "Reserve Now"
     },
     "cta": {
@@ -284,8 +284,8 @@
       }
     },
     "futureProof": {
-      "title": "Future-Proof Your AI with GMI Cloud and the GB200 NVL72",
-      "description": "As AI models continue to grow in complexity, the GB200 NVL72 ensures your infrastructure stays ahead of the curve. With its groundbreaking architecture and seamless scalability, you can confidently invest in tomorrow's AI capabilities today. GMI Cloud provides the platform to harness this power with enterprise-grade reliability and support.",
+      "title": "Future-Proof Your AI with NexusAI and the GB200 NVL72",
+      "description": "As AI models continue to grow in complexity, the GB200 NVL72 ensures your infrastructure stays ahead of the curve. With its groundbreaking architecture and seamless scalability, you can confidently invest in tomorrow's AI capabilities today. NexusAI provides the platform to harness this power with enterprise-grade reliability and support.",
       "cta": "Learn More"
     },
     "contact": {
@@ -343,8 +343,8 @@
       }
     },
     "elevate": {
-      "title": "Elevate Your AI Capabilities with GMI Cloud and NVIDIA HGX B200",
-      "description": "Leverage the world's most powerful AI platform with GMI Cloud's enterprise infrastructure. Get immediate access to HGX B200 systems without capital investment, backed by 24/7 support and optimized MLOps tooling for accelerated time-to-value.",
+      "title": "Elevate Your AI Capabilities with NexusAI and NVIDIA HGX B200",
+      "description": "Leverage the world's most powerful AI platform with NexusAI's enterprise infrastructure. Get immediate access to HGX B200 systems without capital investment, backed by 24/7 support and optimized MLOps tooling for accelerated time-to-value.",
       "cta": "Request Access"
     },
     "contact": {
@@ -385,7 +385,7 @@
     }
   },
   "about": {
-    "kicker": "About GMI Cloud",
+    "kicker": "About NexusAI",
     "heroTitle": "Building AI Infrastructure, Empowering Possibilities",
     "heroSubtitle": "We are dedicated to building the most advanced GPU cloud computing platform, accelerating global AI innovation.",
     "stats": { "year": "Year", "coreMembers": "Core Members", "globalOffices": "Global Offices" }
@@ -431,7 +431,7 @@
     "demoHero": {
       "badge": "Demo",
       "title": "Demo Apps for Developers",
-      "subtitle": "Explore and test live AI models on GMI Cloud. Build prototypes, run experiments, and integrate generative AI into your apps."
+      "subtitle": "Explore and test live AI models on NexusAI. Build prototypes, run experiments, and integrate generative AI into your apps."
     },
     "demoAppsContent": {
       "ragChatbot": {
@@ -478,18 +478,18 @@
     "docsHub": {
       "badge": "Documentation",
       "title": "Docs Hub",
-      "subtitle": "Comprehensive documentation, API references, and integration guides to help you build with GMI Cloud. Coming soon.",
+      "subtitle": "Comprehensive documentation, API references, and integration guides to help you build with NexusAI. Coming soon.",
       "earlyAccess": "Get Early Access",
       "exploreDemos": "Explore Demo Apps"
     }
   },
   "h200Faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Everything you need to know about the NVIDIA H200 on GMI Cloud",
+    "subtitle": "Everything you need to know about the NVIDIA H200 on NexusAI",
     "items": {
       "q1": {
-        "question": "What is the NVIDIA H200 GPU offered by GMI Cloud?",
-        "answer": "The NVIDIA H200 is the latest high-performance GPU from NVIDIA, featuring 141GB of HBM3e memory and 4.8 TB/s bandwidth. GMI Cloud offers on-demand access to H200 GPUs in our enterprise-grade cloud infrastructure, enabling you to run the most demanding AI and HPC workloads without capital investment."
+        "question": "What is the NVIDIA H200 GPU offered by NexusAI?",
+        "answer": "The NVIDIA H200 is the latest high-performance GPU from NVIDIA, featuring 141GB of HBM3e memory and 4.8 TB/s bandwidth. NexusAI offers on-demand access to H200 GPUs in our enterprise-grade cloud infrastructure, enabling you to run the most demanding AI and HPC workloads without capital investment."
       },
       "q2": {
         "question": "How does the H200 differ from previous GPU models like the H100?",
@@ -500,12 +500,12 @@
         "answer": "The H200's massive memory capacity and bandwidth are specifically designed for large language models. It can handle larger batch sizes, longer context windows, and bigger models without memory constraints, enabling faster iteration and more efficient training and inference workflows."
       },
       "q4": {
-        "question": "What are the benefits of using the H200 within GMI Cloud?",
-        "answer": "GMI Cloud provides instant access to H200 GPUs with pay-as-you-go pricing starting at $2.15/GPU-hour. Benefits include enterprise SLAs, NVLink connectivity for multi-GPU workloads, pre-configured ML environments, and 24/7 technical support."
+        "question": "What are the benefits of using the H200 within NexusAI?",
+        "answer": "NexusAI provides instant access to H200 GPUs with pay-as-you-go pricing starting at $2.15/GPU-hour. Benefits include enterprise SLAs, NVLink connectivity for multi-GPU workloads, pre-configured ML environments, and 24/7 technical support."
       },
       "q5": {
-        "question": "How can users access the H200 GPU on GMI Cloud?",
-        "answer": "Getting started is simple: sign up for a GMI Cloud account, select the H200 GPU configuration that matches your workload needs, and deploy within minutes. Our team is also available to help with custom configurations and enterprise deployments."
+        "question": "How can users access the H200 GPU on NexusAI?",
+        "answer": "Getting started is simple: sign up for a NexusAI account, select the H200 GPU configuration that matches your workload needs, and deploy within minutes. Our team is also available to help with custom configurations and enterprise deployments."
       }
     }
   },
@@ -525,8 +525,8 @@
         "answer": "The system uses 5th-generation NVLink with 1.8TB/s GPU-to-GPU bandwidth, enabling seamless scaling across the entire 72-GPU system. Multiple NVL72 racks can be connected via high-speed networking for even larger deployments."
       },
       "q4": {
-        "question": "What benefits does the GB200 NVL72 bring when used within GMI Cloud?",
-        "answer": "GMI Cloud provides fully managed GB200 NVL72 infrastructure with enterprise SLAs, dedicated support, and flexible deployment options. Users get immediate access without capital investment, along with optimized software stack and MLOps tooling."
+        "question": "What benefits does the GB200 NVL72 bring when used within NexusAI?",
+        "answer": "NexusAI provides fully managed GB200 NVL72 infrastructure with enterprise SLAs, dedicated support, and flexible deployment options. Users get immediate access without capital investment, along with optimized software stack and MLOps tooling."
       },
       "q5": {
         "question": "How can users access the GB200 NVL72?",
@@ -555,7 +555,7 @@
       },
       "q5": {
         "question": "How can customers access the HGX B200 platform?",
-        "answer": "GMI Cloud offers flexible access to HGX B200 infrastructure including on-demand hourly access, reserved capacity with volume discounts, and fully dedicated clusters. Contact our sales team to discuss your requirements and get started with a customized deployment."
+        "answer": "NexusAI offers flexible access to HGX B200 infrastructure including on-demand hourly access, reserved capacity with volume discounts, and fully dedicated clusters. Contact our sales team to discuss your requirements and get started with a customized deployment."
       }
     }
   },

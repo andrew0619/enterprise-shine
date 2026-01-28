@@ -41,17 +41,17 @@ const ContactPage = () => {
     {
       title: t("contact.sales.title"),
       description: t("contact.sales.description"),
-      email: "sales@gmicloud.ai",
+      email: "sales@nexusai.dev",
     },
     {
       title: t("contact.support.title"),
       description: t("contact.support.description"),
-      email: "support@gmicloud.ai",
+      email: "support@nexusai.dev",
     },
     {
       title: t("contact.media.title"),
       description: t("contact.media.description"),
-      email: "info@gmicloud.ai",
+      email: "info@nexusai.dev",
     },
   ];
 
