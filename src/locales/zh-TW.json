@@ -22,7 +22,14 @@
   },
   "developers": {
     "demoApps": "示範應用",
-    "docsHub": "文件中心"
+    "docsHubLabel": "文件中心",
+    "docsHub": {
+      "badge": "技術文件",
+      "title": "文件中心",
+      "subtitle": "完整的指南、API 參考文件和資源，協助您使用 NexusAI 建構應用。",
+      "earlyAccess": "申請早期存取",
+      "exploreDemos": "探索示範應用"
+    }
   },
   "company": {
     "aboutUs": "關於我們",

@@ -55,7 +55,7 @@ const Header = () => {
   // 根據 siteConfig 過濾 Developers 下拉選單
   const developersDropdown = [
     { href: "/developers/demo-apps", labelKey: "developers.demoApps", feature: "demoApps" as const },
-    { href: "/docs", labelKey: "developers.docsHub", feature: "docs" as const },
+    { href: "/docs", labelKey: "developers.docsHubLabel", feature: "docs" as const },
   ].filter(item => siteConfig.features[item.feature]);
 
   // 根據 siteConfig 過濾 Company 下拉選單
