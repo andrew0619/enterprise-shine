@@ -25,10 +25,10 @@ const ComplianceSection = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                {t("about.compliance.description1", { defaultValue: "GMI Cloud 遵循業界最高安全標準，確保您的數據和 AI 工作負載受到全方位保護。我們的基礎設施通過 SOC 2 Type II 認證，符合嚴格的安全性、可用性和機密性要求。" })}
+                {t("about.compliance.description1", { defaultValue: "NexusAI 遵循業界最高安全標準，確保您的數據和 AI 工作負載受到全方位保護。我們的基礎設施通過 SOC 2 Type II 認證，符合嚴格的安全性、可用性和機密性要求。" })}
               </p>
               <p>
-                {t("about.compliance.description2", { defaultValue: "我們的安全措施包括：端到端加密、多層身份驗證、持續安全監控，以及定期的第三方安全審計。無論您是處理敏感的金融數據還是醫療資訊，GMI Cloud 都能提供企業級的安全保障。" })}
+                {t("about.compliance.description2", { defaultValue: "我們的安全措施包括：端到端加密、多層身份驗證、持續安全監控，以及定期的第三方安全審計。無論您是處理敏感的金融數據還是醫療資訊，NexusAI 都能提供企業級的安全保障。" })}
               </p>
             </div>
             

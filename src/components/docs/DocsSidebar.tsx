@@ -25,7 +25,7 @@ const navSections: NavSection[] = [
   {
     title: "Getting started",
     items: [
-      { label: "Welcome to GMI Cloud", href: "/docs", isActive: true },
+      { label: "Welcome to NexusAI", href: "/docs", isActive: true },
       { label: "What We Do", href: "/docs/what-we-do" },
       { label: "Our Features", href: "/docs/features" },
     ],
