@@ -20,10 +20,22 @@ const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
 // 檢查是否已配置 Supabase
 export const isSupabaseConfigured = !!(supabaseUrl && supabaseAnonKey);
 
-// 創建 Supabase 客戶端
-export const supabase = isSupabaseConfigured 
+// 創建 Supabase 客戶端（當未配置時為 null）
+// 使用 any 類型來避免複雜的泛型類型推斷問題
+const supabaseClient: any = isSupabaseConfigured 
   ? createClient<Database>(supabaseUrl, supabaseAnonKey)
   : null;
+
+// 導出供外部使用
+export const supabase = supabaseClient;
+
+// 輔助函數：取得確保非空的 Supabase 客戶端
+function getSupabase(): any {
+  if (!supabaseClient) {
+    throw new Error('Supabase is not configured');
+  }
+  return supabaseClient;
+}
 
 // 上傳檔案到 Supabase Storage
 export async function uploadFile(
@@ -137,10 +149,11 @@ export async function createClientSubmission(data: {
   }
 
   try {
+    const db = getSupabase();
     // 1. 創建或查找客戶
     let clientId: string;
     
-    const { data: existingClient } = await supabase
+    const { data: existingClient } = await db
       .from('clients')
       .select('id')
       .eq('contact_email', data.contactEmail)
@@ -160,13 +173,14 @@ export async function createClientSubmission(data: {
         notes: null,
       };
       
-      const { data: newClient, error: clientError } = await supabase
+      const { data: newClient, error: clientError } = await db
         .from('clients')
         .insert(clientInsert)
         .select('id')
         .single();
       
       if (clientError) throw clientError;
+      if (!newClient) throw new Error('Failed to create client');
       clientId = newClient.id;
     }
     
@@ -183,13 +197,14 @@ export async function createClientSubmission(data: {
       internal_notes: null,
     };
     
-    const { data: newProject, error: projectError } = await supabase
+    const { data: newProject, error: projectError } = await db
       .from('projects')
       .insert(projectInsert)
       .select('id')
       .single();
     
     if (projectError) throw projectError;
+    if (!newProject) throw new Error('Failed to create project');
     const projectId = newProject.id;
     
     // 3. 創建模組選擇記錄
@@ -200,9 +215,9 @@ export async function createClientSubmission(data: {
     }));
     
     if (moduleInserts.length > 0) {
-      const { error: moduleError } = await supabase
+      const { error: moduleError } = await db
         .from('project_modules')
-        .insert(moduleInserts);
+        .insert(moduleInserts as any);
       
       if (moduleError) throw moduleError;
     }
@@ -221,15 +236,15 @@ export async function createClientSubmission(data: {
         uploaded_by: 'client',
       }));
       
-      const { error: fileError } = await supabase
+      const { error: fileError } = await db
         .from('files')
-        .insert(fileInserts);
+        .insert(fileInserts as any);
       
       if (fileError) throw fileError;
     }
     
     // 5. 創建活動記錄
-    await supabase
+    await db
       .from('activity_logs')
       .insert({
         project_id: projectId,
@@ -237,7 +252,7 @@ export async function createClientSubmission(data: {
         actor_type: 'client',
         actor_name: data.contactName,
         details: { template: data.templateId, modules: data.selectedModuleIds },
-      });
+      } as any);
     
     return { clientId, projectId, error: null };
     

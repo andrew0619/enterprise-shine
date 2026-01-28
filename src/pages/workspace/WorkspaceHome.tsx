@@ -79,13 +79,13 @@ export default function WorkspaceHome() {
       }
 
       // 設定專案資訊
-      const template = getTemplateById(projectData.template_id || projectData.templateId);
+      const template = getTemplateById(projectData.template_id);
       setProject({
-        name: projectData.project_name || `${projectData.companyName || projectData.client?.company_name} 官網專案`,
+        name: projectData.project_name || `${projectData.client?.company_name} 官網專案`,
         template: template?.name || projectData.template_id || 'Unknown',
-        templateId: projectData.template_id || projectData.templateId || 'enterprise-shine',
-        createdAt: new Date(projectData.created_at || projectData.submittedAt).toLocaleDateString('zh-TW'),
-        contactName: projectData.contactName || projectData.client?.contact_name || '',
+        templateId: projectData.template_id || 'enterprise-shine',
+        createdAt: new Date(projectData.created_at).toLocaleDateString('zh-TW'),
+        contactName: projectData.client?.contact_name || '',
         status: projectData.status || 'pending',
       });
 
