@@ -34,20 +34,20 @@ const AboutFAQSection = () => {
 
   const faqs = [
     {
-      question: t("about.faq.q1.question", { defaultValue: "GMI Cloud 是什麼？" }),
-      answer: t("about.faq.q1.answer", { defaultValue: "GMI Cloud 是一個專為 AI 工作負載設計的 GPU 雲端運算平台。我們提供 NVIDIA H100、H200 等高效能 GPU，支援大規模模型訓練、推論部署等各種 AI 應用場景。" }),
+      question: t("about.faq.q1.question", { defaultValue: "NexusAI 是什麼？" }),
+      answer: t("about.faq.q1.answer", { defaultValue: "NexusAI 是一個專為 AI 工作負載設計的 GPU 雲端運算平台。我們提供 NVIDIA H100、H200 等高效能 GPU，支援大規模模型訓練、推論部署等各種 AI 應用場景。" }),
     },
     {
-      question: t("about.faq.q2.question", { defaultValue: "如何開始使用 GMI Cloud？" }),
+      question: t("about.faq.q2.question", { defaultValue: "如何開始使用 NexusAI？" }),
       answer: t("about.faq.q2.answer", { defaultValue: "您可以透過我們的網站註冊帳號，選擇適合的 GPU 方案，即可在幾分鐘內開始使用。我們的團隊也提供專業的導入諮詢服務，協助您規劃最佳的 AI 基礎設施方案。" }),
     },
     {
-      question: t("about.faq.q3.question", { defaultValue: "GMI Cloud 的數據安全如何保障？" }),
+      question: t("about.faq.q3.question", { defaultValue: "NexusAI 的數據安全如何保障？" }),
       answer: t("about.faq.q3.answer", { defaultValue: "我們通過 SOC 2 Type II 認證，採用端到端加密、多層身份驗證、持續安全監控等措施。所有數據中心都符合國際安全標準，確保您的數據得到最高級別的保護。" }),
     },
     {
       question: t("about.faq.q4.question", { defaultValue: "支援哪些 AI 框架和工具？" }),
-      answer: t("about.faq.q4.answer", { defaultValue: "GMI Cloud 支援所有主流 AI 框架，包括 PyTorch、TensorFlow、JAX 等。我們也提供預配置的開發環境和容器映像，讓您可以快速開始 AI 開發工作。" }),
+      answer: t("about.faq.q4.answer", { defaultValue: "NexusAI 支援所有主流 AI 框架，包括 PyTorch、TensorFlow、JAX 等。我們也提供預配置的開發環境和容器映像，讓您可以快速開始 AI 開發工作。" }),
     },
     {
       question: t("about.faq.q5.question", { defaultValue: "如何聯繫技術支援？" }),

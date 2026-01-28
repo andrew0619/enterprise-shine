@@ -9,7 +9,7 @@ const AboutNewsSection = () => {
   const newsItems = [
     {
       id: 1,
-      title: t("about.news.article1.title", { defaultValue: "GMI Cloud 宣布擴展亞太區數據中心" }),
+      title: t("about.news.article1.title", { defaultValue: "NexusAI 宣布擴展亞太區數據中心" }),
       date: "2024-01-15",
       image: "linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%)",
       category: t("about.news.article1.category", { defaultValue: "公司新聞" }),
@@ -40,7 +40,7 @@ const AboutNewsSection = () => {
               {t("about.news.kicker", { defaultValue: "最新消息" })}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-heading">
-              {t("about.news.title", { defaultValue: "GMI Cloud 新聞" })}
+              {t("about.news.title", { defaultValue: "NexusAI 新聞" })}
             </h2>
           </div>
           <Link

@@ -24,7 +24,7 @@ const DocsContent = () => {
         {/* Header with Copy button */}
         <div className="flex items-start justify-between gap-4 mb-6">
           <h1 className="text-4xl font-bold text-slate-900">
-            Welcome to GMI Cloud
+            Welcome to NexusAI
           </h1>
           <Button
             variant="outline"
@@ -92,10 +92,10 @@ const DocsContent = () => {
             Complete API Documentation for All Services
           </h3>
           <p className="text-slate-600 leading-relaxed mb-6">
-            Ready to integrate GMI Cloud into your applications? Our comprehensive API 
+            Ready to integrate NexusAI into your applications? Our comprehensive API 
             documentation covers everything from authentication to container management. 
             Whether you're building custom workflows or automating deployments, these APIs 
-            give you programmatic access to all GMI Cloud capabilities.
+            give you programmatic access to all NexusAI capabilities.
           </p>
 
           {/* Code Block */}

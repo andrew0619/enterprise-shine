@@ -13,7 +13,7 @@ const topNavLinks = [
   { href: "/products/cluster-engine", label: "Cluster Engine" },
   { href: "/docs/api-reference", label: "API reference" },
   { href: "/docs/migration", label: "Migration" },
-  { href: "/studio", label: "GMI Studio" },
+  { href: "/studio", label: "NexusAI Studio" },
 ];
 
 const DocsHeader = () => {
@@ -55,7 +55,7 @@ const DocsHeader = () => {
             Support
           </Link>
           <Button asChild size="sm" className="hidden sm:inline-flex">
-            <Link to="/contact">GMI Cloud</Link>
+            <Link to="/contact">NexusAI</Link>
           </Button>
           <Button variant="ghost" size="icon" className="h-9 w-9">
             <Moon className="h-4 w-4" />
