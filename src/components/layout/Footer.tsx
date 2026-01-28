@@ -63,7 +63,7 @@ const Footer = () => {
 
             {/* Address */}
             <p className="text-muted-foreground text-sm">
-              278 Castro St, Mountain View, CA 94041
+              100 Innovation Way, San Francisco, CA 94105
             </p>
 
             {/* Social Icons */}

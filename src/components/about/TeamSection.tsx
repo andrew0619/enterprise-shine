@@ -3,25 +3,25 @@ import TeamMemberCard from "./TeamMemberCard";
 
 const leadershipTeam = [
   {
-    name: "Alex Yeh",
+    name: "David Chen",
     role: "Founder / CEO",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Arthur Chen",
+    name: "Michael Lin",
     role: "VP Engineering",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Frank Yu",
+    name: "Jason Wu",
     role: "VP Business",
     image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop&crop=face",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Justin Lee",
+    name: "Kevin Huang",
     role: "CTO",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face",
     linkedin: "https://linkedin.com",
@@ -30,19 +30,19 @@ const leadershipTeam = [
 
 const secondRowTeam = [
   {
-    name: "Dustin Lo",
+    name: "Brian Wang",
     role: "Tech Lead",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop&crop=face",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Yu Jeng Lin",
+    name: "Amy Tsai",
     role: "Product Director",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Joshua Gao",
+    name: "Eric Chang",
     role: "Operations",
     image: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=200&h=200&fit=crop&crop=face",
     linkedin: "https://linkedin.com",
@@ -51,13 +51,13 @@ const secondRowTeam = [
 
 const advisors = [
   {
-    name: "Tim Yang",
+    name: "Richard Liu",
     role: "Business Advisor / Angel Investor",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=face",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Kelli Chen",
+    name: "Sarah Chen",
     role: "Chief Accounting Advisor",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face",
     linkedin: "https://linkedin.com",
