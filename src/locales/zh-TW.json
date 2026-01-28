@@ -77,15 +77,15 @@
     "viewPricing": "查看定價",
     "foundationTitle": "您 AI 成功的基石",
     "foundationSubtitle": "— 由 GPU 雲端解決方案驅動",
-    "foundationDescription": "GMI Cloud 提供您建構可擴展 AI 解決方案所需的一切——完全運行在 GMI 自有的 AI 優化數據中心。從高效能推論和容器化運維，到隨需存取頂級 GPU 進行訓練和推論，我們掌控完整技術堆疊。",
+    "foundationDescription": "NexusAI 提供您建構可擴展 AI 解決方案所需的一切——完全運行在 NexusAI 自有的 AI 優化數據中心。從高效能推論和容器化運維，到隨需存取頂級 GPU 進行訓練和推論，我們掌控完整技術堆疊。",
     "inferenceTitle": "推論引擎 Inference Engine",
-    "inferenceDescription1": "GMI Cloud 推論引擎為開發者提供運行 AI 模型所需的超高速度與彈性擴展性，專為極低延遲、高併發處理以及頂尖效能優化設計。無論是深度學習、自然語言處理 (NLP) 還是計算機視覺 (CV)，皆能完美支援，實現更高的推論效率。",
-    "inferenceDescription2": "透過 GMI Cloud 的全球 GPU 節點佈局，開發者能夠即時部署模型，隨時隨地擴展計算力，自動化調整運算負載，大幅降低成本並提升效能。依需求彈性伸縮，即刻應對高流量運算挑戰，交付更快、更穩定且更精準的 AI 預測。",
+    "inferenceDescription1": "NexusAI 推論引擎為開發者提供運行 AI 模型所需的超高速度與彈性擴展性，專為極低延遲、高併發處理以及頂尖效能優化設計。無論是深度學習、自然語言處理 (NLP) 還是計算機視覺 (CV)，皆能完美支援，實現更高的推論效率。",
+    "inferenceDescription2": "透過 NexusAI 的全球 GPU 節點佈局，開發者能夠即時部署模型，隨時隨地擴展計算力，自動化調整運算負載，大幅降低成本並提升效能。依需求彈性伸縮，即刻應對高流量運算挑戰，交付更快、更穩定且更精準的 AI 預測。",
     "inferenceModelsLabel": "輕鬆運行市場領先的 AI 模型",
     "clusterTitle": "Cluster Engine",
-    "clusterDescription": "GMI Cloud 的 Cluster Engine 是您的一站式 AI 雲端管理平台，專為簡化 GPU 資源協調、工作負載排程和成本優化而設計。無論您是管理 AI 訓練、微調還是推論工作負載，Cluster Engine 都能提供即時可見性和控制。",
+    "clusterDescription": "NexusAI 的 Cluster Engine 是您的一站式 AI 雲端管理平台，專為簡化 GPU 資源協調、工作負載排程和成本優化而設計。無論您是管理 AI 訓練、微調還是推論工作負載，Cluster Engine 都能提供即時可見性和控制。",
     "gpuTitle": "GPUs",
-    "gpuDescription": "GMI Cloud 提供多元的 NVIDIA GPU 組合，專為 AI/ML 訓練、推論和數據分析設計。我們的 GPU 基礎設施專為最嚴苛的 AI 工作負載打造，具備超低延遲、高記憶體頻寬和企業級可靠性。",
+    "gpuDescription": "NexusAI 提供多元的 NVIDIA GPU 組合，專為 AI/ML 訓練、推論和數據分析設計。我們的 GPU 基礎設施專為最嚴苛的 AI 工作負載打造，具備超低延遲、高記憶體頻寬和企業級可靠性。",
     "caseStudyTitle": "實證成效",
     "caseStudySubtitle": "我們的客戶在成本、效能和上市時間方面都取得了可衡量的改善。",
     "caseStudyQuote": "NexusAI 徹底改變了我們部署 AI 模型的方式。過去需要數週的工作現在只需數小時。",
@@ -194,12 +194,12 @@
       "serviceType": "服務類型",
       "inference": {
         "title": "推論引擎 Inference Engine",
-        "description": "GMI Cloud 的推論服務適用於需要高吞吐量和低延遲的場景。優化的推論堆疊確保模型能夠以最佳效能運行，支援即時 AI 應用。",
+        "description": "NexusAI 的推論服務適用於需要高吞吐量和低延遲的場景。優化的推論堆疊確保模型能夠以最佳效能運行，支援即時 AI 應用。",
         "cta": "了解更多"
       },
       "cluster": {
         "title": "叢集引擎 Cluster Engine",
-        "description": "GMI Cluster 服務優化於分佈式訓練和大規模計算。透過 InfiniBand 高速網路，實現多節點協同運算，加速大型模型訓練。",
+        "description": "NexusAI Cluster 服務優化於分佈式訓練和大規模計算。透過 InfiniBand 高速網路，實現多節點協同運算，加速大型模型訓練。",
         "cta": "開始部署"
       }
     },
@@ -248,7 +248,7 @@
       },
       "privateCloud": {
         "title": "企業專屬私有雲",
-        "description": "GMI Cloud 提供專屬於企業的雲端環境，確保端到端的安全與資料隔離。可客製化的環境配置滿足企業獨特的IT 策略。您可以依自己的方式建置、同時擁有完整的控制與彈性，在雲端與本地環境之間無縫切換。"
+        "description": "NexusAI 提供專屬於企業的雲端環境，確保端到端的安全與資料隔離。可客製化的環境配置滿足企業獨特的IT 策略。您可以依自己的方式建置、同時擁有完整的控制與彈性，在雲端與本地環境之間無縫切換。"
       },
       "security": {
         "title": "安全網路架構",
@@ -296,8 +296,8 @@
       "resultsP3": "這些改進得益於 H200 增強的 HBM3e 記憶體架構，提供 4.8 TB/s 的頻寬——對於記憶體密集型的大型語言模型運算至關重要。"
     },
     "marketing": {
-      "title": "與 GMI Cloud 和 H200 一起面向未來",
-      "description": "隨著 AI 模型持續增長規模和複雜度，NVIDIA H200 為您提供領先所需的發展空間。憑藉其龐大的 141GB 記憶體容量和業界領先的頻寬，GMI Cloud 上的 H200 確保您的基礎設施能夠應對明日的 AI 工作負載。透過我們的企業級雲端平台，從開發無縫擴展到生產環境。",
+      "title": "與 NexusAI 和 H200 一起面向未來",
+      "description": "隨著 AI 模型持續增長規模和複雜度，NVIDIA H200 為您提供領先所需的發展空間。憑藉其龐大的 141GB 記憶體容量和業界領先的頻寬，NexusAI 上的 H200 確保您的基礎設施能夠應對明日的 AI 工作負載。透過我們的企業級雲端平台，從開發無縫擴展到生產環境。",
       "cta": "立即預訂"
     },
     "cta": {
@@ -350,8 +350,8 @@
       }
     },
     "futureProof": {
-      "title": "與 GMI Cloud 和 GB200 NVL72 一起面向未來",
-      "description": "隨著 AI 模型持續增長複雜度，GB200 NVL72 確保您的基礎設施始終領先。憑藉其突破性架構和無縫可擴展性，您可以自信地投資明日的 AI 能力。GMI Cloud 提供平台，以企業級可靠性和支援駕馭這股力量。",
+      "title": "與 NexusAI 和 GB200 NVL72 一起面向未來",
+      "description": "隨著 AI 模型持續增長複雜度，GB200 NVL72 確保您的基礎設施始終領先。憑藉其突破性架構和無縫可擴展性，您可以自信地投資明日的 AI 能力。NexusAI 提供平台，以企業級可靠性和支援駕馭這股力量。",
       "cta": "了解更多"
     },
     "contact": {
@@ -409,8 +409,8 @@
       }
     },
     "elevate": {
-      "title": "與 GMI Cloud 和 NVIDIA HGX B200 提升您的 AI 能力",
-      "description": "透過 GMI Cloud 的企業基礎設施，善用全球最強大的 AI 平台。無需資本投資即可立即存取 HGX B200 系統，並獲得 24/7 支援和優化的 MLOps 工具，加速價值實現。",
+      "title": "與 NexusAI 和 NVIDIA HGX B200 提升您的 AI 能力",
+      "description": "透過 NexusAI 的企業基礎設施，善用全球最強大的 AI 平台。無需資本投資即可立即存取 HGX B200 系統，並獲得 24/7 支援和優化的 MLOps 工具，加速價值實現。",
       "cta": "申請存取"
     },
     "contact": {
@@ -460,7 +460,7 @@
     }
   },
   "about": {
-    "kicker": "關於 GMI Cloud",
+    "kicker": "關於 NexusAI",
     "heroTitle": "築基 AI 基礎建設，成就每個可能",
     "heroSubtitle": "Building AI Infrastructure, Empowering Possibilities. 我們致力於打造最先進的 GPU 雲端運算平台，加速全球 AI 創新。",
     "stats": {
@@ -720,7 +720,7 @@
     "demoHero": {
       "badge": "示範",
       "title": "開發者示範應用",
-      "subtitle": "在 GMI Cloud 上探索和測試即時 AI 模型。建構原型、進行實驗，並將生成式 AI 整合到您的應用程式中。"
+      "subtitle": "在 NexusAI 上探索和測試即時 AI 模型。建構原型、進行實驗，並將生成式 AI 整合到您的應用程式中。"
     },
     "demoAppsContent": {
       "ragChatbot": {
@@ -767,18 +767,18 @@
     "docsHub": {
       "badge": "文件",
       "title": "文件中心",
-      "subtitle": "全面的文件、API 參考和整合指南，幫助您使用 GMI Cloud 進行建構。即將推出。",
+      "subtitle": "全面的文件、API 參考和整合指南，幫助您使用 NexusAI 進行建構。即將推出。",
       "earlyAccess": "搶先體驗",
       "exploreDemos": "探索示範應用"
     }
   },
   "h200Faq": {
     "title": "常見問題",
-    "subtitle": "關於 GMI Cloud 上的 NVIDIA H200 您需要知道的一切",
+    "subtitle": "關於 NexusAI 上的 NVIDIA H200 您需要知道的一切",
     "items": {
       "q1": {
-        "question": "GMI Cloud 提供的 NVIDIA H200 GPU 是什麼？",
-        "answer": "NVIDIA H200 是 NVIDIA 最新的高效能 GPU，配備 141GB HBM3e 記憶體和 4.8 TB/s 頻寬。GMI Cloud 在我們的企業級雲端基礎設施中提供 H200 GPU 的隨需存取，讓您無需資本投資即可運行最苛刻的 AI 和 HPC 工作負載。"
+        "question": "NexusAI 提供的 NVIDIA H200 GPU 是什麼？",
+        "answer": "NVIDIA H200 是 NVIDIA 最新的高效能 GPU，配備 141GB HBM3e 記憶體和 4.8 TB/s 頻寬。NexusAI 在我們的企業級雲端基礎設施中提供 H200 GPU 的隨需存取，讓您無需資本投資即可運行最苛刻的 AI 和 HPC 工作負載。"
       },
       "q2": {
         "question": "H200 與之前的 GPU 型號（如 H100）有何不同？",
@@ -789,12 +789,12 @@
         "answer": "H200 的大規模記憶體容量和頻寬專為大型語言模型設計。它可以處理更大的批次大小、更長的上下文視窗和更大的模型，而不會受到記憶體限制，實現更快的迭代和更高效的訓練和推論工作流程。"
       },
       "q4": {
-        "question": "在 GMI Cloud 中使用 H200 有什麼好處？",
-        "answer": "GMI Cloud 提供 H200 GPU 的即時存取，採用隨用隨付定價，起價 $2.15/GPU-小時。優勢包括企業 SLA、用於多 GPU 工作負載的 NVLink 連接、預配置的 ML 環境和 24/7 技術支援。"
+        "question": "在 NexusAI 中使用 H200 有什麼好處？",
+        "answer": "NexusAI 提供 H200 GPU 的即時存取，採用隨用隨付定價，起價 $2.15/GPU-小時。優勢包括企業 SLA、用於多 GPU 工作負載的 NVLink 連接、預配置的 ML 環境和 24/7 技術支援。"
       },
       "q5": {
-        "question": "用戶如何在 GMI Cloud 上存取 H200 GPU？",
-        "answer": "開始使用很簡單：註冊 GMI Cloud 帳戶，選擇符合您工作負載需求的 H200 GPU 配置，幾分鐘內即可部署。我們的團隊也可以協助自訂配置和企業部署。"
+        "question": "用戶如何在 NexusAI 上存取 H200 GPU？",
+        "answer": "開始使用很簡單：註冊 NexusAI 帳戶，選擇符合您工作負載需求的 H200 GPU 配置，幾分鐘內即可部署。我們的團隊也可以協助自訂配置和企業部署。"
       }
     }
   },
@@ -814,8 +814,8 @@
         "answer": "該系統使用第 5 代 NVLink，具備 1.8TB/s 的 GPU 對 GPU 頻寬，實現整個 72-GPU 系統的無縫擴展。多個 NVL72 機架可以透過高速網路連接以進行更大規模的部署。"
       },
       "q4": {
-        "question": "在 GMI Cloud 中使用 GB200 NVL72 有什麼好處？",
-        "answer": "GMI Cloud 提供完全託管的 GB200 NVL72 基礎設施，包括企業 SLA、專屬支援和靈活的部署選項。用戶無需資本投資即可立即存取，並獲得優化的軟體堆疊和 MLOps 工具。"
+        "question": "在 NexusAI 中使用 GB200 NVL72 有什麼好處？",
+        "answer": "NexusAI 提供完全託管的 GB200 NVL72 基礎設施，包括企業 SLA、專屬支援和靈活的部署選項。用戶無需資本投資即可立即存取，並獲得優化的軟體堆疊和 MLOps 工具。"
       },
       "q5": {
         "question": "用戶如何存取 GB200 NVL72？",
@@ -844,7 +844,7 @@
       },
       "q5": {
         "question": "客戶如何存取 HGX B200 平台？",
-        "answer": "GMI Cloud 提供靈活的 HGX B200 基礎設施存取，包括隨需每小時存取、具有批量折扣的預留容量和完全專屬叢集。請聯繫我們的銷售團隊討論您的需求並開始自訂部署。"
+        "answer": "NexusAI 提供靈活的 HGX B200 基礎設施存取，包括隨需每小時存取、具有批量折扣的預留容量和完全專屬叢集。請聯繫我們的銷售團隊討論您的需求並開始自訂部署。"
       }
     }
   },
