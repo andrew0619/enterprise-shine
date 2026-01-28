@@ -22,7 +22,14 @@
   },
   "developers": {
     "demoApps": "Demo Apps",
-    "docsHub": "Docs Hub"
+    "docsHubLabel": "Docs Hub",
+    "docsHub": {
+      "badge": "Documentation",
+      "title": "Documentation Hub",
+      "subtitle": "Comprehensive guides, API references, and resources to help you build with NexusAI.",
+      "earlyAccess": "Request Early Access",
+      "exploreDemos": "Explore Demo Apps"
+    }
   },
   "company": {
     "aboutUs": "About Us",
